@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 
 @property(nonatomic,strong) NSMutableDictionary *controllerDic;//控制器存储
 @property(nonatomic,assign) NSInteger currentControllerIndex;//当前控制器的index
+@property (nonatomic,assign) BOOL scrollAble;
 
 #pragma mark ViewPagerOptions
 // Tab bar's height, defaults to 49.0
@@ -102,12 +103,18 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index;
 - (UIView *)viewPager:(ViewPagerController *)viewPager contentViewForTabAtIndex:(NSUInteger)index;
 
+- (NSUInteger)numberOfContentsForViewPager:(ViewPagerController *)viewPager;
+
+
 @end
 
 #pragma mark delegate
 @protocol ViewPagerDelegate <NSObject>
 
 @optional
+
+- (BOOL)viewPager:(ViewPagerController *)viewPager shouldChangeTabToIndex:(NSUInteger)index;
+
 // delegate object must implement this method if wants to be informed when a tab changes
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index;
 // Every time - reloadData called, ViewPager will ask its delegate for option values

@@ -1,29 +1,24 @@
 //
-//  SaidouPage.m
+//  GuanfangController.m
 //  Saiya
 //
 //  Created by jp007 on 16/6/23.
 //  Copyright © 2016年 crv. All rights reserved.
 //
 
-#import "SaidouPage.h"
-#import "GoodsDetailTitle.h"
-#import "SaishiViewController.h"
 #import "GuanfangController.h"
-@interface SaidouPage ()<ViewPagerDataSource,ViewPagerDelegate>
 
-{
-    GoodsDetailTitle  * _titileView;
+@interface GuanfangController ()<ViewPagerDataSource,ViewPagerDelegate>
 
-}
 @end
 
-@implementation SaidouPage
+@implementation GuanfangController
+
 -(instancetype)init
 {
     self = [super init];
     self.hidesBottomBarWhenPushed = NO;
-    self.tabHeight =0;
+    self.tabHeight =45;
     return self;
 }
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -31,53 +26,29 @@
     self = [super initWithCoder:aDecoder];
     self.hidesBottomBarWhenPushed = NO;
     self.navigationItem.leftBarButtonItem = [self backItem];
-    self.tabHeight = 0;
+    self.tabHeight = 45;
     return self;
 }
 -(UIBarButtonItem *)backItem
 {
     return  nil;
 }
+
 - (void)viewDidLoad {
     
     self.delegate = self;
     self.dataSource = self;
-
-    _tabTitles = @[@"xx",@"xxx"];
+    
+   _tabTitles = @[@"推荐热号",@"我关注的"];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.tabBarItem.image = [[UIImage imageNamed:@"icon-nav1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.navigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon-nav1-visited"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [self initTitleview];
-
-
+    
+    
+    
 }
 
 
--(void)initTitleview
-{
-    
-    GoodsDetailTitle *title =[[GoodsDetailTitle alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-    title.selectedTitleColor = [UIColor whiteColor];
-    title.unselectedTitleColor = APPCOLOR_GRAY;
-    
-    
-    title.titles=@[@"赛事",@"官方号"];
-
-    self.navigationItem.titleView=title;
-    
-    _titileView = title;
-    
-    //__weak UIScrollView * weakScroll=_pageScrollView;
-    __weak typeof(self) weakSelf = self;
-   // __weak typeof(_goodsDetailView) weakContent=_goodsDetailView;
-    
-    _titileView.indexChangeBlock=^(int old ,int index){
-        
-        [weakSelf setSelectedIndex:index animation:YES];
-    };
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -86,14 +57,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager
 {
@@ -110,32 +81,23 @@
      *购物车字符串
      *EWJ_BDSH（本地生活）,EWJ_KJJP（跨境精品）,EWJ_WJS/门店id（万家送）
      */
-    UIViewController * vc = nil;
+    UIViewController *controler=[UIViewController new];
+    controler.view.backgroundColor = [UIColor whiteColor];
     if (index == 1) {
-         vc =[GuanfangController new];
-        //controler.view.backgroundColor = [UIColor whiteColor];
-
-        //vc.view.backgroundColor = [UIColor redColor];
-    }else{
-        vc = [SaishiViewController new];
-        
+        controler.view.backgroundColor = [UIColor redColor];
     }
-   
+    
     
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
-    [self.controllerDic setValue:vc forKey:conKey];
+    [self.controllerDic setValue:controler forKey:conKey];
     
     
-    return vc;
+    return controler;
 }
 
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
 {
-    if (self.currentControllerIndex != index) {
-        _titileView.index = index;
-    }
     self.currentControllerIndex = index;
-    
     
     
     
@@ -147,7 +109,7 @@
     
     switch (option) {
         case ViewPagerOptionTabHeight:
-            return 0.0f;
+            return 40.0f;
             break;
         case ViewPagerOptionTabOffset:
             return 0.0f;
@@ -174,7 +136,7 @@
 {
     switch (component) {
         case ViewPagerIndicator:
-            return RGBColor(0, 0, 0);
+            return APPCOLOR_ORINGE;
             break;
         case ViewPagerTabsView:
             return RGBColor(255, 255, 255);
@@ -194,7 +156,10 @@
 
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index
 {
-    
-    return nil;
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = _tabTitles[index];
+    label.font = [UIFont systemFontOfSize:13];
+    return label;
 }
 @end

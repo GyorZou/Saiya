@@ -47,7 +47,7 @@
 -(UIBarButtonItem *)backItem
 {
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(0, 0, 20, 30);
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
     
     [backBtn addTarget:self action:@selector(dissmiss) forControlEvents:UIControlEventTouchUpInside];
 //    UIEdgeInsets edge;

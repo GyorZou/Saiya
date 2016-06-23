@@ -93,6 +93,7 @@
 @property NSMutableArray *contents;
 
 @property NSUInteger tabCount;
+@property NSUInteger contentsCount;
 @property (getter = isAnimatingToTab, assign) BOOL animatingToTab;
 
 @property (nonatomic) NSUInteger activeTabIndex;
@@ -112,7 +113,11 @@
     }
     return self;
 }
-
+-(void)setScrollAble:(BOOL)scrollAble
+{
+    _scrollAble = scrollAble;
+    //_SC
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -405,6 +410,12 @@
     [_contents removeAllObjects];
     
     _tabCount = [self.dataSource numberOfTabsForViewPager:self];
+    _contentsCount = _tabCount;
+    
+    if ([self.delegate respondsToSelector:@selector(numberOfContentsForViewPager:)]) {
+        
+        _contentsCount = [self.dataSource numberOfContentsForViewPager:self];
+    }
     
     // Populate arrays with [NSNull null];
     _tabs = [NSMutableArray arrayWithCapacity:_tabCount];
@@ -412,8 +423,8 @@
         [_tabs addObject:[NSNull null]];
     }
     
-    _contents = [NSMutableArray arrayWithCapacity:_tabCount];
-    for (int i = 0; i < _tabCount; i++) {
+    _contents = [NSMutableArray arrayWithCapacity:_contentsCount];
+    for (int i = 0; i < _contentsCount; i++) {
         [_contents addObject:[NSNull null]];
     }
     
@@ -594,6 +605,7 @@
 
 #pragma mark - UIScrollViewDelegate, Responding to Scrolling and Dragging
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     
     if ([self.origPageScrollViewDelegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
         [self.origPageScrollViewDelegate scrollViewDidScroll:scrollView];

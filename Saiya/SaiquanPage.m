@@ -9,6 +9,7 @@
 #import "SaiquanPage.h"
 
 #import "GoodsDetailTitle.h"
+#import "SearchViewController.h"
 @interface SaiquanPage ()
 
 @end
@@ -65,6 +66,9 @@
 }
 -(void)searchItemClick
 {
+    SearchViewController * s = [SearchViewController new];
+    
+    [self.navigationController pushViewController:s animated:YES];
 
 }
 - (void)didReceiveMemoryWarning {

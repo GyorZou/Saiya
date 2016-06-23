@@ -27,6 +27,9 @@
 		4C29E8171D1BBDEB00E51E24 /* MyHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8151D1BBDEB00E51E24 /* MyHeadCell.m */; };
 		4C29E8181D1BBDEB00E51E24 /* MyHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8161D1BBDEB00E51E24 /* MyHeadCell.xib */; };
 		4C29E8191D1BC41400E51E24 /* MineInfoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E7FD1D1B80C000E51E24 /* MineInfoPage.m */; };
+		4C29E81C1D1BCF6300E51E24 /* BaseWebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E81B1D1BCF6300E51E24 /* BaseWebviewController.m */; };
+		4C29E81F1D1BD0D800E51E24 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E81E1D1BD0D800E51E24 /* SearchViewController.m */; };
+		4C29E8221D1BD3FC00E51E24 /* GuanfangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8211D1BD3FC00E51E24 /* GuanfangController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,12 @@
 		4C29E8141D1BBDEB00E51E24 /* MyHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeadCell.h; sourceTree = "<group>"; };
 		4C29E8151D1BBDEB00E51E24 /* MyHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeadCell.m; sourceTree = "<group>"; };
 		4C29E8161D1BBDEB00E51E24 /* MyHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHeadCell.xib; sourceTree = "<group>"; };
+		4C29E81A1D1BCF6300E51E24 /* BaseWebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebviewController.h; sourceTree = "<group>"; };
+		4C29E81B1D1BCF6300E51E24 /* BaseWebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebviewController.m; sourceTree = "<group>"; };
+		4C29E81D1D1BD0D800E51E24 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		4C29E81E1D1BD0D800E51E24 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		4C29E8201D1BD3FC00E51E24 /* GuanfangController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuanfangController.h; sourceTree = "<group>"; };
+		4C29E8211D1BD3FC00E51E24 /* GuanfangController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuanfangController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +197,8 @@
 				4C29E7F21D1B7FAC00E51E24 /* BaseViewController.m */,
 				4C29E7F41D1B805400E51E24 /* BarItemViewController.h */,
 				4C29E7F51D1B805400E51E24 /* BarItemViewController.m */,
+				4C29E81D1D1BD0D800E51E24 /* SearchViewController.h */,
+				4C29E81E1D1BD0D800E51E24 /* SearchViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -199,6 +210,8 @@
 				4C29E8061D1B810C00E51E24 /* SaidouPage.m */,
 				4C29E8111D1B912F00E51E24 /* SaishiViewController.h */,
 				4C29E8121D1B912F00E51E24 /* SaishiViewController.m */,
+				4C29E8201D1BD3FC00E51E24 /* GuanfangController.h */,
+				4C29E8211D1BD3FC00E51E24 /* GuanfangController.m */,
 			);
 			name = saidou;
 			sourceTree = "<group>";
@@ -238,6 +251,8 @@
 			children = (
 				4C29E80A1D1B87AC00E51E24 /* GoodsDetailTitle.h */,
 				4C29E80C1D1B87BE00E51E24 /* GoodsDetailTitle.m */,
+				4C29E81A1D1BCF6300E51E24 /* BaseWebviewController.h */,
+				4C29E81B1D1BCF6300E51E24 /* BaseWebviewController.m */,
 				4C29E80E1D1B8E0000E51E24 /* ViewPagerController.h */,
 				4C29E80F1D1B8E0000E51E24 /* ViewPagerController.m */,
 			);
@@ -382,11 +397,14 @@
 				4C29E7C41D1B79DE00E51E24 /* ViewController.m in Sources */,
 				4C29E80D1D1B87BE00E51E24 /* GoodsDetailTitle.m in Sources */,
 				4C29E7F31D1B7FAC00E51E24 /* BaseViewController.m in Sources */,
+				4C29E81F1D1BD0D800E51E24 /* SearchViewController.m in Sources */,
 				4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */,
 				4C29E8171D1BBDEB00E51E24 /* MyHeadCell.m in Sources */,
+				4C29E8221D1BD3FC00E51E24 /* GuanfangController.m in Sources */,
 				4C29E7BE1D1B79DE00E51E24 /* main.m in Sources */,
 				4C29E8101D1B8E0000E51E24 /* ViewPagerController.m in Sources */,
 				4C29E7F61D1B805400E51E24 /* BarItemViewController.m in Sources */,
+				4C29E81C1D1BCF6300E51E24 /* BaseWebviewController.m in Sources */,
 				4C29E7FE1D1B80C000E51E24 /* MineInfoPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,8 +551,9 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Saiya/PrefixHeader.pch";
 				INFOPLIST_FILE = Saiya/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = main.Saiya;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saiya.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9c6a9005-a80f-4e17-9f3a-1f1a1b08cb44";
 			};
 			name = Debug;
 		};
@@ -542,12 +561,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen All-See-Own Digital Technology Co.,Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Saiya/PrefixHeader.pch";
 				INFOPLIST_FILE = Saiya/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = main.Saiya;
+				PRODUCT_BUNDLE_IDENTIFIER = com.saiya.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9c6a9005-a80f-4e17-9f3a-1f1a1b08cb44";
 			};
 			name = Release;
 		};
