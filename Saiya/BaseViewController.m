@@ -48,6 +48,7 @@
 {
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 0, 40, 40);
+    backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 15);
     
     [backBtn addTarget:self action:@selector(dissmiss) forControlEvents:UIControlEventTouchUpInside];
 //    UIEdgeInsets edge;

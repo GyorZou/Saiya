@@ -46,6 +46,14 @@
 		4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8491D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m */; };
 		4C29E8541D1BE92A00E51E24 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E84B1D1BE92A00E51E24 /* UIWebView+AFNetworking.m */; };
 		4C29E8571D1BE9CF00E51E24 /* NetworkManagementRequset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8561D1BE9CF00E51E24 /* NetworkManagementRequset.m */; };
+		4C29E85C1D1BEEC000E51E24 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E85A1D1BEEC000E51E24 /* LoginPage.m */; };
+		4C29E85D1D1BEEC000E51E24 /* LoginPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E85B1D1BEEC000E51E24 /* LoginPage.xib */; };
+		4C29E8611D1BF5E800E51E24 /* RegisterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E85F1D1BF5E800E51E24 /* RegisterPage.m */; };
+		4C29E8621D1BF5E800E51E24 /* RegisterPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8601D1BF5E800E51E24 /* RegisterPage.xib */; };
+		4C29E8661D1BF64400E51E24 /* RegisterPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8641D1BF64400E51E24 /* RegisterPage2.m */; };
+		4C29E8671D1BF64400E51E24 /* RegisterPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8651D1BF64400E51E24 /* RegisterPage2.xib */; };
+		4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8691D1BF66800E51E24 /* RegisterPage3.m */; };
+		4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +153,18 @@
 		4C29E84B1D1BE92A00E51E24 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		4C29E8551D1BE9CF00E51E24 /* NetworkManagementRequset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManagementRequset.h; path = AFNetworking/NetworkManagementRequset.h; sourceTree = "<group>"; };
 		4C29E8561D1BE9CF00E51E24 /* NetworkManagementRequset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManagementRequset.m; path = AFNetworking/NetworkManagementRequset.m; sourceTree = "<group>"; };
+		4C29E8591D1BEEC000E51E24 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
+		4C29E85A1D1BEEC000E51E24 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
+		4C29E85B1D1BEEC000E51E24 /* LoginPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPage.xib; sourceTree = "<group>"; };
+		4C29E85E1D1BF5E800E51E24 /* RegisterPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage.h; sourceTree = "<group>"; };
+		4C29E85F1D1BF5E800E51E24 /* RegisterPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage.m; sourceTree = "<group>"; };
+		4C29E8601D1BF5E800E51E24 /* RegisterPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage.xib; sourceTree = "<group>"; };
+		4C29E8631D1BF64400E51E24 /* RegisterPage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage2.h; sourceTree = "<group>"; };
+		4C29E8641D1BF64400E51E24 /* RegisterPage2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage2.m; sourceTree = "<group>"; };
+		4C29E8651D1BF64400E51E24 /* RegisterPage2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage2.xib; sourceTree = "<group>"; };
+		4C29E8681D1BF66800E51E24 /* RegisterPage3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage3.h; sourceTree = "<group>"; };
+		4C29E8691D1BF66800E51E24 /* RegisterPage3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage3.m; sourceTree = "<group>"; };
+		4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +216,7 @@
 		4C29E7BB1D1B79DE00E51E24 /* Saiya */ = {
 			isa = PBXGroup;
 			children = (
+				4C29E8581D1BECF100E51E24 /* Login */,
 				4C29E7FB1D1B809900E51E24 /* wode */,
 				4C29E7F91D1B808700E51E24 /* saiquan */,
 				4C29E7F81D1B808100E51E24 /* saixin */,
@@ -361,6 +382,25 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		4C29E8581D1BECF100E51E24 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4C29E8591D1BEEC000E51E24 /* LoginPage.h */,
+				4C29E85A1D1BEEC000E51E24 /* LoginPage.m */,
+				4C29E85B1D1BEEC000E51E24 /* LoginPage.xib */,
+				4C29E85E1D1BF5E800E51E24 /* RegisterPage.h */,
+				4C29E85F1D1BF5E800E51E24 /* RegisterPage.m */,
+				4C29E8601D1BF5E800E51E24 /* RegisterPage.xib */,
+				4C29E8631D1BF64400E51E24 /* RegisterPage2.h */,
+				4C29E8641D1BF64400E51E24 /* RegisterPage2.m */,
+				4C29E8651D1BF64400E51E24 /* RegisterPage2.xib */,
+				4C29E8681D1BF66800E51E24 /* RegisterPage3.h */,
+				4C29E8691D1BF66800E51E24 /* RegisterPage3.m */,
+				4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,8 +506,12 @@
 			files = (
 				4C29E7CC1D1B79DE00E51E24 /* LaunchScreen.storyboard in Resources */,
 				4C29E7C91D1B79DE00E51E24 /* Assets.xcassets in Resources */,
+				4C29E85D1D1BEEC000E51E24 /* LoginPage.xib in Resources */,
 				4C29E7C71D1B79DE00E51E24 /* Main.storyboard in Resources */,
+				4C29E8671D1BF64400E51E24 /* RegisterPage2.xib in Resources */,
 				4C29E8181D1BBDEB00E51E24 /* MyHeadCell.xib in Resources */,
+				4C29E8621D1BF5E800E51E24 /* RegisterPage.xib in Resources */,
+				4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +541,7 @@
 				4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4C29E8501D1BE92A00E51E24 /* UIButton+AFNetworking.m in Sources */,
 				4C29E8071D1B810C00E51E24 /* SaidouPage.m in Sources */,
+				4C29E8611D1BF5E800E51E24 /* RegisterPage.m in Sources */,
 				4C29E8571D1BE9CF00E51E24 /* NetworkManagementRequset.m in Sources */,
 				4C29E8011D1B80D700E51E24 /* SaiquanPage.m in Sources */,
 				4C29E7C41D1B79DE00E51E24 /* ViewController.m in Sources */,
@@ -510,6 +555,8 @@
 				4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */,
 				4C29E84F1D1BE92A00E51E24 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4C29E8171D1BBDEB00E51E24 /* MyHeadCell.m in Sources */,
+				4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */,
+				4C29E85C1D1BEEC000E51E24 /* LoginPage.m in Sources */,
 				4C29E8321D1BE92300E51E24 /* AFNetworkReachabilityManager.m in Sources */,
 				4C29E8221D1BD3FC00E51E24 /* GuanfangController.m in Sources */,
 				4C29E7BE1D1B79DE00E51E24 /* main.m in Sources */,
@@ -517,6 +564,7 @@
 				4C29E8511D1BE92A00E51E24 /* UIImageView+AFNetworking.m in Sources */,
 				4C29E8101D1B8E0000E51E24 /* ViewPagerController.m in Sources */,
 				4C29E7F61D1B805400E51E24 /* BarItemViewController.m in Sources */,
+				4C29E8661D1BF64400E51E24 /* RegisterPage2.m in Sources */,
 				4C29E81C1D1BCF6300E51E24 /* BaseWebviewController.m in Sources */,
 				4C29E8311D1BE92300E51E24 /* AFHTTPSessionManager.m in Sources */,
 				4C29E8351D1BE92300E51E24 /* AFURLResponseSerialization.m in Sources */,

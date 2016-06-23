@@ -10,6 +10,7 @@
 #import "GoodsDetailTitle.h"
 #import "SaishiViewController.h"
 #import "GuanfangController.h"
+#import "LoginPage.h"
 @interface SaidouPage ()<ViewPagerDataSource,ViewPagerDelegate>
 
 {
@@ -54,7 +55,26 @@
 
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        if ([self isLogined] == NO) {
+            
+            LoginPage * lg = [LoginPage new];
+            UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
+            [self.navigationController.tabBarController presentViewController: navi animated:YES completion:nil];
+        }
 
+    });
+    
+}
+-(BOOL)isLogined
+{
+    return NO;
+}
 -(void)initTitleview
 {
     
