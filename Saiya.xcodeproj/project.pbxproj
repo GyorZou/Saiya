@@ -54,6 +54,7 @@
 		4C29E8671D1BF64400E51E24 /* RegisterPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8651D1BF64400E51E24 /* RegisterPage2.xib */; };
 		4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8691D1BF66800E51E24 /* RegisterPage3.m */; };
 		4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */; };
+		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,8 @@
 		4C29E8681D1BF66800E51E24 /* RegisterPage3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage3.h; sourceTree = "<group>"; };
 		4C29E8691D1BF66800E51E24 /* RegisterPage3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage3.m; sourceTree = "<group>"; };
 		4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage3.xib; sourceTree = "<group>"; };
+		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
+		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +400,8 @@
 				4C29E8681D1BF66800E51E24 /* RegisterPage3.h */,
 				4C29E8691D1BF66800E51E24 /* RegisterPage3.m */,
 				4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */,
+				5272D4871D1C3C2300E2B8D1 /* SMSSender.h */,
+				5272D4881D1C3C2300E2B8D1 /* SMSSender.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
 				4C29E8041D1B80F300E51E24 /* SaixinPage.m in Sources */,
 				4C29E8131D1B912F00E51E24 /* SaishiViewController.m in Sources */,
 				4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "RegisterPage.h"
 #import "RegisterPage2.h"
+#import "SMSSender.h"
 @interface RegisterPage ()<UITextFieldDelegate>
 {
     IBOutlet UIButton * _registerBtn;
@@ -48,24 +49,18 @@
 -(IBAction)registerBtn:(id)sender
 {
     
-    NSDictionary * dict = @{@"phone":_nameFiled.text,@"smsType":@"1"};
-    NSString * url = @"http://saiya.tv/api/Common/SendSMS";
-    [[NetworkManagementRequset manager] requestPostData:url postData:dict complation:^BOOL(BOOL result, id returnData) {
+    [SMSSender sendSMSToPhone:_nameFiled.text of:SMSTypeRegister block:^(BOOL result, id returnData ) {
         if (result) {
             
             NSLog(@"%@",returnData);
-        
+            
         }else{
             
         }
         RegisterPage2 * p2 = [RegisterPage2 new];
         [self.navigationController pushViewController:p2 animated:YES];
 
-        
-        return YES;
-    }];
-
-    
+    }];    
 }
 /*
 #pragma mark - Navigation

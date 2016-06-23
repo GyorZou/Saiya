@@ -44,7 +44,9 @@
     }else{
         or = [or stringByReplacingCharactersInRange:range withString:string];
     }
-    
+    [UIView animateWithDuration:0 animations:^{
+        
+    }];
     if (_pwdField == textField) {
         pwd = or;
     }else{
