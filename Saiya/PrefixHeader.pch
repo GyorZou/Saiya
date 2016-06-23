@@ -37,4 +37,5 @@ const static char * notification_specs = "this is a notification with id 8899";
 #define APPCOLOR_PLACEHOLDER  [UIColor colorWithRed:0XBB/255.0 green:0XBB/255.0 blue:0XBB/255.0 alpha:1.0]
 
 #define APPCOLOR_BLACK  [UIColor colorWithRed:0X1B/255.0 green:0X1B/255.0 blue:0X1B/255.0 alpha:1.0]
+#import "NetworkManagementRequset.h"
 #endif /* PrefixHeader_pch */

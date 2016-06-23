@@ -320,10 +320,18 @@ NSURLSessionConfiguration *configuration;
             {
                 NSDictionary *dictionary = [httpResponse allHeaderFields];
                 CookieDic = dictionary;
-                
-           
             }
-            complation(YES,responseObject);
+            
+            if ([response isKindOfClass:[NSData class]]) {
+                responseObject =  [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            }
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                complation(YES,responseObject);
+            }else
+            {
+                complation(NO,nil);
+
+            }
             
            
         }

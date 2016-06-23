@@ -10,5 +10,5 @@
 
 #import "GoodsDetailTitle.h"
 @interface RegisterPage : BaseViewController
-
+@property (nonatomic,weak) IBOutlet UITextField * nameFiled;
 @end

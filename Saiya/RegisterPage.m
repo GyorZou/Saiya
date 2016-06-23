@@ -8,8 +8,10 @@
 
 #import "RegisterPage.h"
 #import "RegisterPage2.h"
-@interface RegisterPage ()
-
+@interface RegisterPage ()<UITextFieldDelegate>
+{
+    IBOutlet UIButton * _registerBtn;
+}
 @end
 
 @implementation RegisterPage
@@ -19,7 +21,8 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = APPCOLOR_GRAY; 
     [self initTitleview];
-    
+    _nameFiled.delegate = self;
+    _registerBtn.enabled = NO;
 }
 -(void)initTitleview
 {
@@ -44,8 +47,25 @@
 }
 -(IBAction)registerBtn:(id)sender
 {
-    RegisterPage2 * p2 = [RegisterPage2 new];
-    [self.navigationController pushViewController:p2 animated:YES];
+    
+    NSDictionary * dict = @{@"phone":_nameFiled.text,@"smsType":@"1"};
+    NSString * url = @"http://saiya.tv/api/Common/SendSMS";
+    [[NetworkManagementRequset manager] requestPostData:url postData:dict complation:^BOOL(BOOL result, id returnData) {
+        if (result) {
+            
+            NSLog(@"%@",returnData);
+        
+        }else{
+            
+        }
+        RegisterPage2 * p2 = [RegisterPage2 new];
+        [self.navigationController pushViewController:p2 animated:YES];
+
+        
+        return YES;
+    }];
+
+    
 }
 /*
 #pragma mark - Navigation
@@ -56,5 +76,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString * or = textField.text;
+    
+    long count = or.length;
+    if (range.location>=count) {
+        or = [or stringByAppendingString:string];
+    }else{
+        or = [or stringByReplacingCharactersInRange:range withString:string];
+    }
+    if (or.length >11) {
+        return NO;
+    }
+   
+    if ([self checkName:or]) {
+        _registerBtn.backgroundColor = APPCOLOR_ORINGE;
+        _registerBtn.enabled = YES;
+    }else{
+        _registerBtn.backgroundColor = [UIColor grayColor];
+        _registerBtn.enabled = NO;
+    }
+    return or.length < 12;
+}
+-(BOOL)checkName:(NSString*)name
+{
+    
+    return name.length == 11;
+}
 
 @end

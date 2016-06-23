@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPage">
             <connections>
+                <outlet property="_loginBtn" destination="cRO-pw-enm" id="KB8-kR-SKn"/>
+                <outlet property="nameFiled" destination="Me2-0n-CHv" id="SiZ-18-GTA"/>
+                <outlet property="pwdField" destination="TUC-O1-uVc" id="Bgl-AF-v7A"/>
                 <outlet property="quickLabel" destination="dcM-kn-dyD" id="G8S-Ov-vy7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,7 +31,7 @@
                             <rect key="frame" x="62" y="8" width="210" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-key" id="usH-Bf-46F">
                             <rect key="frame" x="19" y="56" width="25" height="25"/>
@@ -38,7 +41,7 @@
                             <rect key="frame" x="62" y="54" width="174" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <view contentMode="scaleToFill" id="feY-dF-fnX">
                             <rect key="frame" x="0.0" y="46" width="320" height="0.5"/>
@@ -50,6 +53,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="忘记密码"/>
+                            <connections>
+                                <action selector="forgetPwdClick:" destination="-1" eventType="touchUpInside" id="g59-8a-jeg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,6 +67,9 @@
                     <state key="normal" title="登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginBtnClick:" destination="-1" eventType="touchUpInside" id="3TD-vY-LgT"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" id="uUy-0v-17s">
                     <rect key="frame" x="65" y="451.5" width="55" height="0.5"/>
@@ -83,16 +92,25 @@
                     <rect key="frame" x="45" y="479" width="62" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <state key="normal" image="icon-weixin"/>
+                    <connections>
+                        <action selector="weixinClick:" destination="-1" eventType="touchUpInside" id="C0W-Fo-ay8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sIk-rG-Hpf">
                     <rect key="frame" x="128" y="479" width="62" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <state key="normal" image="icon-qq"/>
+                    <connections>
+                        <action selector="qqClick:" destination="-1" eventType="touchUpInside" id="IYx-hH-GAh"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VHF-Hj-qt5">
                     <rect key="frame" x="211" y="479" width="62" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                     <state key="normal" image="icon-sina"/>
+                    <connections>
+                        <action selector="weiboClick:" destination="-1" eventType="touchUpInside" id="xds-Yz-QOd"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.48450349506578949" green="0.5" blue="0.5" alpha="0.12" colorSpace="calibratedRGB"/>

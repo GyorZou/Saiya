@@ -10,4 +10,6 @@
 
 @interface LoginPage : BaseViewController
 @property (nonatomic,weak) IBOutlet UILabel * quickLabel;
+@property (nonatomic,weak) IBOutlet UITextField * nameFiled,*pwdField;
+
 @end
