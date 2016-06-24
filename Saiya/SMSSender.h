@@ -15,4 +15,6 @@ typedef enum {
 @interface SMSSender : NSObject
 
 +(void)sendSMSToPhone:(NSString*)phone of:(SMSType)type block:(void(^)(BOOL result, id returnData ))blk;
++(void)verifySMS:(NSString*)code atPhone:(NSString*)phone of:(SMSType)type block:(void(^)(BOOL result, id returnData ))blk;
+
 @end

@@ -95,13 +95,6 @@
     return controler;
 }
 
-- (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
-{
-    self.currentControllerIndex = index;
-    
-    
-    
-}
 
 #pragma mark-ViewPagerDelegate
 - (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value

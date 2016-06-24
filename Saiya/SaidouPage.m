@@ -151,12 +151,8 @@
 
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
 {
-    if (self.currentControllerIndex != index) {
+    
         _titileView.index = index;
-    }
-    self.currentControllerIndex = index;
-    
-    
     
     
 }

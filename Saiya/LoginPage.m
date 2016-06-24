@@ -119,8 +119,10 @@
 -(IBAction)loginBtnClick:(id)sender
 {
 
+    [NWFToastView showProgress:@"正在登录..."];
     NSDictionary * dict = @{@"Account":_nameFiled.text,@"Password":_pwdField.text};
     [[NetworkManagementRequset manager] requestPostData:[self normalLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
+        [NWFToastView dismissProgress];
         if (result) {
         
             NSLog(@"%@",returnData);

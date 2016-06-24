@@ -48,17 +48,27 @@
 }
 -(IBAction)registerBtn:(id)sender
 {
-    
+    [NWFToastView showProgress:@"正在发送..."];
     [SMSSender sendSMSToPhone:_nameFiled.text of:SMSTypeRegister block:^(BOOL result, id returnData ) {
+        NSLog(@"%@",returnData);
+        [NWFToastView dismissProgress];
+        
         if (result) {
-            
-            NSLog(@"%@",returnData);
-            
-        }else{
+            BOOL isTrue = [[returnData objectForKey:@"result"] boolValue];
+            if (isTrue) {
+                RegisterPage2 * p2 = [RegisterPage2 new];
+                p2.phone = _nameFiled.text;
+                [self.navigationController pushViewController:p2 animated:YES];
+               // return ;
+            }else{
+                [NWFToastView showToast:APPENDSTRING(@"发送失败:", returnData[@"messages"])];
+            }
+            return;
+
             
         }
-        RegisterPage2 * p2 = [RegisterPage2 new];
-        [self.navigationController pushViewController:p2 animated:YES];
+        [NWFToastView showToast:@"发送失败"];
+        
 
     }];    
 }

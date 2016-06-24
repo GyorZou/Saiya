@@ -8,6 +8,7 @@
 
 #import "SaixinPage.h"
 
+#import "MessegeConroller.h"
 #import "GoodsDetailTitle.h"
 @interface SaixinPage ()<ViewPagerDataSource,ViewPagerDelegate>
 
@@ -108,8 +109,9 @@
 
     UIViewController *controler=[UIViewController new];
     controler.view.backgroundColor = [UIColor whiteColor];
-    if (index == 1) {
-        controler.view.backgroundColor = [UIColor redColor];
+    if (index == 0) {
+        //controler.view.backgroundColor = [UIColor redColor];
+        controler = [MessegeConroller new];
     }
     
     
@@ -120,13 +122,6 @@
     return controler;
 }
 
-- (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
-{
-    self.currentControllerIndex = index;
-    
-    
-    
-}
 
 #pragma mark-ViewPagerDelegate
 - (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value

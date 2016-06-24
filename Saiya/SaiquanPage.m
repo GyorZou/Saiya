@@ -10,8 +10,13 @@
 
 #import "GoodsDetailTitle.h"
 #import "SearchViewController.h"
-@interface SaiquanPage ()
 
+#import "BaseWebviewController.h"
+@interface SaiquanPage ()
+{
+    BaseWebviewController *_web;
+    BOOL f;
+}
 @end
 
 @implementation SaiquanPage
@@ -25,6 +30,18 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationItem.rightBarButtonItem = [self rightItem];
     [self initTitleview];
+    _web = [BaseWebviewController new];
+    _web.view.backgroundColor = [UIColor whiteColor];
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (f== NO) {
+        _web.baseUrl = @"http://www.ewj.com/activitiesPage/my02.html?from=singlemessage&isappinstalled=1";
+        [self.view addSubview:_web.view];
+    }
+    f = YES;
+    
 }
 -(void)initTitleview
 {

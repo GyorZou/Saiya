@@ -54,6 +54,11 @@
 		4C29E8671D1BF64400E51E24 /* RegisterPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8651D1BF64400E51E24 /* RegisterPage2.xib */; };
 		4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8691D1BF66800E51E24 /* RegisterPage3.m */; };
 		4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */; };
+		4C29E8701D1CCEBA00E51E24 /* NWFToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E86F1D1CCEBA00E51E24 /* NWFToastView.m */; };
+		4C29E8731D1CCF2B00E51E24 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8721D1CCF2B00E51E24 /* MBProgressHUD.m */; };
+		4C29E8771D1CF46D00E51E24 /* SaixinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E8751D1CF46D00E51E24 /* SaixinCell.m */; };
+		4C29E8781D1CF46D00E51E24 /* SaixinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C29E8761D1CF46D00E51E24 /* SaixinCell.xib */; };
+		4C29E87B1D1CF61D00E51E24 /* MessegeConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E87A1D1CF61D00E51E24 /* MessegeConroller.m */; };
 		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +171,15 @@
 		4C29E8681D1BF66800E51E24 /* RegisterPage3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPage3.h; sourceTree = "<group>"; };
 		4C29E8691D1BF66800E51E24 /* RegisterPage3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPage3.m; sourceTree = "<group>"; };
 		4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPage3.xib; sourceTree = "<group>"; };
+		4C29E86E1D1CCEBA00E51E24 /* NWFToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWFToastView.h; sourceTree = "<group>"; };
+		4C29E86F1D1CCEBA00E51E24 /* NWFToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWFToastView.m; sourceTree = "<group>"; };
+		4C29E8711D1CCF2B00E51E24 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4C29E8721D1CCF2B00E51E24 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4C29E8741D1CF46D00E51E24 /* SaixinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaixinCell.h; sourceTree = "<group>"; };
+		4C29E8751D1CF46D00E51E24 /* SaixinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaixinCell.m; sourceTree = "<group>"; };
+		4C29E8761D1CF46D00E51E24 /* SaixinCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaixinCell.xib; sourceTree = "<group>"; };
+		4C29E8791D1CF61D00E51E24 /* MessegeConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessegeConroller.h; sourceTree = "<group>"; };
+		4C29E87A1D1CF61D00E51E24 /* MessegeConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessegeConroller.m; sourceTree = "<group>"; };
 		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
 		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -296,6 +310,11 @@
 			children = (
 				4C29E8021D1B80F300E51E24 /* SaixinPage.h */,
 				4C29E8031D1B80F300E51E24 /* SaixinPage.m */,
+				4C29E8791D1CF61D00E51E24 /* MessegeConroller.h */,
+				4C29E87A1D1CF61D00E51E24 /* MessegeConroller.m */,
+				4C29E8741D1CF46D00E51E24 /* SaixinCell.h */,
+				4C29E8751D1CF46D00E51E24 /* SaixinCell.m */,
+				4C29E8761D1CF46D00E51E24 /* SaixinCell.xib */,
 			);
 			name = saixin;
 			sourceTree = "<group>";
@@ -324,6 +343,10 @@
 		4C29E8081D1B87A100E51E24 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4C29E8711D1CCF2B00E51E24 /* MBProgressHUD.h */,
+				4C29E8721D1CCF2B00E51E24 /* MBProgressHUD.m */,
+				4C29E86E1D1CCEBA00E51E24 /* NWFToastView.h */,
+				4C29E86F1D1CCEBA00E51E24 /* NWFToastView.m */,
 				4C29E8551D1BE9CF00E51E24 /* NetworkManagementRequset.h */,
 				4C29E8561D1BE9CF00E51E24 /* NetworkManagementRequset.m */,
 				4C29E8371D1BE92A00E51E24 /* UIKit+AFNetworking */,
@@ -509,6 +532,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C29E8781D1CF46D00E51E24 /* SaixinCell.xib in Resources */,
 				4C29E7CC1D1B79DE00E51E24 /* LaunchScreen.storyboard in Resources */,
 				4C29E7C91D1B79DE00E51E24 /* Assets.xcassets in Resources */,
 				4C29E85D1D1BEEC000E51E24 /* LoginPage.xib in Resources */,
@@ -544,6 +568,7 @@
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
 				4C29E8041D1B80F300E51E24 /* SaixinPage.m in Sources */,
 				4C29E8131D1B912F00E51E24 /* SaishiViewController.m in Sources */,
+				4C29E8771D1CF46D00E51E24 /* SaixinCell.m in Sources */,
 				4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4C29E8501D1BE92A00E51E24 /* UIButton+AFNetworking.m in Sources */,
 				4C29E8071D1B810C00E51E24 /* SaidouPage.m in Sources */,
@@ -551,6 +576,7 @@
 				4C29E8571D1BE9CF00E51E24 /* NetworkManagementRequset.m in Sources */,
 				4C29E8011D1B80D700E51E24 /* SaiquanPage.m in Sources */,
 				4C29E7C41D1B79DE00E51E24 /* ViewController.m in Sources */,
+				4C29E87B1D1CF61D00E51E24 /* MessegeConroller.m in Sources */,
 				4C29E80D1D1B87BE00E51E24 /* GoodsDetailTitle.m in Sources */,
 				4C29E7F31D1B7FAC00E51E24 /* BaseViewController.m in Sources */,
 				4C29E84C1D1BE92A00E51E24 /* AFAutoPurgingImageCache.m in Sources */,
@@ -563,6 +589,8 @@
 				4C29E8171D1BBDEB00E51E24 /* MyHeadCell.m in Sources */,
 				4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */,
 				4C29E85C1D1BEEC000E51E24 /* LoginPage.m in Sources */,
+				4C29E8731D1CCF2B00E51E24 /* MBProgressHUD.m in Sources */,
+				4C29E8701D1CCEBA00E51E24 /* NWFToastView.m in Sources */,
 				4C29E8321D1BE92300E51E24 /* AFNetworkReachabilityManager.m in Sources */,
 				4C29E8221D1BD3FC00E51E24 /* GuanfangController.m in Sources */,
 				4C29E7BE1D1B79DE00E51E24 /* main.m in Sources */,

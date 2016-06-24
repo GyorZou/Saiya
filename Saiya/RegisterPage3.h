@@ -10,5 +10,5 @@
 
 #import "GoodsDetailTitle.h"
 @interface RegisterPage3 : BaseViewController
-
+@property NSString * phone,*code;
 @end

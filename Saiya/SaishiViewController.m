@@ -75,7 +75,10 @@
 }
 
 
-
+- (NSUInteger)numberOfContentsForViewPager:(ViewPagerController *)viewPager
+{
+    return 1;
+}
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
 {
     
@@ -86,9 +89,9 @@
      */
     UIViewController *controler=[UIViewController new];
     controler.view.backgroundColor = [UIColor whiteColor];
-    if (index == 1) {
-        controler.view.backgroundColor = [UIColor redColor];
-    }
+//    if (index == 1) {
+//        controler.view.backgroundColor = [UIColor redColor];
+//    }
     
     
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
@@ -97,13 +100,9 @@
     
     return controler;
 }
-
-- (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
+-(void)viewPager:(ViewPagerController *)viewPager handleTabTapEventAtIndex:(NSUInteger)index
 {
-    self.currentControllerIndex = index;
-    
-    
-    
+    //NSLog(@"");
 }
 
 #pragma mark-ViewPagerDelegate

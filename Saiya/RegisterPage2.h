@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface RegisterPage2 : BaseViewController
-
+@property NSString * phone;
 @end

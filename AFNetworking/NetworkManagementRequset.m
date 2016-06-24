@@ -304,10 +304,20 @@ NSURLSessionConfiguration *configuration;
          NSError * checkError = [NetworkManagementRequset check:responseObject];
         if (error||checkError) {
             //EWJLog(@"%@",error);
+            NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+            
             if(checkError){
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"com.ewj.nologin" object:nil];
+                dict[@"checkError"] = checkError;
             }
-            complation(NO,responseObject);
+            if (error) {
+                dict[@"error"] = error;
+            }
+            if (responseObject) {
+                dict[@"responseObject"] = responseObject;
+            }
+        
+            complation(NO,dict);
 
         }else{
             

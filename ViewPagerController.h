@@ -28,12 +28,15 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 @protocol ViewPagerDelegate;
 
 @interface ViewPagerController : BaseViewController
+{
+    NSInteger _currentControllerIndex;
+}
 
 @property(nonatomic,weak) id<ViewPagerDataSource> dataSource;
 @property(nonatomic,weak) id<ViewPagerDelegate> delegate;
 
 @property(nonatomic,strong) NSMutableDictionary *controllerDic;//控制器存储
-@property(nonatomic,assign) NSInteger currentControllerIndex;//当前控制器的index
+@property(nonatomic,assign,readonly) NSInteger currentControllerIndex;//当前控制器的index
 @property (nonatomic,assign) BOOL scrollAble;
 
 #pragma mark ViewPagerOptions
@@ -114,6 +117,8 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 @optional
 
 - (BOOL)viewPager:(ViewPagerController *)viewPager shouldChangeTabToIndex:(NSUInteger)index;
+- (void)viewPager:(ViewPagerController *)viewPager handleTabTapEventAtIndex:(NSUInteger)index;
+- (void)viewPager:(ViewPagerController *)viewPager handleControllerTransitionTo:(UIViewController*)vc;
 
 // delegate object must implement this method if wants to be informed when a tab changes
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index;
