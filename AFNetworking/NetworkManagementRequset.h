@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 cre.crv.ewj. All rights reserved.
 //
 
+//#import <Foundation/Foundation.h>
+
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 

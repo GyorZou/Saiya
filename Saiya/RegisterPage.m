@@ -9,6 +9,8 @@
 #import "RegisterPage.h"
 #import "RegisterPage2.h"
 #import "SMSSender.h"
+
+#import "NWFToastView.h"
 @interface RegisterPage ()<UITextFieldDelegate>
 {
     IBOutlet UIButton * _registerBtn;

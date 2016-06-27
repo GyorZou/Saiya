@@ -7,6 +7,7 @@
 //
 
 #import "RegisterPage3.h"
+#import "NWFToastView.h"
 
 @interface RegisterPage3 ()<UITextFieldDelegate>
 {

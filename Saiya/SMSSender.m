@@ -8,6 +8,7 @@
 
 #import "SMSSender.h"
 
+#import "NetworkManagementRequset.h"
 @implementation SMSSender
 +(void)sendSMSToPhone:(NSString *)phone of:(SMSType)type block:(void (^)(BOOL, id))blk
 {

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NWFToastView.h"
 
+#import "NetworkManagementRequset.h"
 
 #define pro [UIScreen mainScreen].bounds.size.width/320
 
