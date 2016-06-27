@@ -12,20 +12,20 @@
  *  @version 3.00
  */
 
-#ifndef EMSDK_h
-#define EMSDK_h
+//#ifndef EMSDK_h
+//#define EMSDK_h
 
-#if TARGET_OS_IPHONE
+//#if TARGET_OS_IPHONE
 
 #import "EMClient.h"
 #import "EMClientDelegate.h"
 
-#else
+//#else
 
-#import <HyphenateSDK/EMClient.h>
-#import <HyphenateSDK/EMClientDelegate.h>
+//#import <HyphenateSDK/EMClient.h>
+//#import <HyphenateSDK/EMClientDelegate.h>
 
-#endif
+//#endif
 
 
-#endif /* EMSDK_h */
+//#endif /* EMSDK_h */

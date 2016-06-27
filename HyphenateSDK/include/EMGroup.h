@@ -18,6 +18,10 @@
 
 #import "EMGroupOptions.h"
 
+#import "EMClient.h"
+#import "EMClientDelegate.h"
+#import "UIViewController+HUD.h"
+
 /*!
  *  \~chinese 
  *  群组

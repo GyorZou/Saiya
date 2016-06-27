@@ -1,0 +1,19 @@
+//
+//  ImportHeader.pch
+//  Saiya
+//
+//  Created by zougyor on 16/6/27.
+//  Copyright © 2016年 crv. All rights reserved.
+//
+
+#ifndef ImportHeader_pch
+#define ImportHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "EMSDK.h"
+
+
+
+#endif /* ImportHeader_pch */

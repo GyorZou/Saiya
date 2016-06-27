@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "EaseUI.h"
 @interface BaseWebviewController : BaseViewController
 {
 
