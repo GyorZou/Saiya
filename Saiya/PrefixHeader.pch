@@ -6,32 +6,13 @@
 //  Copyright © 2016年 crv. All rights reserved.
 //
 
-#ifndef PrefixHeader_pch
-#define PrefixHeader_pch
+#ifndef PrefixHeader_pch_jp
+#define PrefixHeader_pch_jp
 
 
-#ifndef SCREENWIDTH
-#define SCREENWIDTH   [UIScreen mainScreen].bounds.size.width
-#define SCREENHEIGHT  [UIScreen mainScreen].bounds.size.height
-#endif
 
-#define NSStringFromInt(value) [NSString stringWithFormat:@"%d",(int)(value)]
-
-#define NSStringFromValue(value) [NSString stringWithFormat:@"%g",value]
-
-
-#define APPENDSTRING(ARG1,ARG2) [NSString stringWithFormat:@"%@%@",ARG1,ARG2]
-
-
-#define APPCOLOR_ORINGE  [UIColor colorWithRed:0XFF/255.0 green:0X57/255.0 blue:0X22/255.0 alpha:1.0]
-#define APPCOLOR_GREEN  [UIColor colorWithRed:0X18/255.0 green:0XB3/255.0 blue:0X64/255.0 alpha:1.0]
-#define APPCOLOR_BLUE  [UIColor colorWithRed:0X1E/255.0 green:0XA2/255.0 blue:0X71/255.0 alpha:1.0]
-#define APPCOLOR_GRAY  [UIColor colorWithRed:0XE5/255.0 green:0XE5/255.0 blue:0XE5/255.0 alpha:1.0]
-#define APPCOLOR_PLACEHOLDER  [UIColor colorWithRed:0XBB/255.0 green:0XBB/255.0 blue:0XBB/255.0 alpha:1.0]
-
-#define APPCOLOR_BLACK  [UIColor colorWithRed:0X1B/255.0 green:0X1B/255.0 blue:0X1B/255.0 alpha:1.0]
 //#import "NetworkManagementRequset.h"
-//#import "NWFToastView.h"
+
 //#import <UIKit/UIKit.h>
 
 

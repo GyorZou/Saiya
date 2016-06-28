@@ -9,6 +9,10 @@
 #import "LoginPage.h"
 #import "RegisterPage.h"
 
+#import "MBProgressHUD+Add.h"
+#import "TTGlobalUICommon.h"
+#import "ChatDemoHelper.h"
+#import "MainViewController.h"
 @interface LoginPage ()<UITextFieldDelegate>
 {
     IBOutlet UIButton * _loginBtn;
@@ -27,7 +31,7 @@
     self.quickLabel.backgroundColor = APPCOLOR_GRAY;
     _nameFiled.delegate = _pwdField.delegate = self;
     _loginBtn.backgroundColor = [UIColor grayColor];
-    _loginBtn.enabled = NO;
+    _loginBtn.enabled = [self checkName:_nameFiled.text] && [self checkPwd:_pwdField.text];
     _loginBtn.layer.cornerRadius = 5;
     _loginBtn.clipsToBounds = YES;
 }
@@ -111,15 +115,17 @@
 -(BOOL)checkName:(NSString*)name
 {
     
-    return name.length == 11;
+    return name.length >= 6;
 }
 -(BOOL)checkPwd:(NSString*)pwd
 {
-    return pwd.length >6;
+    return pwd.length >=6;
 }
 -(IBAction)loginBtnClick:(id)sender
 {
 
+    [self huanxinLogin];
+    return;
     [NWFToastView showProgress:@"正在登录..."];
     NSDictionary * dict = @{@"Account":_nameFiled.text,@"Password":_pwdField.text};
     [[NetworkManagementRequset manager] requestPostData:[self normalLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
@@ -167,4 +173,85 @@
 }
 */
 
+-(void)huanxinLogin
+{
+
+    [self showHudInView:self.view hint:NSLocalizedString(@"login.ongoing", @"Is Login...")];
+    //异步登陆账号
+    __weak typeof(self) weakself = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        EMError *error = [[EMClient sharedClient] loginWithUsername:_nameFiled.text password:_pwdField.text];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakself hideHud];
+            if (!error) {
+                //设置是否自动登录
+                [[EMClient sharedClient].options setIsAutoLogin:YES];
+                
+                //获取数据库中数据
+                [MBProgressHUD showHUDAddedTo:weakself.view animated:YES];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [[EMClient sharedClient] dataMigrationTo3];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [[ChatDemoHelper shareHelper] asyncGroupFromServer];
+//                        [[ChatDemoHelper shareHelper] asyncConversationFromDB];
+//                        [[ChatDemoHelper shareHelper] asyncPushOptions];
+                        
+                        
+                        
+                        [MBProgressHUD hideAllHUDsForView:weakself.view animated:YES];
+                        //发送自动登陆状态通知
+                        [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_LOGINCHANGE object:@([[EMClient sharedClient] isLoggedIn])];
+                        
+                        //保存最近一次登录用户名
+                        //[weakself saveLastLoginUsername];
+                    });
+                });
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                switch (error.code)
+                {
+                        //                    case EMErrorNotFound:
+                        //                        TTAlertNoTitle(error.errorDescription);
+                        //                        break;
+                    case EMErrorNetworkUnavailable:
+                        TTAlertNoTitle(NSLocalizedString(@"error.connectNetworkFail", @"No network connection!"));
+                        break;
+                    case EMErrorServerNotReachable:
+                        TTAlertNoTitle(NSLocalizedString(@"error.connectServerFail", @"Connect to the server failed!"));
+                        break;
+                    case EMErrorUserAuthenticationFailed:
+                        TTAlertNoTitle(error.errorDescription);
+                        break;
+                    case EMErrorServerTimeout:
+                        TTAlertNoTitle(NSLocalizedString(@"error.connectServerTimeout", @"Connect to the server timed out!"));
+                        break;
+                    default:
+                        TTAlertNoTitle(NSLocalizedString(@"login.fail", @"Login failure"));
+                        break;
+                }
+            }
+        });
+    });
+
+}
++(void)show
+{
+    
+    LoginPage * lg = [LoginPage new];
+    UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
+
+    
+    [[MainViewController currentInstance] presentViewController:navi animated:YES completion:nil];
+
+}
++(BOOL)showIfNotLogin
+{
+
+    BOOL isLogin = [EMClient sharedClient].isLoggedIn;
+    if (isLogin == NO) {
+        [LoginPage show];
+    }
+    return isLogin;
+}
 @end

@@ -123,6 +123,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [self _registerRemoteNotification];
     
     EMOptions *options = [EMOptions optionsWithAppkey:appkey];
+    options.isAutoLogin = NO;
     options.apnsCertName = apnsCertName;
     options.isAutoAcceptGroupInvitation = NO;
     if ([otherConfig objectForKey:kSDKConfigEnableConsoleLogger]) {

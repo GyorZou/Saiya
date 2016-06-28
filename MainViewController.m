@@ -26,6 +26,7 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 static NSString *kMessageType = @"MessageType";
 static NSString *kConversationChatter = @"ConversationChatter";
 static NSString *kGroupName = @"GroupName";
+MainViewController * halfShareInstance = nil;
 
 #define RGBColor(r,g,b)  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 
@@ -49,11 +50,20 @@ static NSString *kGroupName = @"GroupName";
 @end
 
 @implementation MainViewController
++(MainViewController *)currentInstance
+{
 
+    return halfShareInstance;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setupUnreadMessageCount];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        halfShareInstance = self;
     }
     return self;
 }
@@ -61,7 +71,7 @@ static NSString *kGroupName = @"GroupName";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    halfShareInstance = self;
     //if 使tabBarController中管理的viewControllers都符合 UIRectEdgeNone
     if ([UIDevice currentDevice].systemVersion.floatValue >= 7) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -86,6 +96,7 @@ static NSString *kGroupName = @"GroupName";
     
     [ChatDemoHelper shareHelper].contactViewVC = _contactsVC;
     [ChatDemoHelper shareHelper].conversationListVC = _chatListVC;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,47 +130,10 @@ static NSString *kGroupName = @"GroupName";
 
 - (void)setupSubviews
 {
-    self.tabBar.backgroundImage = [[UIImage imageNamed:@"tabbarBackground"] stretchableImageWithLeftCapWidth:25 topCapHeight:25];
-    self.tabBar.selectionIndicatorImage = [[UIImage imageNamed:@"tabbarSelectBg"] stretchableImageWithLeftCapWidth:25 topCapHeight:25];
-    
-    _chatListVC = [[ConversationListController alloc] initWithNibName:nil bundle:nil];
-    [_chatListVC networkChanged:_connectionState];
-    _chatListVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.conversation", @"Conversations")
-                                                           image:nil
-                                                             tag:0];
-    [_chatListVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_chatsHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_chats"]];
-    [self unSelectedTapTabBarItems:_chatListVC.tabBarItem];
-    [self selectedTapTabBarItems:_chatListVC.tabBarItem];
-    
-    _contactsVC = [[ContactListViewController alloc] initWithNibName:nil bundle:nil];
-    _contactsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.addressbook", @"AddressBook")
-                                                           image:nil
-                                                             tag:1];
-    [_contactsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_contactsHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_contacts"]];
-    [self unSelectedTapTabBarItems:_contactsVC.tabBarItem];
-    [self selectedTapTabBarItems:_contactsVC.tabBarItem];
-    
-    _settingsVC = [[UIViewController alloc] init];
-    _settingsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.setting", @"Setting")
-                                                           image:nil
-                                                             tag:2];
-    [_settingsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_settingHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_setting"]];
-    _settingsVC.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [self unSelectedTapTabBarItems:_settingsVC.tabBarItem];
-    [self selectedTapTabBarItems:_settingsVC.tabBarItem];
-    
-    self.viewControllers = @[_chatListVC, _contactsVC, _settingsVC];
-    [self selectedTapTabBarItems:_chatListVC.tabBarItem];
 }
 
 -(void)unSelectedTapTabBarItems:(UITabBarItem *)tabBarItem
 {
-    [tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        [UIFont systemFontOfSize:14], UITextAttributeFont,[UIColor whiteColor],UITextAttributeTextColor,
-                                        nil] forState:UIControlStateNormal];
 }
 
 -(void)selectedTapTabBarItems:(UITabBarItem *)tabBarItem
@@ -171,19 +145,52 @@ static NSString *kGroupName = @"GroupName";
                                         nil] forState:UIControlStateSelected];
 }
 
-// 统计未读消息数
--(void)setupUnreadMessageCount
+-(void)resetAllCount
 {
+    
     NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
     NSInteger unreadCount = 0;
     for (EMConversation *conversation in conversations) {
         unreadCount += conversation.unreadMessagesCount;
     }
-    if (_chatListVC) {
+    
+    unreadCount += [[[ApplyViewController shareController] dataSource] count];
+
+    NSArray * subs = self.viewControllers;
+    UIViewController * vc = subs[1];
+    // vc.view.backgroundColor = [UIColor whiteColor];
+    
+    if (vc) {
         if (unreadCount > 0) {
-            _chatListVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)unreadCount];
+            vc.tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)unreadCount];
         }else{
-            _chatListVC.tabBarItem.badgeValue = nil;
+            vc.tabBarItem.badgeValue = nil;
+        }
+    }
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    [application setApplicationIconBadgeNumber:unreadCount];
+}
+// 统计未读消息数
+-(void)setupUnreadMessageCount
+{
+    [self resetAllCount];
+    return;
+    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
+    NSInteger unreadCount = 0;
+    for (EMConversation *conversation in conversations) {
+        unreadCount += conversation.unreadMessagesCount;
+    }
+    
+    NSArray * subs = self.viewControllers;
+    UIViewController * vc = subs[1];
+   // vc.view.backgroundColor = [UIColor whiteColor];
+
+    if (vc) {
+        if (unreadCount > 0) {
+            vc.tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)unreadCount];
+        }else{
+            vc.tabBarItem.badgeValue = nil;
         }
     }
     
@@ -193,6 +200,9 @@ static NSString *kGroupName = @"GroupName";
 
 - (void)setupUntreatedApplyCount
 {
+    
+    [self resetAllCount];
+    return;
     NSInteger unreadCount = [[[ApplyViewController shareController] dataSource] count];
     if (_contactsVC) {
         if (unreadCount > 0) {
@@ -346,6 +356,7 @@ static NSString *kGroupName = @"GroupName";
 
 - (void)jumpToChatList
 {
+    return;
     if ([self.navigationController.topViewController isKindOfClass:[ChatViewController class]]) {
 //        ChatViewController *chatController = (ChatViewController *)self.navigationController.topViewController;
 //        [chatController hideImagePicker];
@@ -378,6 +389,8 @@ static NSString *kGroupName = @"GroupName";
 
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    NSLog(@"hx recei noti:%@",notification);
+    return;
     NSDictionary *userInfo = notification.userInfo;
     if (userInfo)
     {

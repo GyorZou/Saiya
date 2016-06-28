@@ -36,6 +36,7 @@
             return [self.ext objectForKey:@"subject"];
         }
     }
+
     return self.conversationId;
 }
 
@@ -125,7 +126,7 @@
 
 - (UISearchBar *)searchBar
 {
-    if (!_searchBar) {
+    if (!_searchBar && self.showSearchBar) {
         _searchBar = [[EMSearchBar alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, 44)];
         _searchBar.delegate = self;
         _searchBar.placeholder = NSLocalizedString(@"search", @"Search");

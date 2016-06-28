@@ -62,13 +62,19 @@
     _sectionTitles = [NSMutableArray array];
     
     [self searchController];
-    self.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+    float y = 0;
+    if (self.showSearchBar) {
+        y = 44;
+    }
+    self.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, y);
     [self.view addSubview:self.searchBar];
     
     self.tableView.frame = CGRectMake(0, self.searchBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.searchBar.frame.size.height);
     
     // 环信UIdemo中有用到Parse, 加载用户好友个人信息
     [[UserProfileManager sharedInstance] loadUserProfileInBackgroundWithBuddy:self.contactsSource saveToLoacal:YES completion:NULL];
+    
+    [self reloadGroupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -163,6 +169,9 @@
                                           initWithConversationChatter:buddy
                                                                                 conversationType:EMConversationTypeChat];
             chatVC.title = [[UserProfileManager sharedInstance] getNickNameWithUsername:buddy];
+                                                  
+            chatVC.hidesBottomBarWhenPushed = YES;
+                                                   
             [weakSelf.navigationController pushViewController:chatVC animated:YES];
         }];
     }
@@ -181,7 +190,7 @@
 {
     // Return the number of rows in the section.
     if (section == 0) {
-        return 3;
+        return 2;
     }
     
     return [[self.dataArray objectAtIndex:(section - 1)] count];
@@ -292,17 +301,14 @@
     NSInteger row = indexPath.row;
     if (section == 0) {
         if (row == 0) {
-            [self.navigationController pushViewController:[ApplyViewController shareController] animated:YES];
+            UIViewController * vc = [ApplyViewController shareController];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
         else if (row == 1)
         {
-//            if (_groupController == nil) {
-//                _groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStylePlain];
-//            }
-//            else{
-//                [_groupController reloadDataSource];
-//            }
             GroupListViewController *groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStylePlain];
+            groupController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:groupController animated:YES];
         }
         else if (row == 2)
@@ -333,10 +339,14 @@
 #endif
                                               initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
         chatController.title = model.nickname.length > 0 ? model.nickname : model.buddy;
+                                                       
+                                                       chatController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:chatController animated:YES];
+        
     }
 }
 
+                                                       
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.

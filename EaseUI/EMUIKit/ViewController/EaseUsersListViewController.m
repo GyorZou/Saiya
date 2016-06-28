@@ -46,19 +46,19 @@
 
 #pragma mark - setter
 
-- (void)setShowSearchBar:(BOOL)showSearchBar
-{
-    if (_showSearchBar != showSearchBar) {
-        _showSearchBar = showSearchBar;
-        
-//        if (_showSearchBar) {
-//            <#statements#>
-//        }
-//        else{
-//            
-//        }
-    }
-}
+//- (void)setShowSearchBar:(BOOL)showSearchBar
+//{
+//    if (_showSearchBar != showSearchBar) {
+//        _showSearchBar = showSearchBar;
+//        
+////        if (_showSearchBar) {
+////            <#statements#>
+////        }
+////        else{
+////            
+////        }
+//    }
+//}
 
 #pragma mark - Table view data source
 

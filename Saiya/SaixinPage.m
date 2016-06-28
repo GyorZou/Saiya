@@ -10,7 +10,18 @@
 
 #import "MessegeConroller.h"
 #import "GoodsDetailTitle.h"
-@interface SaixinPage ()<ViewPagerDataSource,ViewPagerDelegate>
+
+#import "GroupListViewController.h"
+#import "ConversationListController.h"
+#import "ContactListViewController.h"
+#import "MainViewController.h"
+#import "LoginPage.h"
+#import "AddFriendViewController.h"
+#import "ChatDemoHelper.h"
+@interface SaixinPage ()<ViewPagerDataSource,ViewPagerDelegate>{
+
+    NSArray * cls;
+}
 
 @end
 
@@ -37,6 +48,18 @@
 
 - (void)viewDidLoad {
         // Do any additional setup after loading the view.
+    
+     cls = @[[ConversationListController new] ,[GroupListViewController new],[ContactListViewController new]];
+    MainViewController * main  = [MainViewController currentInstance];
+    main.contactsVC = cls[2];
+    main.chatListVC = cls[0];
+    
+    
+    [ChatDemoHelper shareHelper].contactViewVC = cls[2];
+    [ChatDemoHelper shareHelper].conversationListVC = cls[0];
+    
+    
+    
     self.navigationController.tabBarItem.image = [[UIImage imageNamed:@"icon-nav2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon-nav2-visited"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self initTitleview];
@@ -68,7 +91,11 @@
 }
 -(void)addItemClick
 {
-
+    if ([LoginPage showIfNotLogin] == YES) {
+        AddFriendViewController *addController = [[AddFriendViewController alloc] initWithStyle:UITableViewStylePlain];
+        addController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:addController animated:YES];
+    }
 }
 -(UIBarButtonItem *)rightItem
 {
@@ -101,8 +128,16 @@
     return [_tabTitles count];
 }
 
-
-
+-(void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
+{
+    
+        [LoginPage showIfNotLogin];
+    
+}
+-(BOOL)viewPager:(ViewPagerController *)viewPager shouldChangeTabToIndex:(NSUInteger)index
+{
+    return  [LoginPage showIfNotLogin] == YES;
+}
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
 {
     
@@ -111,9 +146,13 @@
     controler.view.backgroundColor = [UIColor whiteColor];
     if (index == 0) {
         //controler.view.backgroundColor = [UIColor redColor];
-        controler = [MessegeConroller new];
+      //  controler = [MessegeConroller new];
     }
     
+   
+
+    controler = cls[index];
+    controler.container = self;
     
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
     [self.controllerDic setValue:controler forKey:conKey];

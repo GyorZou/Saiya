@@ -18,7 +18,7 @@
 {
     NSArray *_rightItems;
 }
-
+@property (nonatomic,assign) BOOL showSearchBar;
 @property (strong, nonatomic) NSArray *rightItems;
 @property (strong, nonatomic) UIView *defaultFooterView;
 @property (strong, nonatomic) UITableView *tableView;

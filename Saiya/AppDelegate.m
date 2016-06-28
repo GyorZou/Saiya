@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseViewController.h"
+#import "AppDelegate+EaseMob.h"
+#define EaseMobAppKey @"junfeng2016#saiya"
 
 @interface AppDelegate ()
 
@@ -18,6 +21,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+#warning 初始化环信SDK，详细内容在AppDelegate+EaseMob.m 文件中
+#warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
+    NSString *apnsCertName = nil;
+#if DEBUG
+    apnsCertName = @"push_dev";
+#else
+    apnsCertName = @"push_dis";
+#endif
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *appkey = [ud stringForKey:@"identifier_appkey"];
+    if (!appkey) {
+        appkey = EaseMobAppKey;
+        [ud setObject:appkey forKey:@"identifier_appkey"];
+    }
+    
+    [self easemobApplication:application
+didFinishLaunchingWithOptions:launchOptions
+                      appkey:appkey
+                apnsCertName:apnsCertName
+                 otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setBarTintColor:APPCOLOR_ORINGE];
+
     NSArray * arr = self.window.rootViewController.childViewControllers;
     int index = 1;
     for (UIViewController *vc in arr) {

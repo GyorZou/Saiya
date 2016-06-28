@@ -63,6 +63,7 @@
     
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
+        self.hidesBottomBarWhenPushed = YES;
         _conversation = [[EMClient sharedClient].chatManager getConversation:conversationChatter type:conversationType createIfNotExist:YES];
         
         _messageCountOfPage = 10;

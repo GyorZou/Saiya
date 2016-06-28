@@ -12,8 +12,40 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import "EMSDK.h"
+//#import "EMSDK.h"
+
+//RGB颜色
+#define RGBColor(r,g,b)  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+
+#ifndef SCREENWIDTH
+#define SCREENWIDTH   [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT  [UIScreen mainScreen].bounds.size.height
+#endif
+
+#define NSStringFromInt(value) [NSString stringWithFormat:@"%d",(int)(value)]
+
+#define NSStringFromValue(value) [NSString stringWithFormat:@"%g",value]
 
 
+#define APPENDSTRING(ARG1,ARG2) [NSString stringWithFormat:@"%@%@",ARG1,ARG2]
+
+
+#define APPCOLOR_ORINGE  [UIColor colorWithRed:0XFF/255.0 green:0X57/255.0 blue:0X22/255.0 alpha:1.0]
+#define APPCOLOR_GREEN  [UIColor colorWithRed:0X18/255.0 green:0XB3/255.0 blue:0X64/255.0 alpha:1.0]
+#define APPCOLOR_BLUE  [UIColor colorWithRed:0X1E/255.0 green:0XA2/255.0 blue:0X71/255.0 alpha:1.0]
+#define APPCOLOR_GRAY  [UIColor colorWithRed:0XE5/255.0 green:0XE5/255.0 blue:0XE5/255.0 alpha:1.0]
+#define APPCOLOR_PLACEHOLDER  [UIColor colorWithRed:0XBB/255.0 green:0XBB/255.0 blue:0XBB/255.0 alpha:1.0]
+
+#define APPCOLOR_BLACK  [UIColor colorWithRed:0X1B/255.0 green:0X1B/255.0 blue:0X1B/255.0 alpha:1.0]
 
 #endif /* ImportHeader_pch */
+
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import "EMSDK.h"
+#import "EaseUI.h"
+#import "LoginPage.h"
+
+#endif

@@ -62,7 +62,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.tableView.tableHeaderView = self.searchBar;
+   // self.tableView.tableHeaderView = self.searchBar;
     [self.tableView addSubview:self.slimeView];
     [self searchController];
     

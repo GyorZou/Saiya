@@ -61,12 +61,13 @@
     
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        if ([self isLogined] == NO) {
-            
-            LoginPage * lg = [LoginPage new];
-            UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
-            [self.navigationController.tabBarController presentViewController: navi animated:YES completion:nil];
-        }
+        [LoginPage showIfNotLogin];
+//        if ([self isLogined] == NO) {
+//            
+//            LoginPage * lg = [LoginPage new];
+//            UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
+//            [self.navigationController.tabBarController presentViewController: navi animated:YES completion:nil];
+//        }
 
     });
     

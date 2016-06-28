@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="1184" y="-856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="rb8-xa-SvG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UnJ-V7-riD" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UnJ-V7-riD" customClass="MainViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SdL-zG-7fS">
                         <autoresizingMask key="autoresizingMask"/>

@@ -15,12 +15,18 @@
 #import "EMClient.h"
 //#import "EMClientDelegate.h"
 
+#import "ContactListViewController.h"
+#import "ConversationListController.h"
 
 @interface MainViewController : UITabBarController
 {
     EMConnectionState _connectionState;
 }
+@property ContactListViewController *contactsVC;
+@property ConversationListController *chatListVC;
 
+
++(MainViewController*)currentInstance;
 - (void)jumpToChatList;
 
 - (void)setupUntreatedApplyCount;

@@ -32,8 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.translucent=NO;
-    self.navigationController.navigationBar.barTintColor=APPCOLOR_ORINGE;
+    //self.navigationController.navigationBar.translucent=NO;
+    //self.navigationController.navigationBar.barTintColor=APPCOLOR_ORINGE;
  
     self.navigationItem.leftBarButtonItem = [self backItem];
 }
