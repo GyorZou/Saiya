@@ -72,7 +72,14 @@
 }
 
 
-
+-(BOOL)viewPager:(ViewPagerController *)viewPager shouldChangeTabToIndex:(NSUInteger)index
+{
+    if (index == 1) {
+        return [LoginPage showIfNotLogin] == YES;
+    }
+    
+    return YES;
+}
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
 {
     

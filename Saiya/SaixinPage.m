@@ -18,6 +18,8 @@
 #import "LoginPage.h"
 #import "AddFriendViewController.h"
 #import "ChatDemoHelper.h"
+
+#import "SaiyaPopover.h"
 @interface SaixinPage ()<ViewPagerDataSource,ViewPagerDelegate>{
 
     NSArray * cls;
@@ -91,11 +93,31 @@
 }
 -(void)addItemClick
 {
-    if ([LoginPage showIfNotLogin] == YES) {
-        AddFriendViewController *addController = [[AddFriendViewController alloc] initWithStyle:UITableViewStylePlain];
-        addController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:addController animated:YES];
-    }
+    
+   if ([LoginPage showIfNotLogin] == YES) {
+       SaiyaItem * item0 = [SaiyaItem itemWithTitle:@"发起群聊" image:@"icon-grouchat"];
+       
+       SaiyaItem * item1 = [SaiyaItem itemWithTitle:@"添加朋友" image:@"icon-addpy"];
+       SaiyaItem * item2 = [SaiyaItem itemWithTitle:@"扫一扫" image:@"icon-sweep"];
+    
+    
+       [SaiyaPopover showAt:CGPointMake(SCREENWIDTH , 64) withItems:@[item0,item1,item2] inView:self.view.window block:^(int index) {
+           NSLog(@"xxxx,%d",index);
+        
+           if(index == 0){
+        
+           }else if (index == 1){
+               AddFriendViewController *addController = [[AddFriendViewController alloc] initWithStyle:UITableViewStylePlain];
+               addController.hidesBottomBarWhenPushed = YES;
+               [self.navigationController pushViewController:addController animated:YES];
+            
+           }else{
+        
+           }
+       }];
+   }
+    
+
 }
 -(UIBarButtonItem *)rightItem
 {

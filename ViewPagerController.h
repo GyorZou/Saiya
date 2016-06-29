@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 @interface ViewPagerController : BaseViewController
 {
     NSInteger _currentControllerIndex;
+    UIView * _lineView;
 }
 
 @property(nonatomic,weak) id<ViewPagerDataSource> dataSource;
@@ -73,7 +74,7 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 //未选中的文本颜色
 @property UIColor *nTextColor;
 //指示条的颜色
-@property UIColor *indicatorColor;
+@property UIColor *indicatorColor,*seperatorColor;
 //tab的背景颜色
 @property UIColor *tabsViewBackgroundColor;
 //内容页面的背景颜色

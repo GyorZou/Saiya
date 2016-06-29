@@ -10,7 +10,7 @@
 
 #import "GoodsDetailTitle.h"
 #import "SearchViewController.h"
-
+#import "SaiyaPopover.h"
 #import "BaseWebviewController.h"
 @interface SaiquanPage ()
 {
@@ -79,6 +79,29 @@
 }
 -(void)releaseItemClick
 {
+    if ([LoginPage showIfNotLogin] == YES) {
+        SaiyaItem * item0 = [SaiyaItem itemWithTitle:@"文字" image:@"icon-writing"];
+        SaiyaItem * item1 = [SaiyaItem itemWithTitle:@"照片" image:@"icon-photo"];
+        SaiyaItem * item2 = [SaiyaItem itemWithTitle:@"视频" image:@"icon-video"];
+        SaiyaItem * item3 = [SaiyaItem itemWithTitle:@"直播" image:@"icon-live"];
+        SaiyaItem * item4 = [SaiyaItem itemWithTitle:@"赛事(官方号项)" image:@"icon-event"];
+        
+        
+        [SaiyaPopover showAt:CGPointMake(SCREENWIDTH , 64) withItems:@[item0,item1,item2,item3,item4] inView:self.view.window block:^(int index) {
+            NSLog(@"xxxx,%d",index);
+            
+            switch (index) {
+                case 0:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+        
+        }];
+    }
+    
 
 }
 -(void)searchItemClick

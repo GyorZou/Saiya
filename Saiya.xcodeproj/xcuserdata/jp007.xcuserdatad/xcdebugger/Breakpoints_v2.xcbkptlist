@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewPagerController.m"
-            timestampString = "488431239.174345"
+            timestampString = "488873837.569895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "610"
-            endingLineNumber = "610"
+            startingLineNumber = "638"
+            endingLineNumber = "638"
             landmarkName = "-pageViewController:willTransitionToViewControllers:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewPagerController.m"
-            timestampString = "488431913.524649"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "618"
-            endingLineNumber = "618"
-            landmarkName = "-pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewPagerController.m"
-            timestampString = "488431956.990055"
+            timestampString = "488873837.569895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "-setActiveTabIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -86,17 +70,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EaseUI/EMUIKit/ViewController/EaseConversationListViewController.m"
-            timestampString = "488796984.418082"
+            filePath = "SaiyaPopover.m"
+            timestampString = "488881668.890301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "+showAt:withItems:inView:block:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[SaiyaPopover showAt:withItems:inView:block:]"
+                  moduleName = "Saiya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/SaiyaPopover.m"
+                  timestampString = "488881668.922688"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "847">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[SaiyaPopover showAt:withItems:inView:block:]"
+                  moduleName = "Saiya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/SaiyaPopover.m"
+                  timestampString = "488881668.923263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "969">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SaiyaPopover.m"
+            timestampString = "488881696.014308"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "+showAt:withItems:inView:block:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[SaiyaPopover showAt:withItems:inView:block:]"
+                  moduleName = "Saiya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/SaiyaPopover.m"
+                  timestampString = "488881696.016724"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "985">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[SaiyaPopover showAt:withItems:inView:block:]"
+                  moduleName = "Saiya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/SaiyaPopover.m"
+                  timestampString = "488881696.017168"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "993">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Saiya/Contacts/ContactListViewController.m"
-            timestampString = "488797336.425432"
+            filePath = "EaseUI/EMUIKit/3rdparty/MJRefresh/Custom/Header/MJRefreshStateHeader.m"
+            timestampString = "488884691.023661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "-searchController"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-setLastUpdatedTimeKey:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

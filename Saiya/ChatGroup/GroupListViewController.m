@@ -404,12 +404,15 @@
 - (void)showPublicGroupList
 {
     PublicGroupListViewController *publicController = [[PublicGroupListViewController alloc] initWithStyle:UITableViewStylePlain];
+    publicController.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:publicController animated:YES];
 }
 
 - (void)createGroup
 {
     CreateGroupViewController *createChatroom = [[CreateGroupViewController alloc] init];
+    createChatroom.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:createChatroom animated:YES];
 }
 

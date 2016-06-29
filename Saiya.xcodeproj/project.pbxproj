@@ -311,6 +311,8 @@
 		4C76B7C41D22404200C6FE6A /* tabbarSelectBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C76B75A1D22404200C6FE6A /* tabbarSelectBg.png */; };
 		4C76B7C51D22404200C6FE6A /* tabbarSelectBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C76B75B1D22404200C6FE6A /* tabbarSelectBg@2x.png */; };
 		4C76B7C71D22409300C6FE6A /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C76B7C61D22409300C6FE6A /* EaseUIResource.bundle */; };
+		4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D41D23AF8800C6FE6A /* DXPopover.m */; };
+		4C76B7D81D23B1A700C6FE6A /* SaiyaPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */; };
 		4CA6632D1D2135BE008B094B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA6632C1D2135BE008B094B /* libiconv.tbd */; };
 		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 		5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D48D1D216D4F00E2B8D1 /* ConversationListController.m */; };
@@ -925,6 +927,10 @@
 		4C76B75A1D22404200C6FE6A /* tabbarSelectBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbarSelectBg.png; sourceTree = "<group>"; };
 		4C76B75B1D22404200C6FE6A /* tabbarSelectBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbarSelectBg@2x.png"; sourceTree = "<group>"; };
 		4C76B7C61D22409300C6FE6A /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
+		4C76B7D31D23AF8800C6FE6A /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
+		4C76B7D41D23AF8800C6FE6A /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
+		4C76B7D61D23B1A700C6FE6A /* SaiyaPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaPopover.h; sourceTree = "<group>"; };
+		4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaPopover.m; sourceTree = "<group>"; };
 		4CA6632C1D2135BE008B094B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
 		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
@@ -1272,6 +1278,8 @@
 		4C29E8081D1B87A100E51E24 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4C76B7D31D23AF8800C6FE6A /* DXPopover.h */,
+				4C76B7D41D23AF8800C6FE6A /* DXPopover.m */,
 				4C29E8711D1CCF2B00E51E24 /* MBProgressHUD.h */,
 				4C29E8721D1CCF2B00E51E24 /* MBProgressHUD.m */,
 				4C29E86E1D1CCEBA00E51E24 /* NWFToastView.h */,
@@ -1286,6 +1294,8 @@
 				4C29E81B1D1BCF6300E51E24 /* BaseWebviewController.m */,
 				4C29E80E1D1B8E0000E51E24 /* ViewPagerController.h */,
 				4C29E80F1D1B8E0000E51E24 /* ViewPagerController.m */,
+				4C76B7D61D23B1A700C6FE6A /* SaiyaPopover.h */,
+				4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -2933,6 +2943,7 @@
 				4C76B6A21D213F4600C6FE6A /* EaseEmotionEscape.m in Sources */,
 				5272D5211D21769C00E2B8D1 /* UIResponder+Router.m in Sources */,
 				4C76B6651D213F4600C6FE6A /* MJRefreshGifHeader.m in Sources */,
+				4C76B7D81D23B1A700C6FE6A /* SaiyaPopover.m in Sources */,
 				4C76B6AD1D213F4700C6FE6A /* EaseCustomMessageCell.m in Sources */,
 				4C76B6771D213F4600C6FE6A /* EMSDWebImageCompat.m in Sources */,
 				4C29E7F61D1B805400E51E24 /* BarItemViewController.m in Sources */,
@@ -2954,6 +2965,7 @@
 				4C76B68D1D213F4600C6FE6A /* PSTCollectionViewLayout.m in Sources */,
 				5272D4E71D21715D00E2B8D1 /* EMRemarkImageView.m in Sources */,
 				4C29E8351D1BE92300E51E24 /* AFURLResponseSerialization.m in Sources */,
+				4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */,
 				4C76B6551D213F4600C6FE6A /* EMVoiceConverter.mm in Sources */,
 				4C76B67D1D213F4600C6FE6A /* MKAnnotationView+EMWebCache.m in Sources */,
 				5272D4D71D2170DA00E2B8D1 /* ContactSelectionViewController.m in Sources */,

@@ -160,6 +160,12 @@
     frame.size.width = self.view.bounds.size.width;
     frame.size.height = self.tabHeight;
     _tabsView.frame = frame;
+    //这里再加上分割线吧
+    if (_lineView == nil) {
+        _lineView = [[UIView alloc] initWithFrame:CGRectMake(0,_tabHeight-0.5, frame.size.width, 0.5)];
+        [_tabsView addSubview:_lineView];
+    }
+    _lineView.backgroundColor = _seperatorColor;
     
     frame = _contentView.frame;
     frame.origin.x = 0.0;
@@ -278,6 +284,13 @@
     UITapGestureRecognizer *tapGestureRecognizer = (UITapGestureRecognizer *)sender;
     UIView *tabView = tapGestureRecognizer.view;
     __block NSUInteger index = [_tabs indexOfObject:tabView];
+    
+    if ([_delegate respondsToSelector:@selector(viewPager:shouldChangeTabToIndex:)] && [_delegate viewPager:self shouldChangeTabToIndex:index] == NO) {
+       // return [self viewControllerAtIndex:index];
+        return;
+    }
+
+    
     [self setSelectedIndex:index animation:YES];
 }
 
@@ -372,6 +385,7 @@
     
     // Default colors
     _indicatorColor = kDefaultIndicatorColor;
+    _seperatorColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     _tabsViewBackgroundColor = kDefaultTabsViewBackgroundColor;
     _contentViewBackgroundColor = kDefaultContentViewBackgroundColor;
     _nTextColor = RGBColor(51, 51, 51);
@@ -595,14 +609,28 @@
 #pragma mark - UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = [self indexForViewController:viewController];
+    
+    
     index++;
     
+    if ([_delegate respondsToSelector:@selector(viewPager:shouldChangeTabToIndex:)]   && [_delegate viewPager:self shouldChangeTabToIndex:index] == NO) {
+        
+        return nil;
+    }
     return [self viewControllerAtIndex:index];
+    
 }
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = [self indexForViewController:viewController];
     index--;
+    
+    if ([_delegate respondsToSelector:@selector(viewPager:shouldChangeTabToIndex:)]   && [_delegate viewPager:self shouldChangeTabToIndex:index] == NO) {
+        
+        return nil;
+    }
     return [self viewControllerAtIndex:index];
+
+
 }
 
 #pragma mark - UIPageViewControllerDelegate

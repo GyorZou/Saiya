@@ -32,6 +32,9 @@
     _nameFiled.delegate = _pwdField.delegate = self;
     _loginBtn.backgroundColor = [UIColor grayColor];
     _loginBtn.enabled = [self checkName:_nameFiled.text] && [self checkPwd:_pwdField.text];
+    if (_loginBtn.enabled) {
+        _loginBtn.backgroundColor = APPCOLOR_ORINGE;
+    }
     _loginBtn.layer.cornerRadius = 5;
     _loginBtn.clipsToBounds = YES;
 }
