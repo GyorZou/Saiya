@@ -14,5 +14,9 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong,nonatomic) MainViewController * mainController;
+@property (readonly) BOOL isLogin;
++(BOOL) isLogin;
++(NSString*)accToken;
+
 @end
 

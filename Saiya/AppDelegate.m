@@ -16,7 +16,22 @@
 @end
 
 @implementation AppDelegate
++(BOOL)isLogin
+{
+    return    [((AppDelegate*)[UIApplication sharedApplication].delegate ) isLogin];
+}
++(NSString *)accToken
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    NSString * s = [def objectForKey:@"acc_token"];
+    return s;
 
+}
+-(BOOL)isLogin{
+    
+    
+    return [AppDelegate accToken] != nil;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

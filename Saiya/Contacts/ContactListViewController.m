@@ -463,7 +463,7 @@
     NSMutableArray *contactsSource = [NSMutableArray array];
     
     //从获取的数据中剔除黑名单中的好友
-    NSArray *blockList = [[EMClient sharedClient].contactManager getBlackListFromDB];
+    NSArray *blockList;// = [[EMClient sharedClient].contactManager getBlackListFromDB];
     for (NSString *buddy in buddyList) {
         if (![blockList containsObject:buddy]) {
             [contactsSource addObject:buddy];

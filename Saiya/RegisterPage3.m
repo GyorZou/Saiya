@@ -68,27 +68,50 @@
     }
     [NWFToastView showProgress:@"正在注册"];
     NSString *url = @"http://saiya.tv/api/customer/Register";
-    NSDictionary * dict = @{@"Username":_phone,@"Password":@"",@"ConfirmPassword":@"",@"code":_code};
+    NSDictionary * dict = @{@"Username":_phone,@"Password":_pwdField.text,@"ConfirmPassword":_pwdField2.text,@"code":_code};
     [[NetworkManagementRequset manager] requestPostData:url postData:dict complation:^BOOL(BOOL result, id returnData) {
         
-        [NWFToastView dismissProgress];
-        
-        if (result) {
-            BOOL isTrue = [[returnData objectForKey:@"result"] boolValue];
-            if (isTrue) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
-              
-            }else{
-             [NWFToastView showToast:APPENDSTRING(@"注册失败:", returnData[@"messages"])];
-            }
-              return  YES;
+        /*
+         开始注册环信
+         */
+        if (result && [[returnData objectForKey:@"result"] boolValue] == YES) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                EMError *error = [[EMClient sharedClient] registerWithUsername:_phone  password:_pwdField.text];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [NWFToastView dismissProgress];
+                    
+                    if (result && error == nil) {
+                        BOOL isTrue = [[returnData objectForKey:@"result"] boolValue];
+                        if (isTrue) {
+                            
+                            
+                            [self.navigationController popToRootViewControllerAnimated:YES];
+                            
+                        }else{
+                            [NWFToastView showToast:APPENDSTRING(@"注册失败:", returnData[@"messages"])];
+                        }
+                        return;
+                    }
+                    [NWFToastView showToast:@"注册失败"];
+                });
+                
+                
+            });
+
+        }else{
+            [NWFToastView showToast:@"注册失败"];
         }
-        [NWFToastView showToast:@"注册失败"];
+        
         return  YES;
     }];
     
  
     
+}
+-(void)doHuanxinRegister
+{
+
 }
 
 /*

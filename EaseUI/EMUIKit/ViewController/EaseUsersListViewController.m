@@ -151,7 +151,7 @@
             NSMutableArray *tempDataArray = [NSMutableArray array];
             
             //从获取的数据中剔除黑名单中的好友
-            NSArray *blockList = [[EMClient sharedClient].contactManager getBlackListFromDB];
+            NSArray *blockList;// = [[EMClient sharedClient].contactManager getBlackListFromDB];
             for (NSInteger i = 0; i < buddyList.count; i++) {
                 NSString *buddy = [buddyList objectAtIndex:i];
                 if (![blockList containsObject:buddy]) {

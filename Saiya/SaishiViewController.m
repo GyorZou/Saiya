@@ -8,6 +8,7 @@
 
 #import "SaishiViewController.h"
 #import "GoodsDetailTitle.h"
+#import "HotEventsViewController.h"
 @interface SaishiViewController ()<ViewPagerDataSource,ViewPagerDelegate>
 
 {
@@ -82,16 +83,8 @@
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
 {
     
-    
-    /**
-     *购物车字符串
-     *EWJ_BDSH（本地生活）,EWJ_KJJP（跨境精品）,EWJ_WJS/门店id（万家送）
-     */
-    UIViewController *controler=[UIViewController new];
+    UIViewController *controler=[HotEventsViewController new];
     controler.view.backgroundColor = [UIColor whiteColor];
-//    if (index == 1) {
-//        controler.view.backgroundColor = [UIColor redColor];
-//    }
     
     
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];

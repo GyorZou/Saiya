@@ -139,7 +139,7 @@ NSURLSessionConfiguration *configuration;
     request.timeoutInterval = 10;
     request.cachePolicy=NSURLRequestReloadIgnoringCacheData;
     
-    
+    [self setAccTokenFor:request];
     self.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"application/xhtml+xml", @"text/html",@"text/json",@"text/javascript",@"multipart/form-data",@"text/plain",@"application/xml",@"text", nil];
  
@@ -297,6 +297,7 @@ NSURLSessionConfiguration *configuration;
     request.timeoutInterval = 30;
     request.cachePolicy = 1;
 
+    [self setAccTokenFor:request];
 
     
     
@@ -376,6 +377,13 @@ NSURLSessionConfiguration *configuration;
         [task suspend];
     }
     
+}
+-(void)setAccTokenFor:(NSMutableURLRequest*)req
+{
+    NSString * acc = [NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:@"acc_token"]];
+    if (acc) {
+        [req setValue:acc forHTTPHeaderField:@"accToken"];
+    }
 }
 -(NSString*)getCookieWithISID:(NSString*)isid Jid:(NSString*)jid
 {

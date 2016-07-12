@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 @property (nonatomic) int page;
+@property (nonatomic) int totalCount;
 
 @property (nonatomic) BOOL showRefreshHeader;//是否支持下拉刷新
 @property (nonatomic) BOOL showRefreshFooter;//是否支持上拉加载

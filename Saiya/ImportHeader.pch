@@ -47,5 +47,5 @@
 #import "EMSDK.h"
 #import "EaseUI.h"
 #import "LoginPage.h"
-
+#import "AppDelegate.h"
 #endif

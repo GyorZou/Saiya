@@ -118,7 +118,7 @@
 -(BOOL)checkName:(NSString*)name
 {
     
-    return name.length >= 6;
+    return name.length >= 11;
 }
 -(BOOL)checkPwd:(NSString*)pwd
 {
@@ -127,17 +127,21 @@
 -(IBAction)loginBtnClick:(id)sender
 {
 
-    [self huanxinLogin];
-    return;
+    
     [NWFToastView showProgress:@"正在登录..."];
     NSDictionary * dict = @{@"Account":_nameFiled.text,@"Password":_pwdField.text};
     [[NetworkManagementRequset manager] requestPostData:[self normalLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
         [NWFToastView dismissProgress];
-        if (result) {
-        
+        if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
+            
+             NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            [def setObject:[returnData objectForKey:@"data"] forKey:@"acc_token"];
+            [def synchronize];
+            
+             [self huanxinLogin];
             NSLog(@"%@",returnData);
         }else{
-        
+            [NWFToastView showToast:@"用户名或密码错误"];
         }
         
         return YES;
@@ -252,7 +256,7 @@
 {
 
     BOOL isLogin = [EMClient sharedClient].isLoggedIn;
-    if (isLogin == NO) {
+    if (isLogin == NO || [AppDelegate isLogin] == NO) {
         [LoginPage show];
     }
     return isLogin;
