@@ -73,6 +73,10 @@
 		4C29EC001D2131AA00E51E24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C29EBFF1D2131AA00E51E24 /* SystemConfiguration.framework */; };
 		4C29EC021D21325900E51E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C29EC011D21325900E51E24 /* Foundation.framework */; };
 		4C6903901D34F8AE00049806 /* HotEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C69038F1D34F8AE00049806 /* HotEventsViewController.m */; };
+		4C6903931D35037200049806 /* AsynBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903921D35037200049806 /* AsynBaseModel.m */; };
+		4C6903961D35038E00049806 /* HotEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903951D35038E00049806 /* HotEventModel.m */; };
+		4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903981D35057B00049806 /* HotEventTableViewCell.m */; };
+		4C69039B1D35057B00049806 /* HotEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6903991D35057B00049806 /* HotEventTableViewCell.xib */; };
 		4C76B4F11D213E1000C6FE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F01D213E1000C6FE6A /* UIKit.framework */; };
 		4C76B4F31D213E4800C6FE6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F21D213E4800C6FE6A /* CoreData.framework */; };
 		4C76B4F51D213E5000C6FE6A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F41D213E5000C6FE6A /* Accounts.framework */; };
@@ -512,12 +516,19 @@
 		4C29EC011D21325900E51E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C69038E1D34F8AE00049806 /* HotEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventsViewController.h; sourceTree = "<group>"; };
 		4C69038F1D34F8AE00049806 /* HotEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventsViewController.m; sourceTree = "<group>"; };
+		4C6903911D35037200049806 /* AsynBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynBaseModel.h; sourceTree = "<group>"; };
+		4C6903921D35037200049806 /* AsynBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynBaseModel.m; sourceTree = "<group>"; };
+		4C6903941D35038E00049806 /* HotEventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventModel.h; sourceTree = "<group>"; };
+		4C6903951D35038E00049806 /* HotEventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventModel.m; sourceTree = "<group>"; };
+		4C6903971D35057B00049806 /* HotEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventTableViewCell.h; sourceTree = "<group>"; };
+		4C6903981D35057B00049806 /* HotEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventTableViewCell.m; sourceTree = "<group>"; };
+		4C6903991D35057B00049806 /* HotEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotEventTableViewCell.xib; sourceTree = "<group>"; };
 		4C76B4F01D213E1000C6FE6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C76B4F21D213E4800C6FE6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C76B4F41D213E5000C6FE6A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4C76B4F61D213E5800C6FE6A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4C76B4FA1D213F4600C6FE6A /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
-		4C76B4FB1D213F4600C6FE6A /* EaseUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseUI.m; sourceTree = "<group>"; };
+		4C76B4FB1D213F4600C6FE6A /* EaseUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EaseUI.m; path = ../EaseUI/EaseUI.m; sourceTree = "<group>"; };
 		4C76B5001D213F4600C6FE6A /* EMCDDeviceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerDelegate.h; sourceTree = "<group>"; };
 		4C76B5011D213F4600C6FE6A /* EMCDDeviceManagerProximitySensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerProximitySensorDelegate.h; sourceTree = "<group>"; };
 		4C76B5031D213F4600C6FE6A /* DemoErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoErrorCode.h; sourceTree = "<group>"; };
@@ -1118,6 +1129,8 @@
 		4C29E7B01D1B79DE00E51E24 = {
 			isa = PBXGroup;
 			children = (
+				4C6903911D35037200049806 /* AsynBaseModel.h */,
+				4C6903921D35037200049806 /* AsynBaseModel.m */,
 				4C76B6D61D22284100C6FE6A /* Localizable.strings */,
 				5272D54D1D21776600E2B8D1 /* MainViewController.h */,
 				5272D54E1D21776600E2B8D1 /* MainViewController.m */,
@@ -1149,6 +1162,7 @@
 		4C29E7BB1D1B79DE00E51E24 /* Saiya */ = {
 			isa = PBXGroup;
 			children = (
+				4C76B4FB1D213F4600C6FE6A /* EaseUI.m */,
 				4C76B6DA1D2232E300C6FE6A /* AppDelegate+EaseMob.h */,
 				4C76B6DB1D2232E300C6FE6A /* AppDelegate+EaseMob.m */,
 				4C76B6DC1D2232E300C6FE6A /* AppDelegate+EaseMobDebug.h */,
@@ -1404,6 +1418,11 @@
 			children = (
 				4C69038E1D34F8AE00049806 /* HotEventsViewController.h */,
 				4C69038F1D34F8AE00049806 /* HotEventsViewController.m */,
+				4C6903941D35038E00049806 /* HotEventModel.h */,
+				4C6903951D35038E00049806 /* HotEventModel.m */,
+				4C6903971D35057B00049806 /* HotEventTableViewCell.h */,
+				4C6903981D35057B00049806 /* HotEventTableViewCell.m */,
+				4C6903991D35057B00049806 /* HotEventTableViewCell.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1417,7 +1436,6 @@
 				5272D4951D216E1200E2B8D1 /* EMTextView.h */,
 				5272D4961D216E1200E2B8D1 /* EMTextView.m */,
 				4C76B4FA1D213F4600C6FE6A /* EaseUI.h */,
-				4C76B4FB1D213F4600C6FE6A /* EaseUI.m */,
 				4C76B4FC1D213F4600C6FE6A /* EMUIKit */,
 			);
 			path = EaseUI;
@@ -2694,6 +2712,7 @@
 				4C76B7601D22404200C6FE6A /* call_out_h.png in Resources */,
 				4C76B7881D22404200C6FE6A /* icon_012.gif in Resources */,
 				4C76B77B1D22404200C6FE6A /* chat_sender_audio_playing_000@2x.png in Resources */,
+				4C69039B1D35057B00049806 /* HotEventTableViewCell.xib in Resources */,
 				4C76B78C1D22404200C6FE6A /* icon_018.gif in Resources */,
 				4C76B7BB1D22404200C6FE6A /* tabbar_contacts@2x.png in Resources */,
 				4C76B7B31D22404200C6FE6A /* groupPublicHeader@2x.png in Resources */,
@@ -2786,6 +2805,7 @@
 			files = (
 				4C76B6521D213F4600C6FE6A /* EMCDDeviceManagerBase.m in Sources */,
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
+				4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */,
 				4C29E8041D1B80F300E51E24 /* SaixinPage.m in Sources */,
 				4C76B6A91D213F4700C6FE6A /* EaseUsersListViewController.m in Sources */,
 				5272D4FC1D2175AC00E2B8D1 /* ChatroomListViewController.m in Sources */,
@@ -2896,6 +2916,7 @@
 				4C76B6501D213F4600C6FE6A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				4C76B6B81D213F4700C6FE6A /* EaseChatToolbar.m in Sources */,
 				4C76B6631D213F4600C6FE6A /* MJRefreshBackNormalFooter.m in Sources */,
+				4C6903961D35038E00049806 /* HotEventModel.m in Sources */,
 				4C76B6951D213F4600C6FE6A /* EaseConversationModel.m in Sources */,
 				5272D4E11D2170DA00E2B8D1 /* SearchMessageViewController.m in Sources */,
 				5272D4DB1D2170DA00E2B8D1 /* GroupListViewController.m in Sources */,
@@ -2962,6 +2983,7 @@
 				4C76B6771D213F4600C6FE6A /* EMSDWebImageCompat.m in Sources */,
 				4C29E7F61D1B805400E51E24 /* BarItemViewController.m in Sources */,
 				4C29E8661D1BF64400E51E24 /* RegisterPage2.m in Sources */,
+				4C6903931D35037200049806 /* AsynBaseModel.m in Sources */,
 				5272D4D91D2170DA00E2B8D1 /* CreateGroupViewController.m in Sources */,
 				4C76B6811D213F4600C6FE6A /* UIImage+EMMultiFormat.m in Sources */,
 				5272D50C1D21761B00E2B8D1 /* SRRefreshView.m in Sources */,

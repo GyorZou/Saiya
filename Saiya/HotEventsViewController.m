@@ -9,6 +9,8 @@
 #import "HotEventsViewController.h"
 #import "UIScrollView+MJExtension.h"
 #import "MJRefresh.h"
+#import "HotEventModel.h"
+#import "HotEventTableViewCell.h"
 @interface HotEventsViewController ()
 
 @end
@@ -23,25 +25,35 @@
     self.showRefreshFooter = YES;
     [self.tableView.mj_header beginRefreshing];
     [self tableViewDidTriggerHeaderRefresh];
+    self.tableView.rowHeight = 255;
+    [self.tableView registerNib:[UINib nibWithNibName:@"HotEventTableViewCell" bundle:nil] forCellReuseIdentifier:@"hoteventcell"];
     
 }
 
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.dataArray.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 255;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * rid = @"hoteventcell";
+    //static NSString * rid = @"hoteventcell";
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:rid];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:rid];
-    }
+    HotEventTableViewCell * cell = (HotEventTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"hoteventcell"];
+    HotEventModel * model = [self.dataArray objectAtIndex:indexPath.section];
+    NSDictionary * d =model.Vendor;
+    d = d[@"Customer"];
+    
+    [cell.avartarImage setImageWithURL:[NSURL URLWithString:d[@"AvatarUrl"]] placeholderImage:nil];
+    [cell.snapImage setImageWithURL:[NSURL URLWithString:[model.Images firstObject]]];
     return cell;
 }
 - (void)didReceiveMemoryWarning {
@@ -58,6 +70,7 @@
     }
     [[NetworkManagementRequset manager] requestGet:url params:@{@"Page":@(self.page),@"PageSize":@"10"} complation:^(BOOL result, id returnData, id cookieData) {
         if (refresh) {
+            [self.dataArray removeAllObjects];
             [self.tableView.mj_header endRefreshing];
  
         }else{
@@ -67,8 +80,13 @@
             self.page ++;
             NSDictionary * dict = [returnData objectForKey:@"data"];
             self.totalCount = [dict[@"Total"] intValue];
-            [self.dataArray removeAllObjects];
             
+            
+                NSArray * items = dict[@"Data"];
+                for (NSDictionary * d in items) {
+                    HotEventModel * m = [[HotEventModel alloc] initWithAtrribute:d];
+                    [self.dataArray addObject:m];
+                }
             
             
             if (self.totalCount <= self.dataArray.count) {
