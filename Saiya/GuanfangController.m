@@ -8,6 +8,8 @@
 
 #import "GuanfangController.h"
 
+#import "MyWatchingVendorViewController.h"
+
 @interface GuanfangController ()<ViewPagerDataSource,ViewPagerDelegate>
 
 @end
@@ -88,13 +90,17 @@
      *购物车字符串
      *EWJ_BDSH（本地生活）,EWJ_KJJP（跨境精品）,EWJ_WJS/门店id（万家送）
      */
-    UIViewController *controler=[UIViewController new];
-    controler.view.backgroundColor = [UIColor whiteColor];
+    UIViewController *controler;
     if (index == 1) {
-        controler.view.backgroundColor = [UIColor redColor];
+        MyWatchingVendorViewController * m = [MyWatchingVendorViewController new];
+        controler = m;
+        
+    }else{
+        RecommendVendorController * m = [RecommendVendorController new];
+        controler = m;
     }
     
-    
+    controler.container = self;
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
     [self.controllerDic setValue:controler forKey:conKey];
     

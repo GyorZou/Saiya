@@ -77,6 +77,30 @@
 		4C6903961D35038E00049806 /* HotEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903951D35038E00049806 /* HotEventModel.m */; };
 		4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903981D35057B00049806 /* HotEventTableViewCell.m */; };
 		4C69039B1D35057B00049806 /* HotEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6903991D35057B00049806 /* HotEventTableViewCell.xib */; };
+		4C69039E1D35F86300049806 /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C69039D1D35F86300049806 /* EScrollerView.m */; };
+		4C6903A11D35F8A600049806 /* UIImageView+RZWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903A01D35F8A600049806 /* UIImageView+RZWebImage.m */; };
+		4C6903BC1D35F8DD00049806 /* MLPhotoBrowserAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903A61D35F8DC00049806 /* MLPhotoBrowserAssets.m */; };
+		4C6903BD1D35F8DD00049806 /* MLPhotoBrowserDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903A81D35F8DC00049806 /* MLPhotoBrowserDatas.m */; };
+		4C6903BE1D35F8DD00049806 /* MLPhotoBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903AA1D35F8DD00049806 /* MLPhotoBrowserPhoto.m */; };
+		4C6903BF1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903AC1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m */; };
+		4C6903C01D35F8DD00049806 /* MLPhotoBrowserSignleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903AF1D35F8DD00049806 /* MLPhotoBrowserSignleViewController.m */; };
+		4C6903C11D35F8DD00049806 /* MLPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903B11D35F8DD00049806 /* MLPhotoBrowserViewController.m */; };
+		4C6903C21D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903B41D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.m */; };
+		4C6903C31D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903B61D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.m */; };
+		4C6903C41D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903B81D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m */; };
+		4C6903C51D35F8DD00049806 /* MLPhotoBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903BA1D35F8DD00049806 /* MLPhotoBrowserPhotoView.m */; };
+		4C6903C61D35F8DD00049806 /* MLPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C6903BB1D35F8DD00049806 /* MLPhotoBrowser.bundle */; };
+		4C6903C91D35FA7900049806 /* HotSliderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903C81D35FA7900049806 /* HotSliderModel.m */; };
+		4C6903CF1D36271200049806 /* NoneBarWebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903CE1D36271200049806 /* NoneBarWebviewController.m */; };
+		4C6903D31D362AF000049806 /* RecommendVendorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903D21D362AF000049806 /* RecommendVendorController.m */; };
+		4C6903D61D362B1400049806 /* SaiyaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903D51D362B1400049806 /* SaiyaListViewController.m */; };
+		4C6903DA1D362F5300049806 /* VendorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903D81D362F5300049806 /* VendorCell.m */; };
+		4C6903DB1D362F5300049806 /* VendorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6903D91D362F5300049806 /* VendorCell.xib */; };
+		4C6903DE1D362F7200049806 /* VendorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903DD1D362F7200049806 /* VendorModel.m */; };
+		4C6903E11D3633BA00049806 /* MyWatchingVendorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903E01D3633BA00049806 /* MyWatchingVendorViewController.m */; };
+		4C6903E41D36359B00049806 /* UILabel+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903E31D36359B00049806 /* UILabel+NSNull.m */; };
+		4C6903E71D363C5300049806 /* SaiquanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903E61D363C5300049806 /* SaiquanDetailViewController.m */; };
+		4C6903EB1D364B4D00049806 /* SaishiInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903EA1D364B4D00049806 /* SaishiInfoViewController.m */; };
 		4C76B4F11D213E1000C6FE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F01D213E1000C6FE6A /* UIKit.framework */; };
 		4C76B4F31D213E4800C6FE6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F21D213E4800C6FE6A /* CoreData.framework */; };
 		4C76B4F51D213E5000C6FE6A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C76B4F41D213E5000C6FE6A /* Accounts.framework */; };
@@ -523,6 +547,52 @@
 		4C6903971D35057B00049806 /* HotEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventTableViewCell.h; sourceTree = "<group>"; };
 		4C6903981D35057B00049806 /* HotEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventTableViewCell.m; sourceTree = "<group>"; };
 		4C6903991D35057B00049806 /* HotEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotEventTableViewCell.xib; sourceTree = "<group>"; };
+		4C69039C1D35F86300049806 /* EScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EScrollerView.h; sourceTree = "<group>"; };
+		4C69039D1D35F86300049806 /* EScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EScrollerView.m; sourceTree = "<group>"; };
+		4C69039F1D35F8A600049806 /* UIImageView+RZWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RZWebImage.h"; sourceTree = "<group>"; };
+		4C6903A01D35F8A600049806 /* UIImageView+RZWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RZWebImage.m"; sourceTree = "<group>"; };
+		4C6903A51D35F8DC00049806 /* MLPhotoBrowserAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserAssets.h; sourceTree = "<group>"; };
+		4C6903A61D35F8DC00049806 /* MLPhotoBrowserAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserAssets.m; sourceTree = "<group>"; };
+		4C6903A71D35F8DC00049806 /* MLPhotoBrowserDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserDatas.h; sourceTree = "<group>"; };
+		4C6903A81D35F8DC00049806 /* MLPhotoBrowserDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserDatas.m; sourceTree = "<group>"; };
+		4C6903A91D35F8DC00049806 /* MLPhotoBrowserPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserPhoto.h; sourceTree = "<group>"; };
+		4C6903AA1D35F8DD00049806 /* MLPhotoBrowserPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserPhoto.m; sourceTree = "<group>"; };
+		4C6903AB1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MLBrowserPhotoImageForBundle.h"; sourceTree = "<group>"; };
+		4C6903AC1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MLBrowserPhotoImageForBundle.m"; sourceTree = "<group>"; };
+		4C6903AE1D35F8DD00049806 /* MLPhotoBrowserSignleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserSignleViewController.h; sourceTree = "<group>"; };
+		4C6903AF1D35F8DD00049806 /* MLPhotoBrowserSignleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserSignleViewController.m; sourceTree = "<group>"; };
+		4C6903B01D35F8DD00049806 /* MLPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		4C6903B11D35F8DD00049806 /* MLPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		4C6903B31D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserCustomToolBarView.h; sourceTree = "<group>"; };
+		4C6903B41D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserCustomToolBarView.m; sourceTree = "<group>"; };
+		4C6903B51D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserPhotoImageView.h; sourceTree = "<group>"; };
+		4C6903B61D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserPhotoImageView.m; sourceTree = "<group>"; };
+		4C6903B71D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserPhotoScrollView.h; sourceTree = "<group>"; };
+		4C6903B81D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserPhotoScrollView.m; sourceTree = "<group>"; };
+		4C6903B91D35F8DD00049806 /* MLPhotoBrowserPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPhotoBrowserPhotoView.h; sourceTree = "<group>"; };
+		4C6903BA1D35F8DD00049806 /* MLPhotoBrowserPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPhotoBrowserPhotoView.m; sourceTree = "<group>"; };
+		4C6903BB1D35F8DD00049806 /* MLPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MLPhotoBrowser.bundle; sourceTree = "<group>"; };
+		4C6903C71D35FA7900049806 /* HotSliderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotSliderModel.h; sourceTree = "<group>"; };
+		4C6903C81D35FA7900049806 /* HotSliderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotSliderModel.m; sourceTree = "<group>"; };
+		4C6903CD1D36271200049806 /* NoneBarWebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoneBarWebviewController.h; sourceTree = "<group>"; };
+		4C6903CE1D36271200049806 /* NoneBarWebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoneBarWebviewController.m; sourceTree = "<group>"; };
+		4C6903D11D362AF000049806 /* RecommendVendorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendVendorController.h; sourceTree = "<group>"; };
+		4C6903D21D362AF000049806 /* RecommendVendorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendVendorController.m; sourceTree = "<group>"; };
+		4C6903D41D362B1400049806 /* SaiyaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaListViewController.h; sourceTree = "<group>"; };
+		4C6903D51D362B1400049806 /* SaiyaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaListViewController.m; sourceTree = "<group>"; };
+		4C6903D71D362F5300049806 /* VendorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorCell.h; sourceTree = "<group>"; };
+		4C6903D81D362F5300049806 /* VendorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorCell.m; sourceTree = "<group>"; };
+		4C6903D91D362F5300049806 /* VendorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VendorCell.xib; sourceTree = "<group>"; };
+		4C6903DC1D362F7200049806 /* VendorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorModel.h; sourceTree = "<group>"; };
+		4C6903DD1D362F7200049806 /* VendorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorModel.m; sourceTree = "<group>"; };
+		4C6903DF1D3633B900049806 /* MyWatchingVendorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWatchingVendorViewController.h; sourceTree = "<group>"; };
+		4C6903E01D3633BA00049806 /* MyWatchingVendorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWatchingVendorViewController.m; sourceTree = "<group>"; };
+		4C6903E21D36359B00049806 /* UILabel+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NSNull.h"; sourceTree = "<group>"; };
+		4C6903E31D36359B00049806 /* UILabel+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+NSNull.m"; sourceTree = "<group>"; };
+		4C6903E51D363C5200049806 /* SaiquanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiquanDetailViewController.h; sourceTree = "<group>"; };
+		4C6903E61D363C5300049806 /* SaiquanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiquanDetailViewController.m; sourceTree = "<group>"; };
+		4C6903E91D364B4D00049806 /* SaishiInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaishiInfoViewController.h; sourceTree = "<group>"; };
+		4C6903EA1D364B4D00049806 /* SaishiInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaishiInfoViewController.m; sourceTree = "<group>"; };
 		4C76B4F01D213E1000C6FE6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C76B4F21D213E4800C6FE6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C76B4F41D213E5000C6FE6A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1162,20 +1232,7 @@
 		4C29E7BB1D1B79DE00E51E24 /* Saiya */ = {
 			isa = PBXGroup;
 			children = (
-				4C76B4FB1D213F4600C6FE6A /* EaseUI.m */,
-				4C76B6DA1D2232E300C6FE6A /* AppDelegate+EaseMob.h */,
-				4C76B6DB1D2232E300C6FE6A /* AppDelegate+EaseMob.m */,
-				4C76B6DC1D2232E300C6FE6A /* AppDelegate+EaseMobDebug.h */,
-				4C76B6DD1D2232E300C6FE6A /* AppDelegate+EaseMobDebug.m */,
-				4C76B6DE1D2232E300C6FE6A /* AppDelegate+Parse.h */,
-				4C76B6DF1D2232E300C6FE6A /* AppDelegate+Parse.m */,
-				5272D5501D2179B400E2B8D1 /* Robot */,
-				5272D4FE1D2175C500E2B8D1 /* Profile */,
-				5272D4F41D2175AC00E2B8D1 /* Chatroom */,
-				5272D4E81D21719C00E2B8D1 /* Core Data */,
-				5272D4BD1D2170DA00E2B8D1 /* ChatGroup */,
-				5272D4A61D2170BF00E2B8D1 /* Contacts */,
-				5272D48A1D216D4F00E2B8D1 /* Chat */,
+				4C6903E81D364A6000049806 /* Chats */,
 				4C29E8581D1BECF100E51E24 /* Login */,
 				4C29E7FB1D1B809900E51E24 /* wode */,
 				4C29E7F91D1B808700E51E24 /* saiquan */,
@@ -1247,6 +1304,7 @@
 		4C29E7F71D1B807300E51E24 /* saidou */ = {
 			isa = PBXGroup;
 			children = (
+				4C6903D01D362A6600049806 /* Vendors */,
 				4C69038D1D34F88700049806 /* Events */,
 				4C29E8051D1B810C00E51E24 /* SaidouPage.h */,
 				4C29E8061D1B810C00E51E24 /* SaidouPage.m */,
@@ -1254,6 +1312,8 @@
 				4C29E8121D1B912F00E51E24 /* SaishiViewController.m */,
 				4C29E8201D1BD3FC00E51E24 /* GuanfangController.h */,
 				4C29E8211D1BD3FC00E51E24 /* GuanfangController.m */,
+				4C6903D41D362B1400049806 /* SaiyaListViewController.h */,
+				4C6903D51D362B1400049806 /* SaiyaListViewController.m */,
 			);
 			name = saidou;
 			sourceTree = "<group>";
@@ -1277,6 +1337,8 @@
 			children = (
 				4C29E7FF1D1B80D700E51E24 /* SaiquanPage.h */,
 				4C29E8001D1B80D700E51E24 /* SaiquanPage.m */,
+				4C6903E51D363C5200049806 /* SaiquanDetailViewController.h */,
+				4C6903E61D363C5300049806 /* SaiquanDetailViewController.m */,
 			);
 			name = saiquan;
 			sourceTree = "<group>";
@@ -1289,6 +1351,8 @@
 				4C29E8141D1BBDEB00E51E24 /* MyHeadCell.h */,
 				4C29E8151D1BBDEB00E51E24 /* MyHeadCell.m */,
 				4C29E8161D1BBDEB00E51E24 /* MyHeadCell.xib */,
+				4C6903CD1D36271200049806 /* NoneBarWebviewController.h */,
+				4C6903CE1D36271200049806 /* NoneBarWebviewController.m */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -1296,6 +1360,13 @@
 		4C29E8081D1B87A100E51E24 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4C6903E21D36359B00049806 /* UILabel+NSNull.h */,
+				4C6903E31D36359B00049806 /* UILabel+NSNull.m */,
+				4C6903A21D35F8DC00049806 /* MLPhotoBrowser */,
+				4C69039C1D35F86300049806 /* EScrollerView.h */,
+				4C69039D1D35F86300049806 /* EScrollerView.m */,
+				4C69039F1D35F8A600049806 /* UIImageView+RZWebImage.h */,
+				4C6903A01D35F8A600049806 /* UIImageView+RZWebImage.m */,
 				4C76B7D31D23AF8800C6FE6A /* DXPopover.h */,
 				4C76B7D41D23AF8800C6FE6A /* DXPopover.m */,
 				4C29E8711D1CCF2B00E51E24 /* MBProgressHUD.h */,
@@ -1420,11 +1491,112 @@
 				4C69038F1D34F8AE00049806 /* HotEventsViewController.m */,
 				4C6903941D35038E00049806 /* HotEventModel.h */,
 				4C6903951D35038E00049806 /* HotEventModel.m */,
+				4C6903C71D35FA7900049806 /* HotSliderModel.h */,
+				4C6903C81D35FA7900049806 /* HotSliderModel.m */,
 				4C6903971D35057B00049806 /* HotEventTableViewCell.h */,
 				4C6903981D35057B00049806 /* HotEventTableViewCell.m */,
 				4C6903991D35057B00049806 /* HotEventTableViewCell.xib */,
+				4C6903E91D364B4D00049806 /* SaishiInfoViewController.h */,
+				4C6903EA1D364B4D00049806 /* SaishiInfoViewController.m */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		4C6903A21D35F8DC00049806 /* MLPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903A31D35F8DC00049806 /* Classes */,
+				4C6903BB1D35F8DD00049806 /* MLPhotoBrowser.bundle */,
+			);
+			path = MLPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		4C6903A31D35F8DC00049806 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903A41D35F8DC00049806 /* Models */,
+				4C6903AB1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.h */,
+				4C6903AC1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m */,
+				4C6903AD1D35F8DD00049806 /* ViewControllers */,
+				4C6903B21D35F8DD00049806 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4C6903A41D35F8DC00049806 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903A51D35F8DC00049806 /* MLPhotoBrowserAssets.h */,
+				4C6903A61D35F8DC00049806 /* MLPhotoBrowserAssets.m */,
+				4C6903A71D35F8DC00049806 /* MLPhotoBrowserDatas.h */,
+				4C6903A81D35F8DC00049806 /* MLPhotoBrowserDatas.m */,
+				4C6903A91D35F8DC00049806 /* MLPhotoBrowserPhoto.h */,
+				4C6903AA1D35F8DD00049806 /* MLPhotoBrowserPhoto.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C6903AD1D35F8DD00049806 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903AE1D35F8DD00049806 /* MLPhotoBrowserSignleViewController.h */,
+				4C6903AF1D35F8DD00049806 /* MLPhotoBrowserSignleViewController.m */,
+				4C6903B01D35F8DD00049806 /* MLPhotoBrowserViewController.h */,
+				4C6903B11D35F8DD00049806 /* MLPhotoBrowserViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4C6903B21D35F8DD00049806 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903B31D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.h */,
+				4C6903B41D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.m */,
+				4C6903B51D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.h */,
+				4C6903B61D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.m */,
+				4C6903B71D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.h */,
+				4C6903B81D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m */,
+				4C6903B91D35F8DD00049806 /* MLPhotoBrowserPhotoView.h */,
+				4C6903BA1D35F8DD00049806 /* MLPhotoBrowserPhotoView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C6903D01D362A6600049806 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				4C6903D11D362AF000049806 /* RecommendVendorController.h */,
+				4C6903D21D362AF000049806 /* RecommendVendorController.m */,
+				4C6903DF1D3633B900049806 /* MyWatchingVendorViewController.h */,
+				4C6903E01D3633BA00049806 /* MyWatchingVendorViewController.m */,
+				4C6903D71D362F5300049806 /* VendorCell.h */,
+				4C6903D81D362F5300049806 /* VendorCell.m */,
+				4C6903D91D362F5300049806 /* VendorCell.xib */,
+				4C6903DC1D362F7200049806 /* VendorModel.h */,
+				4C6903DD1D362F7200049806 /* VendorModel.m */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		4C6903E81D364A6000049806 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				4C76B4FB1D213F4600C6FE6A /* EaseUI.m */,
+				4C76B6DA1D2232E300C6FE6A /* AppDelegate+EaseMob.h */,
+				4C76B6DB1D2232E300C6FE6A /* AppDelegate+EaseMob.m */,
+				4C76B6DC1D2232E300C6FE6A /* AppDelegate+EaseMobDebug.h */,
+				4C76B6DD1D2232E300C6FE6A /* AppDelegate+EaseMobDebug.m */,
+				4C76B6DE1D2232E300C6FE6A /* AppDelegate+Parse.h */,
+				4C76B6DF1D2232E300C6FE6A /* AppDelegate+Parse.m */,
+				5272D5501D2179B400E2B8D1 /* Robot */,
+				5272D4FE1D2175C500E2B8D1 /* Profile */,
+				5272D4F41D2175AC00E2B8D1 /* Chatroom */,
+				5272D4E81D21719C00E2B8D1 /* Core Data */,
+				5272D4BD1D2170DA00E2B8D1 /* ChatGroup */,
+				5272D4A61D2170BF00E2B8D1 /* Contacts */,
+				5272D48A1D216D4F00E2B8D1 /* Chat */,
+			);
+			name = Chats;
 			sourceTree = "<group>";
 		};
 		4C76B4F81D213F4600C6FE6A /* EaseUI */ = {
@@ -2662,6 +2834,7 @@
 				4C76B7921D22404200C6FE6A /* icon_021.gif in Resources */,
 				4C76B7B71D22404200C6FE6A /* tabbar_chats@2x.png in Resources */,
 				4C29E8781D1CF46D00E51E24 /* SaixinCell.xib in Resources */,
+				4C6903C61D35F8DD00049806 /* MLPhotoBrowser.bundle in Resources */,
 				4C76B7701D22404200C6FE6A /* faceDelete.png in Resources */,
 				4C76B7691D22404200C6FE6A /* chat_location_annotation_someone@2x.png in Resources */,
 				4C76B7BE1D22404200C6FE6A /* tabbar_setting.png in Resources */,
@@ -2776,6 +2949,7 @@
 				4C76B6681D213F4600C6FE6A /* MJRefresh.bundle in Resources */,
 				4C76B7861D22404200C6FE6A /* icon_010.gif in Resources */,
 				4C76B7A31D22404200C6FE6A /* account@2x.png in Resources */,
+				4C6903DB1D362F5300049806 /* VendorCell.xib in Resources */,
 				4C76B7C31D22404200C6FE6A /* tabbarBackground@2x.png in Resources */,
 				4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */,
 				4C76B7771D22404200C6FE6A /* chat_receiver_audio_playing003@2x.png in Resources */,
@@ -2803,6 +2977,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6903CF1D36271200049806 /* NoneBarWebviewController.m in Sources */,
 				4C76B6521D213F4600C6FE6A /* EMCDDeviceManagerBase.m in Sources */,
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
 				4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */,
@@ -2819,6 +2994,7 @@
 				4C76B6821D213F4600C6FE6A /* UIImage+EMWebP.m in Sources */,
 				4C76B6B91D213F4700C6FE6A /* EaseChatToolbarItem.m in Sources */,
 				4C76B65C1D213F4600C6FE6A /* MJRefreshComponent.m in Sources */,
+				4C6903C91D35FA7900049806 /* HotSliderModel.m in Sources */,
 				5272D4DC1D2170DA00E2B8D1 /* GroupSettingViewController.m in Sources */,
 				5272D4971D216E1200E2B8D1 /* EMSearchBar.m in Sources */,
 				4C76B6831D213F4600C6FE6A /* UIImageView+EMHighlightedWebCache.m in Sources */,
@@ -2826,10 +3002,12 @@
 				4C76B6AB1D213F4700C6FE6A /* EaseUserCell.m in Sources */,
 				4C76B6A41D213F4700C6FE6A /* FixFopen.c in Sources */,
 				4C76B65F1D213F4600C6FE6A /* MJRefreshAutoGifFooter.m in Sources */,
+				4C6903BC1D35F8DD00049806 /* MLPhotoBrowserAssets.m in Sources */,
 				4C76B6AA1D213F4700C6FE6A /* EaseViewController.m in Sources */,
 				4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4C29E8501D1BE92A00E51E24 /* UIButton+AFNetworking.m in Sources */,
 				4C76B6661D213F4600C6FE6A /* MJRefreshNormalHeader.m in Sources */,
+				4C6903BD1D35F8DD00049806 /* MLPhotoBrowserDatas.m in Sources */,
 				4C29E8071D1B810C00E51E24 /* SaidouPage.m in Sources */,
 				4C76B6851D213F4600C6FE6A /* UIView+EMWebCacheOperation.m in Sources */,
 				5272D5011D2175C500E2B8D1 /* UserProfileViewController.m in Sources */,
@@ -2842,6 +3020,7 @@
 				5272D4921D216D4F00E2B8D1 /* ChatViewController.m in Sources */,
 				4C76B6BC1D213F4700C6FE6A /* EaseFaceView.m in Sources */,
 				5272D4E01D2170DA00E2B8D1 /* SearchChatViewController.m in Sources */,
+				4C6903BE1D35F8DD00049806 /* MLPhotoBrowserPhoto.m in Sources */,
 				4C76B6801D213F4600C6FE6A /* UIImage+EMGIF.m in Sources */,
 				4C29E8571D1BE9CF00E51E24 /* NetworkManagementRequset.m in Sources */,
 				4C29E8011D1B80D700E51E24 /* SaiquanPage.m in Sources */,
@@ -2854,7 +3033,10 @@
 				5272D5111D21762200E2B8D1 /* TTGlobalUICommon.m in Sources */,
 				4C76B6941D213F4600C6FE6A /* EaseSDKHelper.m in Sources */,
 				5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */,
+				4C6903E41D36359B00049806 /* UILabel+NSNull.m in Sources */,
 				4C76B6BD1D213F4700C6FE6A /* EaseFacialView.m in Sources */,
+				4C6903DA1D362F5300049806 /* VendorCell.m in Sources */,
+				4C6903C01D35F8DD00049806 /* MLPhotoBrowserSignleViewController.m in Sources */,
 				5272D4B61D2170BF00E2B8D1 /* ContactListSelectViewController.m in Sources */,
 				4C76B67E1D213F4600C6FE6A /* NSData+EMImageContentType.m in Sources */,
 				4C29E7C41D1B79DE00E51E24 /* ViewController.m in Sources */,
@@ -2880,6 +3062,8 @@
 				4C76B6981D213F4600C6FE6A /* NSDate+Category.m in Sources */,
 				5272D4A11D216E8500E2B8D1 /* EMNavigationController.m in Sources */,
 				4C29E84C1D1BE92A00E51E24 /* AFAutoPurgingImageCache.m in Sources */,
+				4C6903BF1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m in Sources */,
+				4C6903D61D362B1400049806 /* SaiyaListViewController.m in Sources */,
 				4C76B6B61D213F4700C6FE6A /* EaseBubbleView+Voice.m in Sources */,
 				4C76B6AE1D213F4700C6FE6A /* EaseMessageCell.m in Sources */,
 				4C76B64D1D213F4600C6FE6A /* EMAudioRecorderUtil.m in Sources */,
@@ -2897,25 +3081,32 @@
 				4C76B66C1D213F4600C6FE6A /* UIView+MJExtension.m in Sources */,
 				4C76B68A1D213F4600C6FE6A /* PSTCollectionViewData.m in Sources */,
 				5272D5451D2176EB00E2B8D1 /* RedPacketChatViewController.m in Sources */,
+				4C6903C51D35F8DD00049806 /* MLPhotoBrowserPhotoView.m in Sources */,
 				4C76B6741D213F4600C6FE6A /* MWZoomingScrollView.m in Sources */,
 				4C76B6A81D213F4700C6FE6A /* EaseRefreshTableViewController.m in Sources */,
 				5272D4DF1D2170DA00E2B8D1 /* PublicGroupListViewController.m in Sources */,
 				4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */,
+				4C6903D31D362AF000049806 /* RecommendVendorController.m in Sources */,
 				4C76B68B1D213F4600C6FE6A /* PSTCollectionViewFlowLayout.m in Sources */,
 				5272D5401D2176EB00E2B8D1 /* EaseBubbleView+RedPacket.m in Sources */,
 				4C76B6711D213F4600C6FE6A /* MWPhotoBrowser.m in Sources */,
 				4C76B6891D213F4600C6FE6A /* PSTCollectionViewController.m in Sources */,
 				4C76B66B1D213F4600C6FE6A /* UIScrollView+MJRefresh.m in Sources */,
 				4C29E84F1D1BE92A00E51E24 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				4C6903C41D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m in Sources */,
 				5272D55E1D2179B500E2B8D1 /* RobotListViewController.m in Sources */,
+				4C6903C11D35F8DD00049806 /* MLPhotoBrowserViewController.m in Sources */,
 				4C76B6601D213F4600C6FE6A /* MJRefreshAutoNormalFooter.m in Sources */,
 				4C76B65E1D213F4600C6FE6A /* MJRefreshHeader.m in Sources */,
 				4C76B6781D213F4600C6FE6A /* EMSDWebImageDecoder.m in Sources */,
+				4C69039E1D35F86300049806 /* EScrollerView.m in Sources */,
 				4C29E8171D1BBDEB00E51E24 /* MyHeadCell.m in Sources */,
+				4C6903E71D363C5300049806 /* SaiquanDetailViewController.m in Sources */,
 				4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */,
 				4C76B6501D213F4600C6FE6A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				4C76B6B81D213F4700C6FE6A /* EaseChatToolbar.m in Sources */,
 				4C76B6631D213F4600C6FE6A /* MJRefreshBackNormalFooter.m in Sources */,
+				4C6903DE1D362F7200049806 /* VendorModel.m in Sources */,
 				4C6903961D35038E00049806 /* HotEventModel.m in Sources */,
 				4C76B6951D213F4600C6FE6A /* EaseConversationModel.m in Sources */,
 				5272D4E11D2170DA00E2B8D1 /* SearchMessageViewController.m in Sources */,
@@ -2934,9 +3125,11 @@
 				5272D4DE1D2170DA00E2B8D1 /* PublicGroupDetailViewController.m in Sources */,
 				4C76B69C1D213F4600C6FE6A /* UIViewController+HUD.m in Sources */,
 				4C29E8701D1CCEBA00E51E24 /* NWFToastView.m in Sources */,
+				4C6903C21D35F8DD00049806 /* MLPhotoBrowserCustomToolBarView.m in Sources */,
 				5272D4D61D2170DA00E2B8D1 /* ChatGroupDetailViewController.m in Sources */,
 				4C76B66A1D213F4600C6FE6A /* UIScrollView+MJExtension.m in Sources */,
 				4C76B6BA1D213F4700C6FE6A /* EaseImageView.m in Sources */,
+				4C6903C31D35F8DD00049806 /* MLPhotoBrowserPhotoImageView.m in Sources */,
 				5272D4BA1D2170BF00E2B8D1 /* ApplyFriendCell.m in Sources */,
 				5272D5411D2176EB00E2B8D1 /* EaseRedBagCell.m in Sources */,
 				4C29E8321D1BE92300E51E24 /* AFNetworkReachabilityManager.m in Sources */,
@@ -2954,6 +3147,7 @@
 				4C76B6721D213F4600C6FE6A /* MWTapDetectingImageView.m in Sources */,
 				4C76B6961D213F4600C6FE6A /* EaseMessageModel.m in Sources */,
 				4C76B6861D213F4600C6FE6A /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				4C6903A11D35F8A600049806 /* UIImageView+RZWebImage.m in Sources */,
 				4C29E8361D1BE92300E51E24 /* AFURLSessionManager.m in Sources */,
 				4C76B6881D213F4600C6FE6A /* PSTCollectionViewCell.m in Sources */,
 				4C76B68E1D213F4600C6FE6A /* PSTCollectionViewUpdateItem.m in Sources */,
@@ -2999,6 +3193,7 @@
 				4C76B65D1D213F4600C6FE6A /* MJRefreshFooter.m in Sources */,
 				5272D5201D21769C00E2B8D1 /* UIImageView+HeadImage.m in Sources */,
 				4C76B68D1D213F4600C6FE6A /* PSTCollectionViewLayout.m in Sources */,
+				4C6903EB1D364B4D00049806 /* SaishiInfoViewController.m in Sources */,
 				5272D4E71D21715D00E2B8D1 /* EMRemarkImageView.m in Sources */,
 				4C29E8351D1BE92300E51E24 /* AFURLResponseSerialization.m in Sources */,
 				4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */,
@@ -3019,6 +3214,7 @@
 				4C76B6A31D213F4600C6FE6A /* EaseEmotionManager.m in Sources */,
 				4C76B69A1D213F4600C6FE6A /* NSString+Valid.m in Sources */,
 				4C76B67B1D213F4600C6FE6A /* EMSDWebImageManager.m in Sources */,
+				4C6903E11D3633BA00049806 /* MyWatchingVendorViewController.m in Sources */,
 				4C76B6B41D213F4700C6FE6A /* EaseBubbleView+Text.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

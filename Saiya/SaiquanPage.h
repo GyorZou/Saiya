@@ -8,6 +8,7 @@
 
 #import "BarItemViewController.h"
 
-@interface SaiquanPage : BarItemViewController
+#import "NoneBarWebviewController.h"
+@interface SaiquanPage : NoneBarWebviewController
 
 @end

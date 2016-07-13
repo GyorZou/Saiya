@@ -244,6 +244,15 @@
 }
 +(void)show
 {
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+   // NSString * s = [def objectForKey:@"acc_token"];
+    [def setObject:nil forKey:@"acc_token"];
+    
+    [def synchronize];
+    
+    if ([[EMClient sharedClient]  isLoggedIn]) {
+        [[EMClient sharedClient]  logout:YES];
+    }
     
     LoginPage * lg = [LoginPage new];
     UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
@@ -258,7 +267,8 @@
     BOOL isLogin = [EMClient sharedClient].isLoggedIn;
     if (isLogin == NO || [AppDelegate isLogin] == NO) {
         [LoginPage show];
+        return NO;
     }
-    return isLogin;
+    return YES;
 }
 @end

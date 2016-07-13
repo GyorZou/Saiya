@@ -141,7 +141,7 @@
         vc = [SaishiViewController new];
         
     }
-   
+    vc.container = self;
     
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
     [self.controllerDic setValue:vc forKey:conKey];

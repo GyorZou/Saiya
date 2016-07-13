@@ -13,5 +13,11 @@
 @property (nonatomic,weak) IBOutlet UITextField * nameFiled,*pwdField;
 
 +(void)show;
+
+/**
+ *  未登录就显示，返回是否登录结果
+ *
+ *  @return 是否已登录，yes是已登录
+ */
 +(BOOL)showIfNotLogin;
 @end

@@ -114,17 +114,20 @@ NSURLSessionConfiguration *configuration;
 -(NSURLSessionDataTask *)requestGet:(NSString *)urlString params:(NSDictionary *)dict complation:(void (^)(BOOL, id, id))complation
 {
     //NSMutableString * paramString = [[NSMutableString alloc] init];
-    NSMutableArray * temp = [NSMutableArray array];
-    for (NSString * key in dict) {
-        NSString * value = dict[key];
+    if (dict.count>0) {
+        NSMutableArray * temp = [NSMutableArray array];
+        for (NSString * key in dict) {
+            NSString * value = dict[key];
+            
+            [temp addObject:[NSString stringWithFormat:@"%@=%@",key,value]];
+            
+        }
         
-        [temp addObject:[NSString stringWithFormat:@"%@=%@",key,value]];
         
+        NSString * qury =  [temp componentsJoinedByString:@"&"];
+        urlString = [NSString stringWithFormat:@"%@?%@",urlString,qury];
+ 
     }
-    
-
-   NSString * qury =  [temp componentsJoinedByString:@"&"];
-    urlString = [NSString stringWithFormat:@"%@?%@",urlString,qury];
     return [self requestGet:urlString complation:complation];
 
 }

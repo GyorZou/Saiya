@@ -10,6 +10,8 @@
 #import "MyHeadCell.h"
 
 #import "GoodsDetailTitle.h"
+
+#import "NoneBarWebviewController.h"
 @interface MineInfoPage ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * _contentView;
@@ -33,13 +35,13 @@
     [_contentView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"infocell2"];
     [_contentView registerNib:[UINib nibWithNibName:@"MyHeadCell" bundle:nil] forCellReuseIdentifier:@"infocell1"];
     
-    NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@""};
-    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@""};
-    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@""};
+    NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@"",@"url":@"watchings.html"};
+    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"",@"url":@""};
+    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"",@"url":@""};
 
-    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@""};
+    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"",@"url":@""};
 
-    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@""};
+    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"",@"url":@""};
 
     
     _datas = @[a1,a2,a3,a4,a5];
@@ -129,6 +131,48 @@
     return 20;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([LoginPage showIfNotLogin] == YES) {
+        if (indexPath.section == 0) {
+            
+        }else{
+            
+            NSString * root = @"http://saiya.tv/h5/";
+            NSDictionary * dict =  _datas[indexPath.row];
+            
+            NSString * cls = dict[@"class"];
+            NSString * url = dict[@"url"];
+            NSString * title = dict[@"title"];
+            if (url.length > 0) {
+                url = [root stringByAppendingString:url];
+            }
+            UIViewController * destin;
+            if (cls.length > 0) {
+                UIViewController * vc = [[NSClassFromString(cls) alloc] init];
+                if (url.length > 0) {
+                    [vc setValue:url forKey:@"baseUrl"];
+                    [vc setValue:@(YES) forKey:@"hideNaviBar"];
+                }
+                destin = vc;
+            }else{
+                BaseWebviewController * base = [[NoneBarWebviewController alloc] init];
+                if (url.length == 0) {
+                    url = [root stringByAppendingString:@"watchings.html"];
+                }
+                base.baseUrl = url;
+                destin = base;
+                base.hideNaviBar = YES;
+                            }
+            destin.view.backgroundColor = APPCOLOR_ORINGE;
+            destin.title = title;
+            destin.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:destin animated:YES];
+
+        }
+        
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
