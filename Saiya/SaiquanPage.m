@@ -37,7 +37,7 @@
 {
     [super viewDidAppear:animated];
     if (f== NO) {
-        _web.baseUrl = @"http://www.ewj.com/activitiesPage/my02.html?from=singlemessage&isappinstalled=1";
+        _web.baseUrl = @"http://saiya.tv/h5/saiquan.html";
         [self.view addSubview:_web.view];
     }
     f = YES;

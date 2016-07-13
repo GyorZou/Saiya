@@ -19,5 +19,11 @@
 
     // Configure the view for the selected state
 }
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.avartarImage.layer.cornerRadius = self.avartarImage.frame.size.width/2;
+    self.avartarImage.clipsToBounds = YES;
+}
 
 @end

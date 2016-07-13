@@ -380,10 +380,13 @@ NSURLSessionConfiguration *configuration;
 }
 -(void)setAccTokenFor:(NSMutableURLRequest*)req
 {
-    NSString * acc = [NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:@"acc_token"]];
-    if (acc) {
-        [req setValue:acc forHTTPHeaderField:@"accToken"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"acc_token"] != nil) {
+        NSString * acc = [NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:@"acc_token"]];
+        if (acc) {
+            [req setValue:acc forHTTPHeaderField:@"accToken"];
+        }
     }
+   
 }
 -(NSString*)getCookieWithISID:(NSString*)isid Jid:(NSString*)jid
 {

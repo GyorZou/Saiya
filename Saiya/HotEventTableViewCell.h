@@ -11,4 +11,5 @@
 @interface HotEventTableViewCell : UITableViewCell
 
 @property (nonatomic,weak) IBOutlet UIImageView * avartarImage  ,* snapImage;
+@property (nonatomic,weak) IBOutlet UILabel * activeNameLB,*vendorNameLB,*timeLB;
 @end

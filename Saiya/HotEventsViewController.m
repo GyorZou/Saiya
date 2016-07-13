@@ -18,13 +18,14 @@
 @implementation HotEventsViewController
 
 - (void)viewDidLoad {
+    [self setValue:@(1) forKey:@"style"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.showRefreshHeader = YES;
     self.showRefreshFooter = YES;
     [self.tableView.mj_header beginRefreshing];
-    [self tableViewDidTriggerHeaderRefresh];
+    //[self tableViewDidTriggerHeaderRefresh];
     self.tableView.rowHeight = 255;
     [self.tableView registerNib:[UINib nibWithNibName:@"HotEventTableViewCell" bundle:nil] forCellReuseIdentifier:@"hoteventcell"];
     
@@ -37,7 +38,9 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 255;
+    
+    //320:179 = W:X
+    return SCREENWIDTH* 179/320 + 255 - 179;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -50,7 +53,15 @@
     HotEventTableViewCell * cell = (HotEventTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"hoteventcell"];
     HotEventModel * model = [self.dataArray objectAtIndex:indexPath.section];
     NSDictionary * d =model.Vendor;
+    cell.vendorNameLB.text = d[@"Name"];
     d = d[@"Customer"];
+    
+    cell.selectionStyle = 0;
+    
+    cell.activeNameLB.text = model.Name;
+    cell.timeLB.text = model.CreatedOn;
+    
+    
     
     [cell.avartarImage setImageWithURL:[NSURL URLWithString:d[@"AvatarUrl"]] placeholderImage:nil];
     [cell.snapImage setImageWithURL:[NSURL URLWithString:[model.Images firstObject]]];
@@ -60,6 +71,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return SCREENWIDTH* 179/320 + 20;
+    }
+    return 0.1;
+}
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return 10;
+//}
 -(void)loadData:(BOOL)refresh
 {
     NSString * url = @"http://saiya.tv/API/Event/GetEvents";
