@@ -7,7 +7,7 @@
 //
 
 #import "SaishiInfoViewController.h"
-
+#import "InfoDetailViewController.h"
 @interface SaishiInfoViewController ()
 
 @end
@@ -43,15 +43,25 @@
         [self.jsContext evaluateScript:js];
     //}
 
-    
+
     __weak typeof(self) wS = self;
-//    self.jsContext[@"viewSaiquan"] = ^(NSString * sid){
-//        
-//        SaiquanDetailViewController * detail = [SaiquanDetailViewController new];
-//        detail.saiquanId = sid;
-//        detail.baseUrl = @"http://saiya.tv/h5/saiquan_details.html";
-//        [wS.navigationController pushViewController:detail animated:YES];
-//    };
+    self.jsContext[@"viewDetails"] = ^(NSString * sid){
+        NSArray *args = [JSContext currentArguments];
+        InfoDetailViewController * detail = [InfoDetailViewController new];
+        //detail.baseUrl = @"http://saiya.tv/h5/competionsummary.html";
+        detail.infoId = sid;
+        detail.type = InfoTypeSaishi;
+        [wS.navigationController pushViewController:detail animated:YES];
+    };
+    self.jsContext[@"viewDetailsxx"] = ^(NSString * sid){
+        NSArray *args = [JSContext currentArguments];
+        InfoDetailViewController * detail = [InfoDetailViewController new];
+        //detail.baseUrl = @"http://saiya.tv/h5/competionsummary.html";
+        detail.infoId = sid;
+        detail.type = InfoTypeSaishi;
+        [wS.navigationController pushViewController:detail animated:YES];
+    };
+
 }
 
 

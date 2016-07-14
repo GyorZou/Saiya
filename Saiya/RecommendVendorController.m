@@ -77,5 +77,14 @@
 {
     return 90;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     VendorModel * model = self.dataArray[indexPath.section];
+    InfoDetailViewController * detail = [InfoDetailViewController new];
+    detail.infoId = [NSString stringWithFormat:@"%@",model.Id];
+    detail.type = InfoTypeVendor;
+    [self.navigationController pushViewController:detail animated:YES];
+
+}
 
 @end

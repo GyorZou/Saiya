@@ -11,8 +11,12 @@
 @interface LoginPage : BaseViewController
 @property (nonatomic,weak) IBOutlet UILabel * quickLabel;
 @property (nonatomic,weak) IBOutlet UITextField * nameFiled,*pwdField;
+@property (nonatomic,copy) void (^blk)(void);
 
 +(void)show;
+
++(void)showWithCompletion:(void(^)(void))blk;
+
 
 /**
  *  未登录就显示，返回是否登录结果

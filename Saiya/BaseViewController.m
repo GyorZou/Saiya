@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -35,8 +35,24 @@
     //self.navigationController.navigationBar.translucent=NO;
     //self.navigationController.navigationBar.barTintColor=APPCOLOR_ORINGE;
  
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     self.navigationItem.leftBarButtonItem = [self backItem];
 }
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.navigationController.interactivePopGestureRecognizer) {
+        if (self.navigationController.viewControllers.count == 1)//关闭主界面的右滑返回
+        {
+            return NO;
+        }
+        else{
+            return YES;
+        }
+
+    }
+    return YES;
+}
+
 -(UIImage *)backImage
 {
     if (_backImage ==nil) {

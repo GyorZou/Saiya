@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
-@interface BaseWebviewController : BaseViewController
+@interface BaseWebviewController : BaseViewController<UIWebViewDelegate>
 {
 
     NSString * _callBack;

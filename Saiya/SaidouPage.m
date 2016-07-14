@@ -11,6 +11,9 @@
 #import "SaishiViewController.h"
 #import "GuanfangController.h"
 #import "LoginPage.h"
+
+#import <ShareSDK/ShareSDK.h>
+
 @interface SaidouPage ()<ViewPagerDataSource,ViewPagerDelegate>
 
 {
@@ -51,8 +54,42 @@
     self.navigationController.tabBarItem.image = [[UIImage imageNamed:@"icon-nav1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon-nav1-visited"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self initTitleview];
+    
+    
 
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"share" style:UIBarButtonItemStyleDone target:self action:@selector(share:)];
 
+}
+
+-(IBAction)share:(id)sender{
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"card"  ofType:@"png"];
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"分享内容测试"
+                                       defaultContent:@"默认分享内容测试，没内容时显示"
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"pmmq"
+                                                  url:@"http://www.sharesdk.cn"
+                                          description:@"这是一条测试信息"
+                                            mediaType:SSPublishContentMediaTypeNews];
+    
+    [ShareSDK showShareActionSheet:nil
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions: nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    NSLog(@"分享成功");
+                                    [NWFToastView showToast:@"分享成功"];
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(@"分享失败");
+                                    [NWFToastView showToast:@"分享失败"];
+                                }
+                            }];
 }
 
 -(void)viewDidAppear:(BOOL)animated

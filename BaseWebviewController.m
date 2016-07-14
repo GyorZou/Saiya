@@ -10,10 +10,11 @@
 
 #import "MJRefresh.h"
 
-@interface BaseWebviewController ()<UIWebViewDelegate>
+@interface BaseWebviewController ()
 {
     BOOL _firstLoad;
     BOOL _lastState;
+    UIButton * _refreshBtn;
 }
 
 -(UIBarButtonItem*)shareItem;
@@ -56,9 +57,19 @@
     
     _firstLoad = YES;
 
-    
-    
-    
+    _refreshBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _refreshBtn.center = self.view.center;
+    [self.view addSubview:_refreshBtn];
+    _refreshBtn.titleLabel.textColor = [UIColor lightGrayColor];
+    [_refreshBtn setTitle:@"点击重新加载" forState:0];
+    _refreshBtn.frame = self.view.bounds;
+    _refreshBtn.hidden = YES;
+    [_refreshBtn addTarget:self action:@selector(redo) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)redo
+{
+    _refreshBtn.hidden = YES;
+    [_webView reload];
 }
 -(NSString *)shareUrl
 {
@@ -154,6 +165,9 @@
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    [[ShowIndicatorView ShowIndicator] HideIndicatorInView];
+
+    _refreshBtn.hidden = NO;
     [_webView.scrollView.mj_header endRefreshing];
 
     [NWFToastView dismissProgress];
@@ -162,12 +176,15 @@
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [NWFToastView showProgress:@"加载中..."];
+    [[ShowIndicatorView ShowIndicator] ShowIndicatorInView:self.view];
+  //  [NWFToastView showProgress:@"加载中..."];
     [self superInitJSContext];
 }
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [NWFToastView dismissProgress];
+    //[NWFToastView dismissProgress];
+    [[ShowIndicatorView ShowIndicator] HideIndicatorInView];
+    
     [_webView.scrollView.mj_header endRefreshing];
 
     [self superInitJSContext];
@@ -243,8 +260,10 @@
     
         //goLogin
         _jsContext[@"goLogin"] = ^ {
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-            [LoginPage show];
+            //[weakSelf.navigationController popViewControllerAnimated:YES];
+            [LoginPage showWithCompletion:^{
+                [weakSelf refresh];
+            }];
         };
 
     

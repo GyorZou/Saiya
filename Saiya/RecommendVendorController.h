@@ -7,6 +7,7 @@
 //
 
 #import "SaiyaListViewController.h"
+#import "InfoDetailViewController.h"
 
 @interface RecommendVendorController : SaiyaListViewController
 

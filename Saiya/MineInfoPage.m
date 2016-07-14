@@ -12,6 +12,8 @@
 #import "GoodsDetailTitle.h"
 
 #import "NoneBarWebviewController.h"
+#import "SaiyaSearchController.h"
+
 @interface MineInfoPage ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * _contentView;
@@ -76,7 +78,9 @@
 }
 -(void)searchItemClick
 {
-    
+    SaiyaSearchController * s  = [SaiyaSearchController new];
+    s.baseUrl = @"http://saiya.tv/h5/search.html";
+    [self.navigationController pushViewController:s animated:YES];
 }
 
 
