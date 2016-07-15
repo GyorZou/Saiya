@@ -7,9 +7,11 @@
 //
 
 typedef enum {
+    InfoTypeUndefine,
     InfoTypeSaishi,
     InfoTypeVendor,
     InfoTypeUser,
+    
 }InfoType;
 
 
@@ -17,5 +19,5 @@ typedef enum {
 
 @interface InfoDetailViewController : NoneBarWebviewController
 @property (nonatomic,assign) InfoType type;
-@property (nonatomic,strong) NSString*  infoId;
+@property (nonatomic,strong) NSString *  infoId; 
 @end

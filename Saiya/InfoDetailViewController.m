@@ -28,6 +28,9 @@
         case InfoTypeUser:
             child = @"entertainer.html";
             break;
+        case InfoTypeUndefine:
+            return self.baseUrl;
+            break;
         default:
             
             break;
@@ -63,7 +66,13 @@
         [wS share:nil];
         
     };
-
+    self.jsContext[@"publishComptetion"] = ^{
+        
+        //[wS share:nil];
+        [NWFToastView showToast:@"请发布赛事"];
+        
+        
+    };
     
     
     self.jsContext[@"viewCompetion"] = ^(NSString * sid){

@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Saiya/InfoDetailViewController.m"
-            timestampString = "490179056.565393"
+            timestampString = "490240575.568482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-initJSContext"
             landmarkType = "5">
          </BreakpointContent>
@@ -319,22 +319,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "-initJSContext"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Saiya/InfoDetailViewController.m"
-            timestampString = "490179056.565393"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
             landmarkName = "-initJSContext"
             landmarkType = "5">
          </BreakpointContent>
@@ -401,54 +385,6 @@
             endingLineNumber = "248"
             landmarkName = "-huanxinLogin:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BaseWebviewController.m"
-            timestampString = "490182950.732985"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "-superInitJSContext"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[BaseWebviewController superInitJSContext]_block_invoke_3"
-                  moduleName = "Saiya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/BaseWebviewController.m"
-                  timestampString = "490182977.968367"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "264"
-                  endingLineNumber = "264"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[BaseWebviewController superInitJSContext]_block_invoke_4"
-                  moduleName = "Saiya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/crv/Desktop/GitProjects/Saiya/BaseWebviewController.m"
-                  timestampString = "490182977.968542"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "265"
-                  endingLineNumber = "265"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

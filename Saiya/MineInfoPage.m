@@ -38,7 +38,7 @@
     [_contentView registerNib:[UINib nibWithNibName:@"MyHeadCell" bundle:nil] forCellReuseIdentifier:@"infocell1"];
     
     NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@"",@"url":@"watchings.html"};
-    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"",@"url":@""};
+    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"InfoDetailViewController",@"url":@"mycompetion.html"};
     NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"",@"url":@""};
 
     NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"",@"url":@""};
