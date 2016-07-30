@@ -86,7 +86,7 @@
     UIViewController *controler=[HotEventsViewController new];
     controler.view.backgroundColor = [UIColor whiteColor];
     
-    
+    controler.container = self;
     NSString *conKey =[NSString stringWithFormat:@"%ld",index];
     [self.controllerDic setValue:controler forKey:conKey];
     

@@ -8,10 +8,13 @@
 
 #import "BaseWebviewController.h"
 
+#import "MJRefresh.h"
 
-@interface BaseWebviewController ()<UIWebViewDelegate>
+@interface BaseWebviewController ()
 {
     BOOL _firstLoad;
+    BOOL _lastState;
+    UIButton * _refreshBtn;
 }
 
 -(UIBarButtonItem*)shareItem;
@@ -20,6 +23,10 @@
 
 @implementation BaseWebviewController
 @synthesize webView=_webView;
+-(UIBarButtonItem *)shareItem
+{
+    return nil;
+}
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -47,10 +54,22 @@
     
     _webView = web;
     
+    
     _firstLoad = YES;
 
-    
-    
+    _refreshBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _refreshBtn.center = self.view.center;
+    [self.view addSubview:_refreshBtn];
+    _refreshBtn.titleLabel.textColor = [UIColor lightGrayColor];
+    [_refreshBtn setTitle:@"点击重新加载" forState:0];
+    _refreshBtn.frame = self.view.bounds;
+    _refreshBtn.hidden = YES;
+    [_refreshBtn addTarget:self action:@selector(redo) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)redo
+{
+    _refreshBtn.hidden = YES;
+    [_webView reload];
 }
 -(NSString *)shareUrl
 {
@@ -77,7 +96,7 @@
         NSMutableURLRequest *req =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:_baseUrl]];
         req.cachePolicy=NSURLRequestReloadIgnoringCacheData;
         
-        [req setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"cookie"] forHTTPHeaderField:@"Cookie"];
+      //  [req setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"cookie"] forHTTPHeaderField:@"Cookie"];
         //[req setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53" forHTTPHeaderField:@"User-Agent"];
         
         
@@ -112,9 +131,12 @@
 {
     // self.navigationController.navigationBarHidden=YES;
 
+    
     if (_firstLoad) {
+        _lastState = self.navigationController.navigationBarHidden;
         [self reload];
     }
+    self.navigationController.navigationBarHidden = _hideNaviBar;
 
     [super viewWillAppear:animated];
     
@@ -125,13 +147,13 @@
         self.navigationItem.rightBarButtonItem = nil;
     }
 
-
-    
+        
 }
 
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = _lastState;
     [super viewWillDisappear:animated];
     //self.navigationController.navigationBarHidden=NO;
 }
@@ -143,24 +165,52 @@
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    [[ShowIndicatorView ShowIndicator] HideIndicatorInView];
+
+    _refreshBtn.hidden = NO;
+    [_webView.scrollView.mj_header endRefreshing];
+
+    [NWFToastView dismissProgress];
+
  
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [[ShowIndicatorView ShowIndicator] ShowIndicatorInView:self.view];
+  //  [NWFToastView showProgress:@"加载中..."];
+    [self superInitJSContext];
 }
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-   
+    //[NWFToastView dismissProgress];
+    [[ShowIndicatorView ShowIndicator] HideIndicatorInView];
+    
+    [_webView.scrollView.mj_header endRefreshing];
 
+    [self superInitJSContext];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowBackButton" object:nil];
     
     
 }
 
 
-
+-(void)addMJHeader{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
+    header.automaticallyChangeAlpha = YES;
+    header.lastUpdatedTimeLabel.hidden = YES;
+    _webView.scrollView.mj_header = header;
+}
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    //[self superInitJSContext];
     
+    if (_webView.scrollView.mj_header == nil && self.showMJHeader == YES) {
+        [self addMJHeader];
+    }
+
     NSString *requestString = [[[request URL]  absoluteString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"web loading:%@",requestString);
     
     if ([requestString hasPrefix:@"ewj:"]) {
        
@@ -177,6 +227,52 @@
 {
 
   
+
+}
+-(void)superInitJSContext
+{
+        __weak typeof(self) weakSelf = self;
+        _jsContext = [_webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+ 
+        
+        _jsContext[@"backPress"] = ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        };
+        _jsContext[@"showToast"] = ^(NSString*s){
+            //[weakSelf.navigationController popViewControllerAnimated:YES];
+            NSLog(@"show toast:%@",s);
+            [NWFToastView  showToast:s];
+        };
+
+        _jsContext[@"getAccToken"] = (NSString*)^ (){
+            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            NSString * s = [def objectForKey:@"acc_token"];
+            return s;
+        };
+        NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+        NSString * s = [def objectForKey:@"acc_token"];
+    
+    
+        if (s) {
+            NSString *js = [NSString stringWithFormat:@"setAcctoken('%@')",s];
+            [_jsContext evaluateScript:js];
+        }
+    
+        //goLogin
+        _jsContext[@"goLogin"] = ^ {
+            //[weakSelf.navigationController popViewControllerAnimated:YES];
+            [LoginPage showWithCompletion:^{
+                [weakSelf refresh];
+            }];
+        };
+
+    
+        [self initJSContext];
+}
+
+
+-(void)initJSContext
+{
 
 }
 -(BOOL)handleUrl:(NSString *)url

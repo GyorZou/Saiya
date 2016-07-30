@@ -13,9 +13,13 @@
 #import "TTGlobalUICommon.h"
 #import "ChatDemoHelper.h"
 #import "MainViewController.h"
+
+#import <ShareSDK/ShareSDK.h>
+
 @interface LoginPage ()<UITextFieldDelegate>
 {
     IBOutlet UIButton * _loginBtn;
+    NSString * hxName,*hxPwd;
 }
 @end
 
@@ -112,8 +116,8 @@
     return @"http://saiya.tv/api/customer/Login";
 }
 -(NSString*)thirdLoginUrl
-{
-    return @"http://saiya.tv/api/customer/Login";
+{//http://saiya.tv/api/customer/LoginAuths
+    return @"http://saiya.tv/api/customer/LoginAuths";
 }
 -(BOOL)checkName:(NSString*)name
 {
@@ -138,7 +142,9 @@
             [def setObject:[returnData objectForKey:@"data"] forKey:@"acc_token"];
             [def synchronize];
             
-             [self huanxinLogin];
+            hxName = _nameFiled.text;
+            hxPwd = _pwdField.text;
+            [self huanxinLogin:YES];
             NSLog(@"%@",returnData);
         }else{
             [NWFToastView showToast:@"用户名或密码错误"];
@@ -155,15 +161,49 @@
 }
 -(IBAction)weixinClick:(id)sender
 {
-    
+    [ShareSDK getUserInfoWithType:ShareTypeWeixiSession authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+        NSLog(@"%d",result);
+        if (result) {
+            //成功登录后，判断该用户的ID是否在自己的数据库中。
+            //如果有直接登录，没有就将该用户的ID和相关资料在数据库中创建新用户。
+            //[self reloadStateWithType:ShareTypeSinaWeibo];
+            
+            
+            NSDictionary * d = [self thirdPartDictWithOpenId:userInfo.credential.uid token:userInfo.credential.token forType:2];
+            [self thirdPartLogin:d];
+        }
+    }];
 }
 -(IBAction)qqClick:(id)sender
 {
+    [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+        NSLog(@"%d",result);
+        if (result) {
+            //成功登录后，判断该用户的ID是否在自己的数据库中。
+            //如果有直接登录，没有就将该用户的ID和相关资料在数据库中创建新用户。
+            //[self reloadStateWithType:ShareTypeSinaWeibo];
+            NSDictionary * d = [self thirdPartDictWithOpenId:userInfo.credential.uid token:userInfo.credential.token forType:1];
+            [self thirdPartLogin:d];
+
+        }
+    }];
+
     
 }
 -(IBAction)weiboClick:(id)sender
 {
-    
+    [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+        NSLog(@"%d",result);
+        if (result) {
+            //成功登录后，判断该用户的ID是否在自己的数据库中。
+            //如果有直接登录，没有就将该用户的ID和相关资料在数据库中创建新用户。
+            //[self reloadStateWithType:ShareTypeSinaWeibo];
+            NSDictionary * d = [self thirdPartDictWithOpenId:userInfo.credential.uid token:userInfo.credential.token forType:2];
+            [self thirdPartLogin:d];
+
+        }
+    }];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -180,14 +220,29 @@
 }
 */
 
--(void)huanxinLogin
+-(void)huanxinLogin:(BOOL)showHud
 {
 
-    [self showHudInView:self.view hint:NSLocalizedString(@"login.ongoing", @"Is Login...")];
+    if (showHud) {
+        [self showHudInView:self.view hint:NSLocalizedString(@"login.ongoing", @"Is Login...")];
+    }
+
     //异步登陆账号
     __weak typeof(self) weakself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        EMError *error = [[EMClient sharedClient] loginWithUsername:_nameFiled.text password:_pwdField.text];
+        EMError *error = [[EMClient sharedClient] loginWithUsername:hxName password:hxPwd];//如果未注册，那注册一下吧
+        if (error.code == EMErrorUserNotFound) {
+            EMError* error = [[EMClient sharedClient] registerWithUsername:hxName  password:hxPwd];
+            if (error == nil) {
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [self huanxinLogin:NO];
+              });
+                
+                return;
+            }
+            
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakself hideHud];
             if (!error) {
@@ -214,6 +269,9 @@
                     });
                 });
                 
+                if (_blk) {
+                    _blk();
+                }
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
                 switch (error.code)
@@ -244,13 +302,26 @@
 }
 +(void)show
 {
+    [self showWithCompletion:nil];
+
+}
++(void)showWithCompletion:(void (^)(void))blk
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    // NSString * s = [def objectForKey:@"acc_token"];
+    [def setObject:nil forKey:@"acc_token"];
+    
+    [def synchronize];
+    
+    if ([[EMClient sharedClient]  isLoggedIn]) {
+        [[EMClient sharedClient]  logout:YES];
+    }
     
     LoginPage * lg = [LoginPage new];
     UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
-
     
+    lg.blk = blk;
     [[MainViewController currentInstance] presentViewController:navi animated:YES completion:nil];
-
 }
 +(BOOL)showIfNotLogin
 {
@@ -258,7 +329,38 @@
     BOOL isLogin = [EMClient sharedClient].isLoggedIn;
     if (isLogin == NO || [AppDelegate isLogin] == NO) {
         [LoginPage show];
+        return NO;
     }
-    return isLogin;
+    return YES;
+}
+
+-(void)thirdPartLogin:(NSDictionary*)dict
+{//http://saiya.tv/api/customer/LoginAuths
+    
+    
+    [[NetworkManagementRequset manager] requestPostData:[self thirdLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
+        [NWFToastView dismissProgress];
+        if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
+            
+            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+            [def setObject:[returnData objectForKey:@"data"] forKey:@"acc_token"];
+            [def synchronize];
+            
+            hxName = dict[@"OpenId"];
+            hxPwd = @"123456";
+            [self huanxinLogin:YES];
+            NSLog(@"%@",returnData);
+        }else{
+            [NWFToastView showToast:@"用户名或密码错误"];
+        }
+        
+        return YES;
+    }];
+
+
+}
+-(NSDictionary*)thirdPartDictWithOpenId:(NSString*)pid token:(NSString*)token forType:(int)i
+{
+    return @{@"Type":@(i),@"OpenId":pid,@"Token":token};
 }
 @end

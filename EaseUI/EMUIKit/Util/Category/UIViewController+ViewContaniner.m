@@ -73,7 +73,8 @@ static const NSString * contanerString  = @"this is pager container";
 {
     
     if (self.container != nil) {
-        return  [self.container swizzledNavigationController];
+        //如果container 又还有container
+        return  [self.container navigationController];
     }
     
     return [self swizzledNavigationController];

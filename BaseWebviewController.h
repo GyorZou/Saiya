@@ -7,8 +7,8 @@
 //
 
 #import "BaseViewController.h"
-#import "EaseUI.h"
-@interface BaseWebviewController : BaseViewController
+#import <JavaScriptCore/JavaScriptCore.h>
+@interface BaseWebviewController : BaseViewController<UIWebViewDelegate>
 {
 
     NSString * _callBack;
@@ -23,12 +23,14 @@
 @property (nonatomic,assign) BOOL canShare;
 @property (nonatomic,strong) NSString * imageUrl;//朋友圈的iconurl
 @property (nonatomic,strong) UIWebView *webView;
+@property (nonatomic, strong, readonly) JSContext    *jsContext; 
 
-
+@property (nonatomic,assign) BOOL hideNaviBar;
 
 
 @property (nonatomic,assign) BOOL showMJHeader;
 
+-(void)initJSContext;
 -(void)evaluateJSWithDict:(NSDictionary*)dict;
 -(BOOL)handleUrl:(NSString *)url;
 -(void)reload;

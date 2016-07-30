@@ -12,6 +12,7 @@
 #import "SearchViewController.h"
 #import "SaiyaPopover.h"
 #import "BaseWebviewController.h"
+#import "SaiquanDetailViewController.h"
 @interface SaiquanPage ()
 {
     BaseWebviewController *_web;
@@ -20,6 +21,20 @@
 @end
 
 @implementation SaiquanPage
+-(instancetype)init
+{
+    self = [super init];
+    self.hidesBottomBarWhenPushed = NO;
+    
+    return self;
+}
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    self.hidesBottomBarWhenPushed = NO;
+    self.navigationItem.leftBarButtonItem = [self backItem];
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,15 +45,17 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationItem.rightBarButtonItem = [self rightItem];
     [self initTitleview];
-    _web = [BaseWebviewController new];
-    _web.view.backgroundColor = [UIColor whiteColor];
+    //_web = [BaseWebviewController new];
+    //_web.view.backgroundColor = [UIColor whiteColor];
+    self.baseUrl = @"http://saiya.tv/h5/saiquan.html";
+    self.showMJHeader = YES;
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     if (f== NO) {
-        _web.baseUrl = @"http://saiya.tv/h5/saiquan.html";
-        [self.view addSubview:_web.view];
+        //_web.baseUrl = @"http://saiya.tv/h5/saiquan.html";
+      //  [self.view addSubview:_web.view];
     }
     f = YES;
     
@@ -116,6 +133,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initJSContext
+{
+    __weak typeof(self) wS = self;
+    self.jsContext[@"viewSaiquan"] = ^(NSString * sid){
+    
+        SaiquanDetailViewController * detail = [SaiquanDetailViewController new];
+        detail.saiquanId = sid;
+        detail.baseUrl = @"http://saiya.tv/h5/saiquan_details.html";
+        [wS.navigationController pushViewController:detail animated:YES];
+    };
+}
+
 /*
 #pragma mark - Navigation
 
@@ -125,5 +154,11 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(BOOL)handleUrl:(NSString *)url
+{
+    NoneBarWebviewController * web = [NoneBarWebviewController new];
+    web.baseUrl = url;
+    [self.navigationController pushViewController:web animated:YES];
+    return NO;
+}
 @end
