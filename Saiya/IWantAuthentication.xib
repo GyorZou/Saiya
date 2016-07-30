@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IWantAuthentication"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attestation-1" translatesAutoresizingMaskIntoConstraints="NO" id="nQw-WU-yhs">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nQw-WU-yhs" secondAttribute="height" multiplier="768:384" id="vOE-ie-Tk5"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alE-8A-wGv">
+                    <rect key="frame" x="0.0" y="300" width="600" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XNX-EZ-QMJ"/>
+                    </constraints>
+                    <state key="normal" title="艺人特权说明"/>
+                    <connections>
+                        <action selector="doShowDetail:" destination="-1" eventType="touchUpInside" id="fix-7w-hlJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-ua-M8N">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RPT-ua-M8N" secondAttribute="height" multiplier="768:384" id="f6K-oL-Uxd"/>
+                    </constraints>
+                    <connections>
+                        <action selector="doAuthen:" destination="-1" eventType="touchUpInside" id="DNc-na-ETh"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attestation-2" translatesAutoresizingMaskIntoConstraints="NO" id="axM-0K-4a8">
+                    <rect key="frame" x="0.0" y="340" width="600" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="axM-0K-4a8" secondAttribute="height" multiplier="768:384" id="aJY-D4-0dl"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-OM-VzK">
+                    <rect key="frame" x="0.0" y="640" width="600" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4Hs-yp-shn"/>
+                    </constraints>
+                    <state key="normal" title="主办方认证的说明"/>
+                    <connections>
+                        <action selector="doShowDetail:" destination="-1" eventType="touchUpInside" id="GxU-wm-MGu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBT-KD-unr">
+                    <rect key="frame" x="0.0" y="340" width="600" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zBT-KD-unr" secondAttribute="height" multiplier="768:384" id="BPA-fQ-SYM"/>
+                    </constraints>
+                    <connections>
+                        <action selector="doAuthen:" destination="-1" eventType="touchUpInside" id="pZy-G0-xpj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="axM-0K-4a8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6sE-o0-mPC"/>
+                <constraint firstItem="zBT-KD-unr" firstAttribute="width" secondItem="zBT-KD-unr" secondAttribute="height" multiplier="768:384" id="761-Du-iHm"/>
+                <constraint firstItem="gSS-OM-VzK" firstAttribute="top" secondItem="zBT-KD-unr" secondAttribute="bottom" id="Csf-yE-gMb"/>
+                <constraint firstAttribute="trailing" secondItem="nQw-WU-yhs" secondAttribute="trailing" id="DUp-5Y-YI4"/>
+                <constraint firstAttribute="trailing" secondItem="RPT-ua-M8N" secondAttribute="trailing" id="Fzl-Gh-DIi"/>
+                <constraint firstItem="RPT-ua-M8N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ItS-bL-BJw"/>
+                <constraint firstItem="nQw-WU-yhs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JZ4-6i-xb6"/>
+                <constraint firstItem="nQw-WU-yhs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QhF-hF-fwn"/>
+                <constraint firstItem="zBT-KD-unr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RPY-oc-RO5"/>
+                <constraint firstItem="alE-8A-wGv" firstAttribute="top" secondItem="RPT-ua-M8N" secondAttribute="bottom" id="SZI-dL-jCv"/>
+                <constraint firstItem="alE-8A-wGv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VYB-yP-8Ja"/>
+                <constraint firstAttribute="trailing" secondItem="axM-0K-4a8" secondAttribute="trailing" id="Vgr-52-QCK"/>
+                <constraint firstItem="RPT-ua-M8N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WbL-nF-Yg8"/>
+                <constraint firstAttribute="trailing" secondItem="alE-8A-wGv" secondAttribute="trailing" id="YuI-jG-InE"/>
+                <constraint firstItem="axM-0K-4a8" firstAttribute="width" secondItem="axM-0K-4a8" secondAttribute="height" multiplier="768:384" id="b0M-FQ-4NE"/>
+                <constraint firstItem="gSS-OM-VzK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fF1-Vm-rbA"/>
+                <constraint firstAttribute="trailing" secondItem="gSS-OM-VzK" secondAttribute="trailing" id="gEp-S2-27C"/>
+                <constraint firstItem="axM-0K-4a8" firstAttribute="top" secondItem="alE-8A-wGv" secondAttribute="bottom" id="iXm-WC-miu"/>
+                <constraint firstAttribute="trailing" secondItem="zBT-KD-unr" secondAttribute="trailing" id="n9m-vP-zCB"/>
+                <constraint firstItem="gSS-OM-VzK" firstAttribute="top" secondItem="zBT-KD-unr" secondAttribute="bottom" id="pbR-ly-d6e"/>
+                <constraint firstItem="zBT-KD-unr" firstAttribute="top" secondItem="alE-8A-wGv" secondAttribute="bottom" id="w8I-WE-MHX"/>
+            </constraints>
+            <point key="canvasLocation" x="303" y="243"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="attestation-1" width="768" height="377"/>
+        <image name="attestation-2" width="768" height="384"/>
+    </resources>
+</document>

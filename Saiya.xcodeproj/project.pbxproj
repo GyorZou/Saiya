@@ -319,6 +319,8 @@
 		4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D41D23AF8800C6FE6A /* DXPopover.m */; };
 		4C76B7D81D23B1A700C6FE6A /* SaiyaPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */; };
 		4CA6632D1D2135BE008B094B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA6632C1D2135BE008B094B /* libiconv.tbd */; };
+		5270A25C1D4CA4DF00B6DD58 /* IWantAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A25B1D4CA4DF00B6DD58 /* IWantAuthentication.m */; };
+		5270A25E1D4CA4EC00B6DD58 /* IWantAuthentication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A25D1D4CA4EC00B6DD58 /* IWantAuthentication.xib */; };
 		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 		5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D48D1D216D4F00E2B8D1 /* ConversationListController.m */; };
 		5272D4921D216D4F00E2B8D1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4901D216D4F00E2B8D1 /* ChatViewController.m */; };
@@ -946,6 +948,9 @@
 		4C76B7D61D23B1A700C6FE6A /* SaiyaPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaPopover.h; sourceTree = "<group>"; };
 		4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaPopover.m; sourceTree = "<group>"; };
 		4CA6632C1D2135BE008B094B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		5270A25A1D4CA4DF00B6DD58 /* IWantAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWantAuthentication.h; sourceTree = "<group>"; };
+		5270A25B1D4CA4DF00B6DD58 /* IWantAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWantAuthentication.m; sourceTree = "<group>"; };
+		5270A25D1D4CA4EC00B6DD58 /* IWantAuthentication.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IWantAuthentication.xib; sourceTree = "<group>"; };
 		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
 		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
 		5272D48C1D216D4F00E2B8D1 /* ConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListController.h; sourceTree = "<group>"; };
@@ -1289,6 +1294,9 @@
 				4C29E8141D1BBDEB00E51E24 /* MyHeadCell.h */,
 				4C29E8151D1BBDEB00E51E24 /* MyHeadCell.m */,
 				4C29E8161D1BBDEB00E51E24 /* MyHeadCell.xib */,
+				5270A25A1D4CA4DF00B6DD58 /* IWantAuthentication.h */,
+				5270A25B1D4CA4DF00B6DD58 /* IWantAuthentication.m */,
+				5270A25D1D4CA4EC00B6DD58 /* IWantAuthentication.xib */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -2711,6 +2719,7 @@
 				4C76B7901D22404200C6FE6A /* icon_020.gif in Resources */,
 				4C76B7601D22404200C6FE6A /* call_out_h.png in Resources */,
 				4C76B7881D22404200C6FE6A /* icon_012.gif in Resources */,
+				5270A25E1D4CA4EC00B6DD58 /* IWantAuthentication.xib in Resources */,
 				4C76B77B1D22404200C6FE6A /* chat_sender_audio_playing_000@2x.png in Resources */,
 				4C69039B1D35057B00049806 /* HotEventTableViewCell.xib in Resources */,
 				4C76B78C1D22404200C6FE6A /* icon_018.gif in Resources */,
@@ -2836,6 +2845,7 @@
 				4C29E8611D1BF5E800E51E24 /* RegisterPage.m in Sources */,
 				4C76B65A1D213F4600C6FE6A /* MJRefreshAutoFooter.m in Sources */,
 				4C76B6A01D213F4600C6FE6A /* EaseEmoji.m in Sources */,
+				5270A25C1D4CA4DF00B6DD58 /* IWantAuthentication.m in Sources */,
 				4C76B6A11D213F4600C6FE6A /* EaseEmojiEmoticons.m in Sources */,
 				5272D4B81D2170BF00E2B8D1 /* AddFriendCell.m in Sources */,
 				4C76B6C01D213F4700C6FE6A /* EaseConversationCell.m in Sources */,
