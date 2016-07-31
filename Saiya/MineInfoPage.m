@@ -14,6 +14,7 @@
 #import "NoneBarWebviewController.h"
 #import "SaiyaSearchController.h"
 #import "IWantAuthentication.h"
+#import "MySaidouViewController.h"
 @interface MineInfoPage ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * _contentView;
@@ -41,7 +42,7 @@
     NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"InfoDetailViewController",@"url":@"mycompetion.html"};
     NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"IWantAuthentication",@"url":@""};
 
-    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"",@"url":@""};
+    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"MySaidouViewController",@"url":@""};
 
     NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"",@"url":@""};
 

@@ -390,6 +390,12 @@
 		5270A28A1D4DDD0A00B6DD58 /* AreaSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2881D4DDD0A00B6DD58 /* AreaSelectorViewController.m */; };
 		5270A28B1D4DDD0A00B6DD58 /* AreaSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A2891D4DDD0A00B6DD58 /* AreaSelectorViewController.xib */; };
 		5270A28E1D4DF17D00B6DD58 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A28D1D4DF17D00B6DD58 /* CategoryViewController.m */; };
+		5270A2921D4E127E00B6DD58 /* MySaidouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2901D4E127E00B6DD58 /* MySaidouViewController.m */; };
+		5270A2931D4E127E00B6DD58 /* MySaidouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A2911D4E127E00B6DD58 /* MySaidouViewController.xib */; };
+		5270A2961D4E152400B6DD58 /* MySaidouDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2951D4E152400B6DD58 /* MySaidouDetailViewController.m */; };
+		5270A2991D4E162500B6DD58 /* SaidouModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2981D4E162500B6DD58 /* SaidouModel.m */; };
+		5270A29D1D4E171E00B6DD58 /* MySaidouDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A29B1D4E171E00B6DD58 /* MySaidouDetailCell.m */; };
+		5270A29E1D4E171E00B6DD58 /* MySaidouDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A29C1D4E171E00B6DD58 /* MySaidouDetailCell.xib */; };
 		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 		5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D48D1D216D4F00E2B8D1 /* ConversationListController.m */; };
 		5272D4921D216D4F00E2B8D1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4901D216D4F00E2B8D1 /* ChatViewController.m */; };
@@ -1136,6 +1142,16 @@
 		5270A2891D4DDD0A00B6DD58 /* AreaSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaSelectorViewController.xib; sourceTree = "<group>"; };
 		5270A28C1D4DF17D00B6DD58 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		5270A28D1D4DF17D00B6DD58 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		5270A28F1D4E127E00B6DD58 /* MySaidouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySaidouViewController.h; sourceTree = "<group>"; };
+		5270A2901D4E127E00B6DD58 /* MySaidouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySaidouViewController.m; sourceTree = "<group>"; };
+		5270A2911D4E127E00B6DD58 /* MySaidouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySaidouViewController.xib; sourceTree = "<group>"; };
+		5270A2941D4E152400B6DD58 /* MySaidouDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySaidouDetailViewController.h; sourceTree = "<group>"; };
+		5270A2951D4E152400B6DD58 /* MySaidouDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySaidouDetailViewController.m; sourceTree = "<group>"; };
+		5270A2971D4E162500B6DD58 /* SaidouModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaidouModel.h; sourceTree = "<group>"; };
+		5270A2981D4E162500B6DD58 /* SaidouModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaidouModel.m; sourceTree = "<group>"; };
+		5270A29A1D4E171E00B6DD58 /* MySaidouDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySaidouDetailCell.h; sourceTree = "<group>"; };
+		5270A29B1D4E171E00B6DD58 /* MySaidouDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySaidouDetailCell.m; sourceTree = "<group>"; };
+		5270A29C1D4E171E00B6DD58 /* MySaidouDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySaidouDetailCell.xib; sourceTree = "<group>"; };
 		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
 		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
 		5272D48C1D216D4F00E2B8D1 /* ConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListController.h; sourceTree = "<group>"; };
@@ -1512,6 +1528,16 @@
 				5270A27F1D4CB5CA00B6DD58 /* GuanfangAuthenticate.h */,
 				5270A2801D4CB5CA00B6DD58 /* GuanfangAuthenticate.m */,
 				5270A2811D4CB5CA00B6DD58 /* GuanfangAuthenticate.xib */,
+				5270A28F1D4E127E00B6DD58 /* MySaidouViewController.h */,
+				5270A2901D4E127E00B6DD58 /* MySaidouViewController.m */,
+				5270A2911D4E127E00B6DD58 /* MySaidouViewController.xib */,
+				5270A2941D4E152400B6DD58 /* MySaidouDetailViewController.h */,
+				5270A2951D4E152400B6DD58 /* MySaidouDetailViewController.m */,
+				5270A2971D4E162500B6DD58 /* SaidouModel.h */,
+				5270A2981D4E162500B6DD58 /* SaidouModel.m */,
+				5270A29A1D4E171E00B6DD58 /* MySaidouDetailCell.h */,
+				5270A29B1D4E171E00B6DD58 /* MySaidouDetailCell.m */,
+				5270A29C1D4E171E00B6DD58 /* MySaidouDetailCell.xib */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -3143,8 +3169,10 @@
 				4C76B7641D22404200C6FE6A /* call_silence_h.png in Resources */,
 				4C35A4341D37977A00DE3A37 /* ActivityIndicaator.xib in Resources */,
 				5270A2761D4CB2CD00B6DD58 /* IWantAuthentication.xib in Resources */,
+				5270A2931D4E127E00B6DD58 /* MySaidouViewController.xib in Resources */,
 				4C76B7AC1D22404200C6FE6A /* group_creategroup@2x.png in Resources */,
 				4C76B78A1D22404200C6FE6A /* icon_013.gif in Resources */,
+				5270A29E1D4E171E00B6DD58 /* MySaidouDetailCell.xib in Resources */,
 				4C76B77F1D22404200C6FE6A /* chat_sender_audio_playing_full@2x.png in Resources */,
 				4C76B79C1D22404200C6FE6A /* icon_030.gif in Resources */,
 				4C76B77E1D22404200C6FE6A /* chat_sender_audio_playing_003@2x.png in Resources */,
@@ -3277,6 +3305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5270A2921D4E127E00B6DD58 /* MySaidouViewController.m in Sources */,
 				4C76B6521D213F4600C6FE6A /* EMCDDeviceManagerBase.m in Sources */,
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
 				4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */,
@@ -3327,6 +3356,7 @@
 				4C29E8571D1BE9CF00E51E24 /* NetworkManagementRequset.m in Sources */,
 				4C29E8011D1B80D700E51E24 /* SaiquanPage.m in Sources */,
 				5272D5431D2176EB00E2B8D1 /* RedpacketMessageCell.m in Sources */,
+				5270A29D1D4E171E00B6DD58 /* MySaidouDetailCell.m in Sources */,
 				4C76B64C1D213F4600C6FE6A /* EMAudioPlayerUtil.m in Sources */,
 				4C76B6611D213F4600C6FE6A /* MJRefreshAutoStateFooter.m in Sources */,
 				4C76B6A61D213F4700C6FE6A /* EaseLocationViewController.m in Sources */,
@@ -3350,6 +3380,7 @@
 				4C76B6871D213F4600C6FE6A /* PSTCollectionView.m in Sources */,
 				4C76B6B71D213F4700C6FE6A /* EaseBubbleView.m in Sources */,
 				5272D4DA1D2170DA00E2B8D1 /* GroupBansViewController.m in Sources */,
+				5270A2961D4E152400B6DD58 /* MySaidouDetailViewController.m in Sources */,
 				4C29E80D1D1B87BE00E51E24 /* GoodsDetailTitle.m in Sources */,
 				4C76B66E1D213F4600C6FE6A /* MWGridCell.m in Sources */,
 				5270A2751D4CB2CD00B6DD58 /* IWantAuthentication.m in Sources */,
@@ -3522,6 +3553,7 @@
 				4C29E84D1D1BE92A00E51E24 /* AFImageDownloader.m in Sources */,
 				5272D50D1D21761B00E2B8D1 /* SRSlimeView.m in Sources */,
 				4C29E84E1D1BE92A00E51E24 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				5270A2991D4E162500B6DD58 /* SaidouModel.m in Sources */,
 				4C76B6A31D213F4600C6FE6A /* EaseEmotionManager.m in Sources */,
 				4C76B69A1D213F4600C6FE6A /* NSString+Valid.m in Sources */,
 				4C76B67B1D213F4600C6FE6A /* EMSDWebImageManager.m in Sources */,
