@@ -215,6 +215,11 @@
 {
     
     if (_activeTabIndex == index) {
+        if([_delegate respondsToSelector:@selector(viewPager:handleTabTapEventAtIndex:)]){
+            
+            [_delegate viewPager:self handleTabTapEventAtIndex:index];
+        }
+        
         return;
     }
      self.animatingToTab = ani;

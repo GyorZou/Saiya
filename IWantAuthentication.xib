@@ -6,7 +6,11 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IWantAuthentication"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IWantAuthentication">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="gNL-Yh-r9L"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>

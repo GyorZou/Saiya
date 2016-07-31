@@ -13,7 +13,7 @@
 
 #import "NoneBarWebviewController.h"
 #import "SaiyaSearchController.h"
-
+#import "IWantAuthentication.h"
 @interface MineInfoPage ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * _contentView;
@@ -39,7 +39,7 @@
     
     NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@"",@"url":@"watchings.html"};
     NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"InfoDetailViewController",@"url":@"mycompetion.html"};
-    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"",@"url":@""};
+    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"IWantAuthentication",@"url":@""};
 
     NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"",@"url":@""};
 
@@ -103,7 +103,11 @@
         myHead.headImgeView.image = [UIImage imageNamed:@"icon-nav4-visited"];
         myHead.clipsToBounds = YES;
         myHead.headImgeView.layer.cornerRadius = myHead.headImgeView.frame.size.width/2;
+        myHead.QRCodeBlk =^{
+        
+        };
         cell = myHead;
+        
     }else{
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"infocell2"];
         cell.detailTextLabel.text = nil;
@@ -153,10 +157,11 @@
             }
             UIViewController * destin;
             if (cls.length > 0) {
-                UIViewController * vc = [[NSClassFromString(cls) alloc] init];
+                UIViewController * vc = [NSClassFromString(cls) new];
                 if (url.length > 0) {
                     [vc setValue:url forKey:@"baseUrl"];
                     [vc setValue:@(YES) forKey:@"hideNaviBar"];
+                    destin.view.backgroundColor = APPCOLOR_ORINGE;
                 }
                 destin = vc;
             }else{
@@ -167,8 +172,9 @@
                 base.baseUrl = url;
                 destin = base;
                 base.hideNaviBar = YES;
-                            }
-            destin.view.backgroundColor = APPCOLOR_ORINGE;
+                destin.view.backgroundColor = APPCOLOR_ORINGE;
+            }
+            
             destin.title = title;
             destin.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:destin animated:YES];

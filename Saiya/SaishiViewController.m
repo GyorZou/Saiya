@@ -96,6 +96,8 @@
 -(void)viewPager:(ViewPagerController *)viewPager handleTabTapEventAtIndex:(NSUInteger)index
 {
     //NSLog(@"");
+    HotEventsViewController * ht= (HotEventsViewController*) [viewPager controllerAtIndex:0];
+    [ht tabClickedAtIndex:index];
 }
 
 #pragma mark-ViewPagerDelegate

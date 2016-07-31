@@ -7,7 +7,9 @@
 //
 
 #import "EaseRefreshTableViewController.h"
-
+#import "SaishiViewController.h"
 @interface HotEventsViewController : EaseRefreshTableViewController
+//@property (nonatomic,weak) SaishiViewController * shaishiVC;
+-(void)tabClickedAtIndex:(int)index;
 
 @end

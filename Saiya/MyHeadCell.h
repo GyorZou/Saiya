@@ -11,4 +11,5 @@
 @interface MyHeadCell : UITableViewCell
 @property (nonatomic,weak) IBOutlet UIImageView * headImgeView;
 @property (nonatomic,weak) IBOutlet UILabel * nameLabel,*countLabel;
+@property (nonatomic,copy) void (^QRCodeBlk)();
 @end
