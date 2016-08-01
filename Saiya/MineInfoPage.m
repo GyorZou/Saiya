@@ -17,6 +17,8 @@
 #import "MySaidouViewController.h"
 #import "CustomerContent.h"
 #import "QRCodeGenerator.h"
+#import "ShowProfileViewController.h"
+
 @interface MineInfoPage ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 {
     UITableView * _contentView;
@@ -176,7 +178,7 @@
 {
     if ([LoginPage showIfNotLogin] == YES) {
         if (indexPath.section == 0) {
-            ProfileController * p = [ProfileController new];
+            ShowProfileViewController * p = [ShowProfileViewController new];
             p.title = @"个人信息";
             [self.navigationController pushViewController:p animated:YES];
         }else{

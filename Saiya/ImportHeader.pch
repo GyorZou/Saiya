@@ -24,6 +24,7 @@
 
 #define NSStringFromInt(value) [NSString stringWithFormat:@"%d",(int)(value)]
 
+#define NSStringFromObject(value) [NSString stringWithFormat:@"%@",value]
 #define NSStringFromValue(value) [NSString stringWithFormat:@"%g",value]
 
 

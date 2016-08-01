@@ -11,6 +11,9 @@
 @interface CityInputCell : UITableViewCell<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 {
     IBOutlet UITextField * _f1,*_f2,*_f3;
+    UIPickerView * _piker;
+    
 }
-
+@property NSArray * states,*citys,*distris;
+@property IBOutlet UILabel * titleLabel;
 @end

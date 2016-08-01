@@ -10,4 +10,6 @@
 
 @interface InputTableViewCell : UITableViewCell
 
+@property IBOutlet UILabel * titleLabel;
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -25,31 +25,31 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6j4-E2-F3X">
-                        <rect key="frame" x="172" y="15" width="50" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6j4-E2-F3X">
+                        <rect key="frame" x="132" y="15" width="50" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="9Qy-0p-jyc"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="KBy-D6-fIc"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="KBy-D6-fIc"/>
                             <constraint firstAttribute="height" constant="30" id="aqC-fH-Dlv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99z-pU-XZv">
-                        <rect key="frame" x="237" y="15" width="50" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="区域" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99z-pU-XZv">
+                        <rect key="frame" x="197" y="15" width="50" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="5Sx-uB-a7L"/>
                             <constraint firstAttribute="height" constant="30" id="N1e-ai-aKb"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="Tvn-QP-7xc"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="Tvn-QP-7xc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQk-EI-7xM">
-                        <rect key="frame" x="65" y="15" width="90" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="省会" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQk-EI-7xM">
+                        <rect key="frame" x="65" y="15" width="50" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="0yr-bn-AsI"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="96y-Hs-bWe"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="96y-Hs-bWe"/>
                             <constraint firstAttribute="height" constant="30" id="eB3-2T-jcS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,8 +69,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="_f1" destination="BQk-EI-7xM" id="Fqa-2T-sb3"/>
-                <outlet property="f2" destination="6j4-E2-F3X" id="tBG-wH-Qah"/>
-                <outlet property="f3" destination="99z-pU-XZv" id="q9J-Vl-0m1"/>
+                <outlet property="_f2" destination="6j4-E2-F3X" id="Pjt-xC-Udb"/>
+                <outlet property="_f3" destination="99z-pU-XZv" id="jdi-Y5-mbW"/>
+                <outlet property="titleLabel" destination="x6D-sY-e9V" id="gXm-SI-ePJ"/>
             </connections>
             <point key="canvasLocation" x="243" y="228"/>
         </tableViewCell>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自我介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5z-bg-1FC">
-                        <rect key="frame" x="8" y="15" width="63" height="21"/>
+                        <rect key="frame" x="16" y="15" width="63" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="AyT-ab-w27"/>
                             <constraint firstAttribute="width" constant="63" id="Vpk-iX-yR7"/>
@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="12" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uRU-Jf-CBu">
-                        <rect key="frame" x="79" y="9" width="233" height="150.5"/>
+                        <rect key="frame" x="82" y="9" width="230" height="150.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -36,12 +36,12 @@
                     <constraint firstItem="uRU-Jf-CBu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="0EM-u7-Mzm"/>
                     <constraint firstItem="uRU-Jf-CBu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="1gb-7m-gNK"/>
                     <constraint firstAttribute="bottomMargin" secondItem="uRU-Jf-CBu" secondAttribute="bottom" constant="1" id="2oU-GA-yrb"/>
-                    <constraint firstItem="uRU-Jf-CBu" firstAttribute="leading" secondItem="k5z-bg-1FC" secondAttribute="trailing" constant="8" id="4v5-ax-zyK"/>
+                    <constraint firstItem="uRU-Jf-CBu" firstAttribute="leading" secondItem="k5z-bg-1FC" secondAttribute="trailing" constant="3" id="4v5-ax-zyK"/>
                     <constraint firstItem="k5z-bg-1FC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="VSh-gu-l2y"/>
-                    <constraint firstItem="k5z-bg-1FC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jC6-j7-d37"/>
+                    <constraint firstItem="k5z-bg-1FC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="jC6-j7-d37"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="243" y="282.5"/>
+            <point key="canvasLocation" x="373" y="279.5"/>
         </tableViewCell>
     </objects>
 </document>
