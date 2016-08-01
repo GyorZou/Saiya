@@ -22,5 +22,14 @@
 }
 -(IBAction)qrcodeClick:(id)sender
 {
+    if (_QRCodeBlk) {
+        _QRCodeBlk();
+    }
+}
+-(IBAction)headClick:(id)sender
+{
+    if (_headBlk) {
+        _headBlk();
+    }
 }
 @end

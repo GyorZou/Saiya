@@ -50,6 +50,6 @@
 #import "AppDelegate.h"
 #import "BaseWebviewController.h"
 #import "ShowIndicatorView.h"
-
+#import "SaiyaUser.h"
 #import "NWFToastView.h"
 #endif

@@ -19,25 +19,29 @@
     }
     return  self;
 }
+-(void)updateAttribute:(NSDictionary *)dict
+{
+    undefProperty=[NSMutableDictionary dictionary];
+    
+    NSDictionary* jsonObj= dict;
+    if (jsonObj==nil||![jsonObj isKindOfClass:[NSDictionary class]]) {
+        
+        // EWJLog(@"failed init from dict ,return default obj");
+        return  ;
+    }
+    
+    for (NSString *key in [jsonObj allKeys]) {
+        [self setValue:[jsonObj objectForKey:key] forKey:key];
+    }
 
+}
 /*should be a dictionary */
 -(id)initWithAtrribute:(NSDictionary *)dict
 {
     self =[super init];
     if ( self) {
-        undefProperty=[NSMutableDictionary dictionary];
 
-        NSDictionary* jsonObj= dict;
-        if (jsonObj==nil||![jsonObj isKindOfClass:[NSDictionary class]]) {
-            
-           // EWJLog(@"failed init from dict ,return default obj");
-            return  self;
-        }
-        
-        for (NSString *key in [jsonObj allKeys]) {
-            [self setValue:[jsonObj objectForKey:key] forKey:key];
-        }
-        
+        [self updateAttribute:dict];
     }
     return self;
 }
@@ -45,7 +49,7 @@
 {
     self =[super init];
     if (self) {
-        undefProperty=[NSMutableDictionary dictionary];
+        
         NSData *data=jsonData;
         NSError *err;
         
@@ -59,9 +63,7 @@
            // EWJLog(@"server response err:%@ \n response data:%@",err.localizedDescription,[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
         }
         
-        for (NSString *key in [jsonObj allKeys]) {
-            [self setValue:[jsonObj objectForKey:key] forKey:key];
-        }
+        [self updateAttribute:jsonObj];
         
     }
     return self;

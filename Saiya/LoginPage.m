@@ -254,24 +254,20 @@
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [[EMClient sharedClient] dataMigrationTo3];
                     dispatch_async(dispatch_get_main_queue(), ^{
-//                        [[ChatDemoHelper shareHelper] asyncGroupFromServer];
-//                        [[ChatDemoHelper shareHelper] asyncConversationFromDB];
-//                        [[ChatDemoHelper shareHelper] asyncPushOptions];
-                        
+
                         
                         
                         [MBProgressHUD hideAllHUDsForView:weakself.view animated:YES];
                         //发送自动登陆状态通知
                         [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_LOGINCHANGE object:@([[EMClient sharedClient] isLoggedIn])];
-                        
-                        //保存最近一次登录用户名
-                        //[weakself saveLastLoginUsername];
+
                     });
                 });
                 
                 if (_blk) {
                     _blk();
                 }
+                [[SaiyaUser curUser] reloadData];
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {
                 switch (error.code)

@@ -19,7 +19,9 @@
 #import "AddFriendViewController.h"
 #import "ChatDemoHelper.h"
 
+#import "CreateGroupViewController.h"
 #import "SaiyaPopover.h"
+#import "SanFriendsController.h"
 @interface SaixinPage ()<ViewPagerDataSource,ViewPagerDelegate>{
 
     NSArray * cls;
@@ -105,13 +107,18 @@
            NSLog(@"xxxx,%d",index);
         
            if(index == 0){
-        
+               CreateGroupViewController *createChatroom = [[CreateGroupViewController alloc] init];
+               createChatroom.hidesBottomBarWhenPushed = YES;
+               [self.navigationController pushViewController:createChatroom animated:YES];
            }else if (index == 1){
                AddFriendViewController *addController = [[AddFriendViewController alloc] initWithStyle:UITableViewStylePlain];
                addController.hidesBottomBarWhenPushed = YES;
                [self.navigationController pushViewController:addController animated:YES];
             
            }else{
+               SanFriendsController * sf = [SanFriendsController new];
+              sf.title = @"扫一扫";
+               [self.navigationController pushViewController:sf animated:YES];
         
            }
        }];

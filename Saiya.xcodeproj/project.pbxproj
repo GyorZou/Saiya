@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C046D141D4EE09C0035C12F /* SaiyaUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D131D4EE09C0035C12F /* SaiyaUser.m */; };
+		4C046D211D4F2D5B0035C12F /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C046D161D4F2D5B0035C12F /* qrcode.png */; };
+		4C046D221D4F2D5B0035C12F /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D181D4F2D5B0035C12F /* QRCodeGenerator.m */; };
+		4C046D231D4F2D5B0035C12F /* QRCodeParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D1A1D4F2D5B0035C12F /* QRCodeParse.m */; };
+		4C046D241D4F2D5B0035C12F /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D1C1D4F2D5B0035C12F /* QRCodeReader.m */; };
+		4C046D251D4F2D5B0035C12F /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D1E1D4F2D5B0035C12F /* QRCodeReaderView.m */; };
+		4C046D261D4F2D5B0035C12F /* QRScopeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D201D4F2D5B0035C12F /* QRScopeView.m */; };
+		4C046D291D4F2E3B0035C12F /* CustomerContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D281D4F2E3B0035C12F /* CustomerContent.m */; };
+		4C046D2F1D4F33A30035C12F /* SanFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D2E1D4F33A30035C12F /* SanFriendsController.m */; };
+		4C046D321D4F38A20035C12F /* SaiyaFriendParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D311D4F38A20035C12F /* SaiyaFriendParse.m */; };
+		4C046D351D4F38FE0035C12F /* XWHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D341D4F38FE0035C12F /* XWHelper.m */; };
+		4C046D5B1D4F445D0035C12F /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D391D4F445C0035C12F /* IQNSArray+Sort.m */; };
+		4C046D5C1D4F445D0035C12F /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D3B1D4F445C0035C12F /* IQUITextFieldView+Additions.m */; };
+		4C046D5D1D4F445D0035C12F /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D3D1D4F445C0035C12F /* IQUIView+Hierarchy.m */; };
+		4C046D5E1D4F445D0035C12F /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D3F1D4F445C0035C12F /* IQUIViewController+Additions.m */; };
+		4C046D5F1D4F445D0035C12F /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D411D4F445C0035C12F /* IQUIWindow+Hierarchy.m */; };
+		4C046D601D4F445D0035C12F /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D461D4F445C0035C12F /* IQKeyboardManager.m */; };
+		4C046D611D4F445D0035C12F /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D481D4F445C0035C12F /* IQKeyboardReturnKeyHandler.m */; };
+		4C046D621D4F445D0035C12F /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D4B1D4F445C0035C12F /* IQSegmentedNextPrevious.m */; };
+		4C046D631D4F445D0035C12F /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D4E1D4F445C0035C12F /* IQTextView.m */; };
+		4C046D641D4F445D0035C12F /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D511D4F445C0035C12F /* IQBarButtonItem.m */; };
+		4C046D651D4F445D0035C12F /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D531D4F445C0035C12F /* IQTitleBarButtonItem.m */; };
+		4C046D661D4F445D0035C12F /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D551D4F445C0035C12F /* IQToolbar.m */; };
+		4C046D671D4F445D0035C12F /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C046D571D4F445C0035C12F /* IQUIView+IQKeyboardToolbar.m */; };
+		4C046D681D4F445D0035C12F /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C046D5A1D4F445C0035C12F /* IQKeyboardManager.bundle */; };
 		4C29E7BE1D1B79DE00E51E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E7BD1D1B79DE00E51E24 /* main.m */; };
 		4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E7C01D1B79DE00E51E24 /* AppDelegate.m */; };
 		4C29E7C41D1B79DE00E51E24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29E7C31D1B79DE00E51E24 /* ViewController.m */; };
@@ -72,6 +97,17 @@
 		4C29EBFE1D21319400E51E24 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C29EBFD1D21319400E51E24 /* AddressBook.framework */; };
 		4C29EC001D2131AA00E51E24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C29EBFF1D2131AA00E51E24 /* SystemConfiguration.framework */; };
 		4C29EC021D21325900E51E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C29EC011D21325900E51E24 /* Foundation.framework */; };
+		4C3206D31D4F45DA004477CC /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206D11D4F45DA004477CC /* InputTableViewCell.m */; };
+		4C3206D41D4F45DA004477CC /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3206D21D4F45DA004477CC /* InputTableViewCell.xib */; };
+		4C3206D71D4F4841004477CC /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206D61D4F4841004477CC /* ProfileController.m */; };
+		4C3206DB1D4F4B28004477CC /* ImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206D91D4F4B28004477CC /* ImagesTableViewCell.m */; };
+		4C3206DC1D4F4B28004477CC /* ImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3206DA1D4F4B28004477CC /* ImagesTableViewCell.xib */; };
+		4C3206E01D4F4B44004477CC /* MySignatureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206DE1D4F4B44004477CC /* MySignatureTableViewCell.m */; };
+		4C3206E11D4F4B44004477CC /* MySignatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3206DF1D4F4B44004477CC /* MySignatureTableViewCell.xib */; };
+		4C3206E51D4F4B77004477CC /* SaveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206E31D4F4B77004477CC /* SaveTableViewCell.m */; };
+		4C3206E61D4F4B77004477CC /* SaveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3206E41D4F4B77004477CC /* SaveTableViewCell.xib */; };
+		4C3206EA1D4F520B004477CC /* CityInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3206E81D4F520B004477CC /* CityInputCell.m */; };
+		4C3206EB1D4F520B004477CC /* CityInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3206E91D4F520B004477CC /* CityInputCell.xib */; };
 		4C35A42F1D37972900DE3A37 /* ShowIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35A42E1D37972900DE3A37 /* ShowIndicatorView.m */; };
 		4C35A4331D37977A00DE3A37 /* ActivityIndicaator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35A4311D37977A00DE3A37 /* ActivityIndicaator.m */; };
 		4C35A4341D37977A00DE3A37 /* ActivityIndicaator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C35A4321D37977A00DE3A37 /* ActivityIndicaator.xib */; };
@@ -478,6 +514,57 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C046D121D4EE09C0035C12F /* SaiyaUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaUser.h; sourceTree = "<group>"; };
+		4C046D131D4EE09C0035C12F /* SaiyaUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaUser.m; sourceTree = "<group>"; };
+		4C046D161D4F2D5B0035C12F /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode.png; sourceTree = "<group>"; };
+		4C046D171D4F2D5B0035C12F /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		4C046D181D4F2D5B0035C12F /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		4C046D191D4F2D5B0035C12F /* QRCodeParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeParse.h; sourceTree = "<group>"; };
+		4C046D1A1D4F2D5B0035C12F /* QRCodeParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeParse.m; sourceTree = "<group>"; };
+		4C046D1B1D4F2D5B0035C12F /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		4C046D1C1D4F2D5B0035C12F /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		4C046D1D1D4F2D5B0035C12F /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		4C046D1E1D4F2D5B0035C12F /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		4C046D1F1D4F2D5B0035C12F /* QRScopeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScopeView.h; sourceTree = "<group>"; };
+		4C046D201D4F2D5B0035C12F /* QRScopeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScopeView.m; sourceTree = "<group>"; };
+		4C046D271D4F2E3B0035C12F /* CustomerContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerContent.h; sourceTree = "<group>"; };
+		4C046D281D4F2E3B0035C12F /* CustomerContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerContent.m; sourceTree = "<group>"; };
+		4C046D2D1D4F33A30035C12F /* SanFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SanFriendsController.h; sourceTree = "<group>"; };
+		4C046D2E1D4F33A30035C12F /* SanFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanFriendsController.m; sourceTree = "<group>"; };
+		4C046D301D4F38A20035C12F /* SaiyaFriendParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaFriendParse.h; sourceTree = "<group>"; };
+		4C046D311D4F38A20035C12F /* SaiyaFriendParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaFriendParse.m; sourceTree = "<group>"; };
+		4C046D331D4F38FE0035C12F /* XWHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWHelper.h; sourceTree = "<group>"; };
+		4C046D341D4F38FE0035C12F /* XWHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWHelper.m; sourceTree = "<group>"; };
+		4C046D381D4F445C0035C12F /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		4C046D391D4F445C0035C12F /* IQNSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		4C046D3A1D4F445C0035C12F /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		4C046D3B1D4F445C0035C12F /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		4C046D3C1D4F445C0035C12F /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		4C046D3D1D4F445C0035C12F /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		4C046D3E1D4F445C0035C12F /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		4C046D3F1D4F445C0035C12F /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		4C046D401D4F445C0035C12F /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		4C046D411D4F445C0035C12F /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		4C046D431D4F445C0035C12F /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		4C046D441D4F445C0035C12F /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		4C046D451D4F445C0035C12F /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		4C046D461D4F445C0035C12F /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		4C046D471D4F445C0035C12F /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		4C046D481D4F445C0035C12F /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		4C046D4A1D4F445C0035C12F /* IQSegmentedNextPrevious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQSegmentedNextPrevious.h; sourceTree = "<group>"; };
+		4C046D4B1D4F445C0035C12F /* IQSegmentedNextPrevious.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQSegmentedNextPrevious.m; sourceTree = "<group>"; };
+		4C046D4D1D4F445C0035C12F /* IQTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
+		4C046D4E1D4F445C0035C12F /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
+		4C046D501D4F445C0035C12F /* IQBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
+		4C046D511D4F445C0035C12F /* IQBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
+		4C046D521D4F445C0035C12F /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		4C046D531D4F445C0035C12F /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		4C046D541D4F445C0035C12F /* IQToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
+		4C046D551D4F445C0035C12F /* IQToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
+		4C046D561D4F445C0035C12F /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		4C046D571D4F445C0035C12F /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		4C046D581D4F445C0035C12F /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
+		4C046D5A1D4F445C0035C12F /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		4C29E7B91D1B79DE00E51E24 /* Saiya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saiya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C29E7BD1D1B79DE00E51E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C29E7BF1D1B79DE00E51E24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -591,6 +678,23 @@
 		4C29EBFD1D21319400E51E24 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4C29EBFF1D2131AA00E51E24 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C29EC011D21325900E51E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C3206D01D4F45DA004477CC /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		4C3206D11D4F45DA004477CC /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
+		4C3206D21D4F45DA004477CC /* InputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
+		4C3206D51D4F4841004477CC /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController.h; sourceTree = "<group>"; };
+		4C3206D61D4F4841004477CC /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
+		4C3206D81D4F4B28004477CC /* ImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewCell.h; sourceTree = "<group>"; };
+		4C3206D91D4F4B28004477CC /* ImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewCell.m; sourceTree = "<group>"; };
+		4C3206DA1D4F4B28004477CC /* ImagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesTableViewCell.xib; sourceTree = "<group>"; };
+		4C3206DD1D4F4B44004477CC /* MySignatureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignatureTableViewCell.h; sourceTree = "<group>"; };
+		4C3206DE1D4F4B44004477CC /* MySignatureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignatureTableViewCell.m; sourceTree = "<group>"; };
+		4C3206DF1D4F4B44004477CC /* MySignatureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySignatureTableViewCell.xib; sourceTree = "<group>"; };
+		4C3206E21D4F4B77004477CC /* SaveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveTableViewCell.h; sourceTree = "<group>"; };
+		4C3206E31D4F4B77004477CC /* SaveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTableViewCell.m; sourceTree = "<group>"; };
+		4C3206E41D4F4B77004477CC /* SaveTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveTableViewCell.xib; sourceTree = "<group>"; };
+		4C3206E71D4F520B004477CC /* CityInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityInputCell.h; sourceTree = "<group>"; };
+		4C3206E81D4F520B004477CC /* CityInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityInputCell.m; sourceTree = "<group>"; };
+		4C3206E91D4F520B004477CC /* CityInputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityInputCell.xib; sourceTree = "<group>"; };
 		4C35A42D1D37972900DE3A37 /* ShowIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowIndicatorView.h; sourceTree = "<group>"; };
 		4C35A42E1D37972900DE3A37 /* ShowIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowIndicatorView.m; sourceTree = "<group>"; };
 		4C35A4301D37977A00DE3A37 /* ActivityIndicaator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicaator.h; sourceTree = "<group>"; };
@@ -1356,6 +1460,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C046D151D4F2D5B0035C12F /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D161D4F2D5B0035C12F /* qrcode.png */,
+				4C046D171D4F2D5B0035C12F /* QRCodeGenerator.h */,
+				4C046D181D4F2D5B0035C12F /* QRCodeGenerator.m */,
+				4C046D191D4F2D5B0035C12F /* QRCodeParse.h */,
+				4C046D1A1D4F2D5B0035C12F /* QRCodeParse.m */,
+				4C046D1B1D4F2D5B0035C12F /* QRCodeReader.h */,
+				4C046D1C1D4F2D5B0035C12F /* QRCodeReader.m */,
+				4C046D1D1D4F2D5B0035C12F /* QRCodeReaderView.h */,
+				4C046D1E1D4F2D5B0035C12F /* QRCodeReaderView.m */,
+				4C046D1F1D4F2D5B0035C12F /* QRScopeView.h */,
+				4C046D201D4F2D5B0035C12F /* QRScopeView.m */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
+		4C046D361D4F445C0035C12F /* IQKeyBoardManager */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D371D4F445C0035C12F /* Categories */,
+				4C046D421D4F445C0035C12F /* Constants */,
+				4C046D451D4F445C0035C12F /* IQKeyboardManager.h */,
+				4C046D461D4F445C0035C12F /* IQKeyboardManager.m */,
+				4C046D471D4F445C0035C12F /* IQKeyboardReturnKeyHandler.h */,
+				4C046D481D4F445C0035C12F /* IQKeyboardReturnKeyHandler.m */,
+				4C046D491D4F445C0035C12F /* IQSegmentedNextPrevious */,
+				4C046D4C1D4F445C0035C12F /* IQTextView */,
+				4C046D4F1D4F445C0035C12F /* IQToolbar */,
+				4C046D581D4F445C0035C12F /* KeyboardManager.h */,
+				4C046D591D4F445C0035C12F /* Resources */,
+			);
+			path = IQKeyBoardManager;
+			sourceTree = "<group>";
+		};
+		4C046D371D4F445C0035C12F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D381D4F445C0035C12F /* IQNSArray+Sort.h */,
+				4C046D391D4F445C0035C12F /* IQNSArray+Sort.m */,
+				4C046D3A1D4F445C0035C12F /* IQUITextFieldView+Additions.h */,
+				4C046D3B1D4F445C0035C12F /* IQUITextFieldView+Additions.m */,
+				4C046D3C1D4F445C0035C12F /* IQUIView+Hierarchy.h */,
+				4C046D3D1D4F445C0035C12F /* IQUIView+Hierarchy.m */,
+				4C046D3E1D4F445C0035C12F /* IQUIViewController+Additions.h */,
+				4C046D3F1D4F445C0035C12F /* IQUIViewController+Additions.m */,
+				4C046D401D4F445C0035C12F /* IQUIWindow+Hierarchy.h */,
+				4C046D411D4F445C0035C12F /* IQUIWindow+Hierarchy.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4C046D421D4F445C0035C12F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D431D4F445C0035C12F /* IQKeyboardManagerConstants.h */,
+				4C046D441D4F445C0035C12F /* IQKeyboardManagerConstantsInternal.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4C046D491D4F445C0035C12F /* IQSegmentedNextPrevious */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D4A1D4F445C0035C12F /* IQSegmentedNextPrevious.h */,
+				4C046D4B1D4F445C0035C12F /* IQSegmentedNextPrevious.m */,
+			);
+			path = IQSegmentedNextPrevious;
+			sourceTree = "<group>";
+		};
+		4C046D4C1D4F445C0035C12F /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D4D1D4F445C0035C12F /* IQTextView.h */,
+				4C046D4E1D4F445C0035C12F /* IQTextView.m */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		4C046D4F1D4F445C0035C12F /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D501D4F445C0035C12F /* IQBarButtonItem.h */,
+				4C046D511D4F445C0035C12F /* IQBarButtonItem.m */,
+				4C046D521D4F445C0035C12F /* IQTitleBarButtonItem.h */,
+				4C046D531D4F445C0035C12F /* IQTitleBarButtonItem.m */,
+				4C046D541D4F445C0035C12F /* IQToolbar.h */,
+				4C046D551D4F445C0035C12F /* IQToolbar.m */,
+				4C046D561D4F445C0035C12F /* IQUIView+IQKeyboardToolbar.h */,
+				4C046D571D4F445C0035C12F /* IQUIView+IQKeyboardToolbar.m */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		4C046D591D4F445C0035C12F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C046D5A1D4F445C0035C12F /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4C29E7B01D1B79DE00E51E24 = {
 			isa = PBXGroup;
 			children = (
@@ -1494,6 +1701,10 @@
 				4C29E8741D1CF46D00E51E24 /* SaixinCell.h */,
 				4C29E8751D1CF46D00E51E24 /* SaixinCell.m */,
 				4C29E8761D1CF46D00E51E24 /* SaixinCell.xib */,
+				4C046D2D1D4F33A30035C12F /* SanFriendsController.h */,
+				4C046D2E1D4F33A30035C12F /* SanFriendsController.m */,
+				4C046D301D4F38A20035C12F /* SaiyaFriendParse.h */,
+				4C046D311D4F38A20035C12F /* SaiyaFriendParse.m */,
 			);
 			name = saixin;
 			sourceTree = "<group>";
@@ -1538,6 +1749,25 @@
 				5270A29A1D4E171E00B6DD58 /* MySaidouDetailCell.h */,
 				5270A29B1D4E171E00B6DD58 /* MySaidouDetailCell.m */,
 				5270A29C1D4E171E00B6DD58 /* MySaidouDetailCell.xib */,
+				4C046D121D4EE09C0035C12F /* SaiyaUser.h */,
+				4C046D131D4EE09C0035C12F /* SaiyaUser.m */,
+				4C3206D01D4F45DA004477CC /* InputTableViewCell.h */,
+				4C3206D11D4F45DA004477CC /* InputTableViewCell.m */,
+				4C3206D21D4F45DA004477CC /* InputTableViewCell.xib */,
+				4C3206E71D4F520B004477CC /* CityInputCell.h */,
+				4C3206E81D4F520B004477CC /* CityInputCell.m */,
+				4C3206E91D4F520B004477CC /* CityInputCell.xib */,
+				4C3206D81D4F4B28004477CC /* ImagesTableViewCell.h */,
+				4C3206D91D4F4B28004477CC /* ImagesTableViewCell.m */,
+				4C3206DA1D4F4B28004477CC /* ImagesTableViewCell.xib */,
+				4C3206DD1D4F4B44004477CC /* MySignatureTableViewCell.h */,
+				4C3206DE1D4F4B44004477CC /* MySignatureTableViewCell.m */,
+				4C3206DF1D4F4B44004477CC /* MySignatureTableViewCell.xib */,
+				4C3206D51D4F4841004477CC /* ProfileController.h */,
+				4C3206D61D4F4841004477CC /* ProfileController.m */,
+				4C3206E21D4F4B77004477CC /* SaveTableViewCell.h */,
+				4C3206E31D4F4B77004477CC /* SaveTableViewCell.m */,
+				4C3206E41D4F4B77004477CC /* SaveTableViewCell.xib */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -1545,9 +1775,13 @@
 		4C29E8081D1B87A100E51E24 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4C046D361D4F445C0035C12F /* IQKeyBoardManager */,
+				4C046D151D4F2D5B0035C12F /* QRCodeReader */,
 				4C35A4301D37977A00DE3A37 /* ActivityIndicaator.h */,
 				4C35A4311D37977A00DE3A37 /* ActivityIndicaator.m */,
 				4C35A4321D37977A00DE3A37 /* ActivityIndicaator.xib */,
+				4C046D331D4F38FE0035C12F /* XWHelper.h */,
+				4C046D341D4F38FE0035C12F /* XWHelper.m */,
 				4C35A42D1D37972900DE3A37 /* ShowIndicatorView.h */,
 				4C35A42E1D37972900DE3A37 /* ShowIndicatorView.m */,
 				4C69043E1D3770BE00049806 /* ShareSDK */,
@@ -1576,6 +1810,8 @@
 				4C29E80F1D1B8E0000E51E24 /* ViewPagerController.m */,
 				4C76B7D61D23B1A700C6FE6A /* SaiyaPopover.h */,
 				4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */,
+				4C046D271D4F2E3B0035C12F /* CustomerContent.h */,
+				4C046D281D4F2E3B0035C12F /* CustomerContent.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -3198,6 +3434,7 @@
 				4C76B76F1D22404200C6FE6A /* chat_location_preview@2x.png in Resources */,
 				4C76B76E1D22404200C6FE6A /* chat_location_preview.png in Resources */,
 				4C76B7631D22404200C6FE6A /* call_silence@2x.png in Resources */,
+				4C3206D41D4F45DA004477CC /* InputTableViewCell.xib in Resources */,
 				5272D50A1D21761B00E2B8D1 /* sr_refresh.png in Resources */,
 				4C76B7801D22404200C6FE6A /* chat_sender_bg.png in Resources */,
 				4C76B7811D22404200C6FE6A /* chat_sender_bg@2x.png in Resources */,
@@ -3215,8 +3452,10 @@
 				4C76B7BB1D22404200C6FE6A /* tabbar_contacts@2x.png in Resources */,
 				4C76B7B31D22404200C6FE6A /* groupPublicHeader@2x.png in Resources */,
 				4C76B7A81D22404200C6FE6A /* delete@2x.png in Resources */,
+				4C3206E61D4F4B77004477CC /* SaveTableViewCell.xib in Resources */,
 				4C76B7831D22404200C6FE6A /* icon_002_cover.png in Resources */,
 				4C76B7961D22404200C6FE6A /* icon_024.gif in Resources */,
+				4C3206DC1D4F4B28004477CC /* ImagesTableViewCell.xib in Resources */,
 				4C76B75F1D22404200C6FE6A /* call_out@2x.png in Resources */,
 				4C76B7711D22404200C6FE6A /* faceDelete@2x.png in Resources */,
 				4C76B79E1D22404200C6FE6A /* icon_035.gif in Resources */,
@@ -3240,7 +3479,9 @@
 				4C76B6931D213F4600C6FE6A /* MWPhotoBrowser.bundle in Resources */,
 				4C76B75D1D22404200C6FE6A /* chatListCellHead@2x.png in Resources */,
 				4C76B7B91D22404200C6FE6A /* tabbar_chatsHL@2x.png in Resources */,
+				4C046D681D4F445D0035C12F /* IQKeyboardManager.bundle in Resources */,
 				4C29E8181D1BBDEB00E51E24 /* MyHeadCell.xib in Resources */,
+				4C046D211D4F2D5B0035C12F /* qrcode.png in Resources */,
 				4C76B77C1D22404200C6FE6A /* chat_sender_audio_playing_001@2x.png in Resources */,
 				4C76B76D1D22404200C6FE6A /* chat_location_detail_disclosureHL@2x.png in Resources */,
 				4C76B7A21D22404200C6FE6A /* account.png in Resources */,
@@ -3250,6 +3491,7 @@
 				4C76B7671D22404200C6FE6A /* chat_video_play.png in Resources */,
 				4C76B7751D22404200C6FE6A /* chat_receiver_audio_playing001@2x.png in Resources */,
 				4C76B7A41D22404200C6FE6A /* password.png in Resources */,
+				4C3206EB1D4F520B004477CC /* CityInputCell.xib in Resources */,
 				4C76B7651D22404200C6FE6A /* call_silence_h@2x.png in Resources */,
 				4C76B7C71D22409300C6FE6A /* EaseUIResource.bundle in Resources */,
 				4C76B7AF1D22404200C6FE6A /* group_joinpublicgroup@2x.png in Resources */,
@@ -3278,6 +3520,7 @@
 				4C76B7861D22404200C6FE6A /* icon_010.gif in Resources */,
 				4C76B7A31D22404200C6FE6A /* account@2x.png in Resources */,
 				4C6903DB1D362F5300049806 /* VendorCell.xib in Resources */,
+				4C3206E11D4F4B44004477CC /* MySignatureTableViewCell.xib in Resources */,
 				4C76B7C31D22404200C6FE6A /* tabbarBackground@2x.png in Resources */,
 				4C29E86C1D1BF66800E51E24 /* RegisterPage3.xib in Resources */,
 				4C76B7771D22404200C6FE6A /* chat_receiver_audio_playing003@2x.png in Resources */,
@@ -3318,24 +3561,30 @@
 				5272D4D81D2170DA00E2B8D1 /* ContactView.m in Sources */,
 				4C76B6B11D213F4700C6FE6A /* EaseBubbleView+Gif.m in Sources */,
 				4C76B6511D213F4600C6FE6A /* EMCDDeviceManager+Remind.m in Sources */,
+				4C046D631D4F445D0035C12F /* IQTextView.m in Sources */,
 				5272D4B91D2170BF00E2B8D1 /* AddFriendViewController.m in Sources */,
 				4C76B6821D213F4600C6FE6A /* UIImage+EMWebP.m in Sources */,
 				4C76B6B91D213F4700C6FE6A /* EaseChatToolbarItem.m in Sources */,
 				4C76B65C1D213F4600C6FE6A /* MJRefreshComponent.m in Sources */,
 				4C6903C91D35FA7900049806 /* HotSliderModel.m in Sources */,
+				4C3206E01D4F4B44004477CC /* MySignatureTableViewCell.m in Sources */,
 				5272D4DC1D2170DA00E2B8D1 /* GroupSettingViewController.m in Sources */,
 				5272D4971D216E1200E2B8D1 /* EMSearchBar.m in Sources */,
 				4C76B6831D213F4600C6FE6A /* UIImageView+EMHighlightedWebCache.m in Sources */,
 				4C29E8771D1CF46D00E51E24 /* SaixinCell.m in Sources */,
 				4C76B6AB1D213F4700C6FE6A /* EaseUserCell.m in Sources */,
 				4C76B6A41D213F4700C6FE6A /* FixFopen.c in Sources */,
+				4C046D5B1D4F445D0035C12F /* IQNSArray+Sort.m in Sources */,
 				4C76B65F1D213F4600C6FE6A /* MJRefreshAutoGifFooter.m in Sources */,
 				4C6903BC1D35F8DD00049806 /* MLPhotoBrowserAssets.m in Sources */,
 				4C76B6AA1D213F4700C6FE6A /* EaseViewController.m in Sources */,
+				4C3206D71D4F4841004477CC /* ProfileController.m in Sources */,
 				4C29E8531D1BE92A00E51E24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4C29E8501D1BE92A00E51E24 /* UIButton+AFNetworking.m in Sources */,
 				4C76B6661D213F4600C6FE6A /* MJRefreshNormalHeader.m in Sources */,
+				4C046D5D1D4F445D0035C12F /* IQUIView+Hierarchy.m in Sources */,
 				4C6903BD1D35F8DD00049806 /* MLPhotoBrowserDatas.m in Sources */,
+				4C046D321D4F38A20035C12F /* SaiyaFriendParse.m in Sources */,
 				4C29E8071D1B810C00E51E24 /* SaidouPage.m in Sources */,
 				4C35A42F1D37972900DE3A37 /* ShowIndicatorView.m in Sources */,
 				4C76B6851D213F4600C6FE6A /* UIView+EMWebCacheOperation.m in Sources */,
@@ -3380,6 +3629,7 @@
 				4C76B6871D213F4600C6FE6A /* PSTCollectionView.m in Sources */,
 				4C76B6B71D213F4700C6FE6A /* EaseBubbleView.m in Sources */,
 				5272D4DA1D2170DA00E2B8D1 /* GroupBansViewController.m in Sources */,
+				4C046D291D4F2E3B0035C12F /* CustomerContent.m in Sources */,
 				5270A2961D4E152400B6DD58 /* MySaidouDetailViewController.m in Sources */,
 				4C29E80D1D1B87BE00E51E24 /* GoodsDetailTitle.m in Sources */,
 				4C76B66E1D213F4600C6FE6A /* MWGridCell.m in Sources */,
@@ -3387,20 +3637,24 @@
 				5272D4FD1D2175AC00E2B8D1 /* MyChatroomListViewController.m in Sources */,
 				5272D55C1D2179B500E2B8D1 /* EMRotbotChatViewCell.m in Sources */,
 				4C76B67A1D213F4600C6FE6A /* EMSDWebImageDownloaderOperation.m in Sources */,
+				4C046D621D4F445D0035C12F /* IQSegmentedNextPrevious.m in Sources */,
 				4C76B6841D213F4600C6FE6A /* UIImageView+EMWebCache.m in Sources */,
 				5272D4981D216E1200E2B8D1 /* EMTextView.m in Sources */,
 				4C76B6AC1D213F4700C6FE6A /* EaseBaseMessageCell.m in Sources */,
 				4C29E7F31D1B7FAC00E51E24 /* BaseViewController.m in Sources */,
+				4C046D601D4F445D0035C12F /* IQKeyboardManager.m in Sources */,
 				4C76B6E11D2232E300C6FE6A /* AppDelegate+EaseMobDebug.m in Sources */,
 				4C76B64E1D213F4600C6FE6A /* EMCDDeviceManager+Media.m in Sources */,
 				4C76B6981D213F4600C6FE6A /* NSDate+Category.m in Sources */,
 				5272D4A11D216E8500E2B8D1 /* EMNavigationController.m in Sources */,
+				4C046D5E1D4F445D0035C12F /* IQUIViewController+Additions.m in Sources */,
 				4C29E84C1D1BE92A00E51E24 /* AFAutoPurgingImageCache.m in Sources */,
 				4C6903BF1D35F8DD00049806 /* UIImage+MLBrowserPhotoImageForBundle.m in Sources */,
 				4C6903D61D362B1400049806 /* SaiyaListViewController.m in Sources */,
 				4C76B6B61D213F4700C6FE6A /* EaseBubbleView+Voice.m in Sources */,
 				4C76B6AE1D213F4700C6FE6A /* EaseMessageCell.m in Sources */,
 				4C76B64D1D213F4600C6FE6A /* EMAudioRecorderUtil.m in Sources */,
+				4C046D671D4F445D0035C12F /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				4C76B6AF1D213F4700C6FE6A /* EaseMessageTimeCell.m in Sources */,
 				4C29E8341D1BE92300E51E24 /* AFURLRequestSerialization.m in Sources */,
 				4C76B67F1D213F4600C6FE6A /* UIButton+EMWebCache.m in Sources */,
@@ -3411,6 +3665,7 @@
 				5272D4DD1D2170DA00E2B8D1 /* GroupSubjectChangingViewController.m in Sources */,
 				5272D5491D2176EB00E2B8D1 /* 环信红包3.x接入文档(iOS).md in Sources */,
 				4C76B6791D213F4600C6FE6A /* EMSDWebImageDownloader.m in Sources */,
+				4C046D351D4F38FE0035C12F /* XWHelper.m in Sources */,
 				4C29E8331D1BE92300E51E24 /* AFSecurityPolicy.m in Sources */,
 				4C76B66C1D213F4600C6FE6A /* UIView+MJExtension.m in Sources */,
 				4C76B68A1D213F4600C6FE6A /* PSTCollectionViewData.m in Sources */,
@@ -3418,19 +3673,23 @@
 				4C6903C51D35F8DD00049806 /* MLPhotoBrowserPhotoView.m in Sources */,
 				4C76B6741D213F4600C6FE6A /* MWZoomingScrollView.m in Sources */,
 				4C76B6A81D213F4700C6FE6A /* EaseRefreshTableViewController.m in Sources */,
+				4C046D221D4F2D5B0035C12F /* QRCodeGenerator.m in Sources */,
 				5272D4DF1D2170DA00E2B8D1 /* PublicGroupListViewController.m in Sources */,
 				4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */,
 				5270A26C1D4CB26000B6DD58 /* NoneBarWebviewController.m in Sources */,
 				4C6903D31D362AF000049806 /* RecommendVendorController.m in Sources */,
+				4C046D5F1D4F445D0035C12F /* IQUIWindow+Hierarchy.m in Sources */,
 				4C76B68B1D213F4600C6FE6A /* PSTCollectionViewFlowLayout.m in Sources */,
 				5272D5401D2176EB00E2B8D1 /* EaseBubbleView+RedPacket.m in Sources */,
 				4C76B6711D213F4600C6FE6A /* MWPhotoBrowser.m in Sources */,
 				4C76B6891D213F4600C6FE6A /* PSTCollectionViewController.m in Sources */,
+				4C046D241D4F2D5B0035C12F /* QRCodeReader.m in Sources */,
 				4C76B66B1D213F4600C6FE6A /* UIScrollView+MJRefresh.m in Sources */,
 				4C29E84F1D1BE92A00E51E24 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4C6903C41D35F8DD00049806 /* MLPhotoBrowserPhotoScrollView.m in Sources */,
 				5272D55E1D2179B500E2B8D1 /* RobotListViewController.m in Sources */,
 				4C6903C11D35F8DD00049806 /* MLPhotoBrowserViewController.m in Sources */,
+				4C046D261D4F2D5B0035C12F /* QRScopeView.m in Sources */,
 				4C76B6601D213F4600C6FE6A /* MJRefreshAutoNormalFooter.m in Sources */,
 				4C76B65E1D213F4600C6FE6A /* MJRefreshHeader.m in Sources */,
 				4C76B6781D213F4600C6FE6A /* EMSDWebImageDecoder.m in Sources */,
@@ -3441,6 +3700,7 @@
 				5270A2861D4DAC7D00B6DD58 /* AreaModel.m in Sources */,
 				4C29E86B1D1BF66800E51E24 /* RegisterPage3.m in Sources */,
 				4C76B6501D213F4600C6FE6A /* EMCDDeviceManager+ProximitySensor.m in Sources */,
+				4C3206D31D4F45DA004477CC /* InputTableViewCell.m in Sources */,
 				4C76B6B81D213F4700C6FE6A /* EaseChatToolbar.m in Sources */,
 				4C76B6631D213F4600C6FE6A /* MJRefreshBackNormalFooter.m in Sources */,
 				4C6903DE1D362F7200049806 /* VendorModel.m in Sources */,
@@ -3453,6 +3713,8 @@
 				4C29E85C1D1BEEC000E51E24 /* LoginPage.m in Sources */,
 				4C76B6E01D2232E300C6FE6A /* AppDelegate+EaseMob.m in Sources */,
 				4C76B6BE1D213F4700C6FE6A /* EaseChatBarMoreView.m in Sources */,
+				4C046D2F1D4F33A30035C12F /* SanFriendsController.m in Sources */,
+				4C3206E51D4F4B77004477CC /* SaveTableViewCell.m in Sources */,
 				4C29E8731D1CCF2B00E51E24 /* MBProgressHUD.m in Sources */,
 				4C76B6B31D213F4700C6FE6A /* EaseBubbleView+Location.m in Sources */,
 				4C76B6541D213F4600C6FE6A /* wav.mm in Sources */,
@@ -3481,8 +3743,10 @@
 				4C29E7BE1D1B79DE00E51E24 /* main.m in Sources */,
 				5272D4BC1D2170BF00E2B8D1 /* RealtimeSearchUtil.m in Sources */,
 				4C76B64B1D213F4600C6FE6A /* EaseUI.m in Sources */,
+				4C046D611D4F445D0035C12F /* IQKeyboardReturnKeyHandler.m in Sources */,
 				5272D4FB1D2175AC00E2B8D1 /* ChatroomDetailViewController.m in Sources */,
 				4C76B6721D213F4600C6FE6A /* MWTapDetectingImageView.m in Sources */,
+				4C3206EA1D4F520B004477CC /* CityInputCell.m in Sources */,
 				4C76B6961D213F4600C6FE6A /* EaseMessageModel.m in Sources */,
 				4C76B6861D213F4600C6FE6A /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				4C6903A11D35F8A600049806 /* UIImageView+RZWebImage.m in Sources */,
@@ -3500,9 +3764,11 @@
 				4C76B6691D213F4600C6FE6A /* MJRefreshConst.m in Sources */,
 				5272D4ED1D21719C00E2B8D1 /* InvitationManager.m in Sources */,
 				4C76B6621D213F4600C6FE6A /* MJRefreshBackGifFooter.m in Sources */,
+				4C046D231D4F2D5B0035C12F /* QRCodeParse.m in Sources */,
 				5272D4B71D2170BF00E2B8D1 /* ContactListViewController.m in Sources */,
 				4C76B6531D213F4600C6FE6A /* amrFileCodec.mm in Sources */,
 				4C76B6B01D213F4700C6FE6A /* EaseBubbleView+File.m in Sources */,
+				4C046D141D4EE09C0035C12F /* SaiyaUser.m in Sources */,
 				4C76B66F1D213F4600C6FE6A /* MWGridViewController.m in Sources */,
 				5270A2791D4CB31800B6DD58 /* InfoDetailViewController.m in Sources */,
 				5270A27D1D4CB5B300B6DD58 /* UserAuthenticate.m in Sources */,
@@ -3512,6 +3778,7 @@
 				4C69043D1D376A3E00049806 /* AppDelegate+ShareSDK.m in Sources */,
 				5272D4E41D21712300E2B8D1 /* BaseTableViewCell.m in Sources */,
 				4C76B6A21D213F4600C6FE6A /* EaseEmotionEscape.m in Sources */,
+				4C046D251D4F2D5B0035C12F /* QRCodeReaderView.m in Sources */,
 				5272D5211D21769C00E2B8D1 /* UIResponder+Router.m in Sources */,
 				4C76B6651D213F4600C6FE6A /* MJRefreshGifHeader.m in Sources */,
 				4C76B7D81D23B1A700C6FE6A /* SaiyaPopover.m in Sources */,
@@ -3522,10 +3789,13 @@
 				4C6903931D35037200049806 /* AsynBaseModel.m in Sources */,
 				5272D4D91D2170DA00E2B8D1 /* CreateGroupViewController.m in Sources */,
 				4C76B6811D213F4600C6FE6A /* UIImage+EMMultiFormat.m in Sources */,
+				4C046D5C1D4F445D0035C12F /* IQUITextFieldView+Additions.m in Sources */,
 				5272D50C1D21761B00E2B8D1 /* SRRefreshView.m in Sources */,
 				5272D55B1D2179B500E2B8D1 /* EMRobotChatTextBubbleView.m in Sources */,
+				4C3206DB1D4F4B28004477CC /* ImagesTableViewCell.m in Sources */,
 				4C76B6701D213F4600C6FE6A /* MWPhoto.m in Sources */,
 				4C29E81C1D1BCF6300E51E24 /* BaseWebviewController.m in Sources */,
+				4C046D651D4F445D0035C12F /* IQTitleBarButtonItem.m in Sources */,
 				4C76B6911D213F4600C6FE6A /* PSTGridLayoutRow.m in Sources */,
 				5272D4F31D2174E100E2B8D1 /* EMAlertView.m in Sources */,
 				4C29E8311D1BE92300E51E24 /* AFHTTPSessionManager.m in Sources */,
@@ -3538,6 +3808,7 @@
 				4C6903EB1D364B4D00049806 /* SaishiInfoViewController.m in Sources */,
 				5272D4E71D21715D00E2B8D1 /* EMRemarkImageView.m in Sources */,
 				4C29E8351D1BE92300E51E24 /* AFURLResponseSerialization.m in Sources */,
+				4C046D641D4F445D0035C12F /* IQBarButtonItem.m in Sources */,
 				4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */,
 				4C76B6551D213F4600C6FE6A /* EMVoiceConverter.mm in Sources */,
 				4C76B67D1D213F4600C6FE6A /* MKAnnotationView+EMWebCache.m in Sources */,
@@ -3559,6 +3830,7 @@
 				4C76B67B1D213F4600C6FE6A /* EMSDWebImageManager.m in Sources */,
 				4C6903E11D3633BA00049806 /* MyWatchingVendorViewController.m in Sources */,
 				4C76B6B41D213F4700C6FE6A /* EaseBubbleView+Text.m in Sources */,
+				4C046D661D4F445D0035C12F /* IQToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

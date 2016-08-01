@@ -17,4 +17,5 @@
 #import "EMClientDelegate.h"
 @interface AddFriendViewController : UITableViewController
 
+@property NSString * defaultString;
 @end

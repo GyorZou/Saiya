@@ -18,6 +18,8 @@
 -(id)initWithJson:(NSString*)jsonString;
 -(id)initWithData:(NSData *)jsonData;
 -(id)initWithAtrribute:(NSDictionary*)dict;
+-(void)updateAttribute:(NSDictionary*)dict;
+
 -(id)objectForKey:(NSString*)key;
 -(BOOL)containKey:(NSString*)key;
 +(NSString*)jsonString:(NSDictionary*)dict;

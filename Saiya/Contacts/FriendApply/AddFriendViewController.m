@@ -72,6 +72,11 @@
     [self.navigationItem setLeftBarButtonItem:backItem];
     
     [self.view addSubview:self.textField];
+    if (_defaultString) {
+        self.textField.text = _defaultString;
+        [self performSelector:@selector(searchAction) withObject:nil afterDelay:1];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

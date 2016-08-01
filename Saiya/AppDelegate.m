@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "AppDelegate+EaseMob.h"
 #import "AppDelegate+ShareSDK.h"
-
+#import "IQKeyboardManager.h"
 #define EaseMobAppKey @"junfeng2016#saiya"
 
 @interface AppDelegate ()
@@ -38,7 +38,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    /**
+     *  注册全局键盘自适应
+     */
     
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
 #warning 初始化环信SDK，详细内容在AppDelegate+EaseMob.m 文件中
 #warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
     NSString *apnsCertName = nil;

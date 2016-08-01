@@ -360,15 +360,18 @@ NSURLSessionConfiguration *configuration;
     //等待上传图片
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"multipart/form-data", nil];
-    [self POST:UrlString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:PostData name:@"1" fileName:@"1.png" mimeType:@"image/png"];
+    [self.requestSerializer setValue:@"image/png" forHTTPHeaderField:@"Content-Type"];
+    
+    [self POST:UrlString parameters:@{@"customerId":CooKie} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:PostData name:@"qqfile" fileName:@"1.png" mimeType:@"image/png"];
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        complation(YES,nil);
+        complation(YES,responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        complation(YES,nil);
+        complation(NO,nil);
+        
         
     }];
     

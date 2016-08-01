@@ -10,6 +10,7 @@
 
 @interface MyHeadCell : UITableViewCell
 @property (nonatomic,weak) IBOutlet UIImageView * headImgeView;
-@property (nonatomic,weak) IBOutlet UILabel * nameLabel,*countLabel;
+@property (nonatomic,weak) IBOutlet UILabel * nameLabel,*countLabel,*saidouLabel;
 @property (nonatomic,copy) void (^QRCodeBlk)();
+@property (nonatomic,copy) void (^headBlk)();
 @end
