@@ -22,7 +22,7 @@
 
 #import "ProfileController.h"
 #import "InputTableViewCell.h"
-
+#import "HeaderTableViewCell.h"
 #import "SaveTableViewCell.h"
 #import "MySignatureTableViewCell.h"
 #import "ImagesTableViewCell.h"
@@ -58,6 +58,9 @@
     //#import "CityInputCell.h"
     
     [_tableView registerNib:[UINib nibWithNibName:@"ProfileInfoCell" bundle:nil] forCellReuseIdentifier:@"ProfileInfoCell.h"];
+    
+    
+    [_tableView registerNib:[UINib nibWithNibName:@"HeaderTableViewCell" bundle:nil] forCellReuseIdentifier:@"HeaderTableViewCell.h"];
     //_editing = YES;
     [self showEdit];
     SaiyaUser * user = [SaiyaUser curUser];
@@ -134,7 +137,18 @@
     SaiyaUser * user = [SaiyaUser curUser];
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"ImagesTableViewCell.h"];
+            ImagesTableViewCell*  cell1 = [tableView dequeueReusableCellWithIdentifier:@"ImagesTableViewCell.h"];
+            
+            cell1.deleteBtn.hidden = YES;            cell1.addBtn.hidden =YES;
+            
+            cell = cell1;
+            [cell1.imageViews ImageArray:user.Pictures TitleArray:nil rect:CGRectZero isBanner:NO];
+        }else if (indexPath.row == 1){
+            //HeaderTableViewCell.h
+           HeaderTableViewCell*   cell1= [tableView dequeueReusableCellWithIdentifier:@"HeaderTableViewCell.h"];
+            cell =cell1;
+            [cell1.headImage setImageWithURL:[NSURL URLWithString:user.AvatarUrl]];
+            cell.userInteractionEnabled = _editing == YES;
         }else{
             cell =[tableView dequeueReusableCellWithIdentifier:@"ProfileInfoCell.h"];
             UILabel * label = [cell valueForKey:@"titleLabel"];

@@ -53,4 +53,5 @@
 #import "ShowIndicatorView.h"
 #import "SaiyaUser.h"
 #import "NWFToastView.h"
+#import "UIImage+SaiyaUpload.h"
 #endif

@@ -51,6 +51,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="infoLabel" destination="gO8-Ku-YSG" id="4B5-Hr-q1V"/>
                 <outlet property="titleLabel" destination="aNx-6Y-qgE" id="dmt-3B-mpI"/>
             </connections>
             <point key="canvasLocation" x="243" y="241.5"/>

@@ -1,14 +1,14 @@
 //
-//  ImagesTableViewCell.m
+//  HeaderTableViewCell.m
 //  Saiya
 //
-//  Created by jp007 on 16/8/1.
+//  Created by zougyor on 16/8/2.
 //  Copyright © 2016年 crv. All rights reserved.
 //
 
-#import "ImagesTableViewCell.h"
+#import "HeaderTableViewCell.h"
 
-@implementation ImagesTableViewCell
+@implementation HeaderTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -19,16 +19,11 @@
 
     // Configure the view for the selected state
 }
--(IBAction)addBtn:(id)sender
+-(IBAction)headClicked:(UIButton*)sender
 {
-    if (_addBlk) {
-        _addBlk();
-    }
-}
--(IBAction)deleBtn:(id)sender
-{
-    if (_deleteBlk) {
-        _deleteBlk();
+
+    if (_headBlk) {
+        _headBlk();
     }
 }
 @end

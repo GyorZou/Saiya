@@ -9,6 +9,9 @@
 #import "AsynBaseModel.h"
 
 @interface SaiyaUser : AsynBaseModel
+{
+
+}
 @property NSString * Email,*Username,*Nickname,*Gender,*AvatarUrl,*Description;
 
 @property NSString *Address,*FirstName,*OpenId,*Signature,*Vendor,*Weibo;
@@ -17,4 +20,5 @@
 +(instancetype)curUser;
 +(NSString*)notificationString;
 -(void)reloadData;
+-(SaiyaUser*)copiedUser;
 @end

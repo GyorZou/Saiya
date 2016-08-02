@@ -56,25 +56,45 @@
     return [self initWithFrame:CGRectZero];
 }
 
+-(NSArray *)imgArr
+{//最后一个第一
+    NSMutableArray * mu =  [NSMutableArray arrayWithArray:imageArray];
+    [mu removeObjectAtIndex:0];
+    [mu removeLastObject];
+
+    return mu;
+}
 -(UIImage *)firstImage
 {
     return  [imageArray firstObject];
 }
--(void)ImageArray:(NSArray *)imgArr TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner{
+-(void)ImageArray:(NSArray *)imgArr holders:(NSArray *)holder TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner
+{
     //return;
     self.userInteractionEnabled=YES;
     if ([imgArr count]==0) {
         return;
     }
     NSMutableArray *tempArray=[NSMutableArray arrayWithArray:imgArr];
+    NSMutableArray *ht=[NSMutableArray arrayWithArray:holder];
     if (_autoScroll) {
         
         [tempArray insertObject:[imgArr objectAtIndex:([imgArr count]-1)] atIndex:0];
         [tempArray addObject:[imgArr objectAtIndex:0]];
+        if (ht.count>0) {
+            [ht insertObject:[holder objectAtIndex:([holder count]-1)] atIndex:0];
+            [ht addObject:[holder objectAtIndex:0]];
+ 
+        }
     }
+    holder = ht;
     imageArray=[NSArray arrayWithArray:tempArray] ;
     _imageUrl = [NSMutableArray arrayWithArray:imageArray];
-    viewSize=rect;
+    viewSize = self.frame;
+    if (rect.size.width !=0) {
+        viewSize=rect;
+    }
+    
     NSUInteger pageCount=[imageArray count];
     if (!scrollView) {
         scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, viewSize.size.height)];
@@ -84,7 +104,7 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.scrollsToTop = NO;
-
+    
     scrollView.delegate = self;
     for (int i=0; i<pageCount; i++) {
         NSString *imgURL= nil;
@@ -95,17 +115,22 @@
             imgURL = [imageArray objectAtIndex:i];
         }
         UIImageView *imgView=[[UIImageView alloc] init] ;
-
-       // imgView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        // imgView.contentMode = UIViewContentModeScaleAspectFit;
         if ([imgURL hasPrefix:@"http://"]) {
             //[imgView setImageWithUrl:imgURL defaultImage:[UIImage imageNamed:@"BannerImg"]];
-            [imgView setImageWithURL:[NSURL URLWithString:imgURL]];
+            UIImage * holderImg;
+            if (holder.count > 0) {
+                
+                holderImg = holder[i];
+            }
+            [imgView setImageWithURL:[NSURL URLWithString:imgURL] placeholderImage:holderImg];
             imgView.contentMode = UIViewContentModeScaleAspectFit;
         }
         
         [imgView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width*i, 0,[UIScreen mainScreen].bounds.size.width, viewSize.size.height)];
         imgView.tag=i+50;
-     
+        
         imgView.contentMode = UIViewContentModeScaleAspectFill;
         imgView.layer.masksToBounds = YES;
         UITapGestureRecognizer *Tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imagePressed:)];
@@ -130,7 +155,7 @@
     
     pageControl.numberOfPages=(pageCount-2);
     if (_autoScroll == NO) {
-       pageControl.numberOfPages=pageCount;
+        pageControl.numberOfPages=pageCount;
     }
     [self addSubview:pageControl];
     
@@ -139,19 +164,28 @@
     
     
     if (_autoScroll) {
-        _moveTime = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:_moveTime forMode:NSRunLoopCommonModes];
-
+        [_moveTime invalidate];
+        
+        _moveTime = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(animalMoveImage) userInfo:nil repeats:YES];
+        //[[NSRunLoop mainRunLoop] addTimer:_moveTime forMode:NSRunLoopCommonModes];
+        
     }
     _isTimeUp = NO;
     
     isTime = YES;
     
     currentPageIndex = 1;
-    
-    
-}
 
+
+}
+-(void)ImageArray:(NSArray *)imgArr TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner{
+    
+    [self ImageArray:imgArr holders:nil TitleArray:titArr rect:rect isBanner:isBanner];
+}
+-(int)curIndex
+{
+    return currentPageIndex;
+}
 -(void)refreshLoad{
     [_moveTime invalidate];
     if (scrollView) {

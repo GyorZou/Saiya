@@ -16,18 +16,62 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4j-9n-2FX" customClass="EScrollerView">
-                        <rect key="frame" x="8" y="8" width="304" height="131.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="319" height="146"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orm-s0-1g1">
+                        <rect key="frame" x="0.0" y="102" width="320" height="44"/>
+                        <color key="backgroundColor" red="0.99329229799999996" green="0.99329229799999996" blue="0.99329229799999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="GNp-Pb-x45"/>
+                            <constraint firstAttribute="height" constant="44" id="PXH-cB-kU8"/>
+                        </constraints>
+                        <state key="normal" title="点击上传三张个人照片">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GNp-Pb-x45"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="addBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h2b-bD-fBG"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqu-qe-Ye2">
+                        <rect key="frame" x="282" y="0.0" width="38" height="36"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="WxW-Ra-Gs1"/>
+                            <constraint firstAttribute="height" constant="36" id="nNN-gg-ktB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                        <state key="normal" title="×">
+                            <color key="titleColor" red="0.99329229799999996" green="0.99329229799999996" blue="0.99329229799999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="deleBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vgb-T4-kfB"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="o4j-9n-2FX" secondAttribute="bottom" id="0d1-1b-FQU"/>
-                    <constraint firstItem="o4j-9n-2FX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="BN4-HN-T5O"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="o4j-9n-2FX" secondAttribute="trailing" id="G9e-Zv-AMg"/>
-                    <constraint firstItem="o4j-9n-2FX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q9n-YK-aFY"/>
+                    <constraint firstItem="Orm-s0-1g1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="4uX-Ay-vbx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Orm-s0-1g1" secondAttribute="bottom" constant="-6.5" id="Oy5-Mg-ecp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zqu-qe-Ye2" secondAttribute="trailing" constant="-8" id="TWP-nX-2SE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="o4j-9n-2FX" secondAttribute="bottom" constant="-6.5" id="UsH-rz-ajQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Orm-s0-1g1" secondAttribute="trailing" constant="-8" id="XUe-Mk-bl2"/>
+                    <constraint firstItem="o4j-9n-2FX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="enS-hl-H36"/>
+                    <constraint firstItem="zqu-qe-Ye2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="lZe-im-Sz5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="o4j-9n-2FX" secondAttribute="trailing" constant="-7" id="qeN-9f-p1G"/>
+                    <constraint firstItem="o4j-9n-2FX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="tUp-jz-4Yo"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="237" y="160"/>
+            <connections>
+                <outlet property="addBtn" destination="Orm-s0-1g1" id="a0w-yw-Egv"/>
+                <outlet property="deleteBtn" destination="zqu-qe-Ye2" id="fPa-F9-xhH"/>
+                <outlet property="imageViews" destination="o4j-9n-2FX" id="rWZ-F8-h7m"/>
+            </connections>
+            <point key="canvasLocation" x="350" y="138"/>
         </tableViewCell>
     </objects>
 </document>

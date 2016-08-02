@@ -28,7 +28,11 @@
 @end
 
 @implementation MineInfoPage
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[SaiyaUser curUser] reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -235,6 +239,9 @@
 }
 */
 
+
+
+#pragma mark - ActionSheet
 -(void)photoImgButtonPressed{
     
     if([LoginPage showIfNotLogin] == NO){
@@ -249,9 +256,6 @@
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [actionSheet showInView:self.view];
 }
-
-#pragma mark - ActionSheet
-
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex==0) {
         //相册

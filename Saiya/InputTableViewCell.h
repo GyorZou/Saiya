@@ -11,5 +11,6 @@
 @interface InputTableViewCell : UITableViewCell
 
 @property IBOutlet UILabel * titleLabel;
+@property IBOutlet UITextField *infoLabel;
 
 @end

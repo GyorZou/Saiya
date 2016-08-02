@@ -48,4 +48,12 @@ id curUser;
     }];
 
 }
+-(SaiyaUser *)copiedUser
+{
+    SaiyaUser * user = [[SaiyaUser alloc] init];
+    
+    [user updateAttribute:[self properties]];
+    
+    return user;
+}
 @end

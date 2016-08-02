@@ -41,6 +41,9 @@
                     <constraint firstItem="k5z-bg-1FC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="jC6-j7-d37"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="infoLabel" destination="uRU-Jf-CBu" id="i8W-e3-SpH"/>
+            </connections>
             <point key="canvasLocation" x="373" y="279.5"/>
         </tableViewCell>
     </objects>

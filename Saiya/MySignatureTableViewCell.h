@@ -10,4 +10,7 @@
 
 @interface MySignatureTableViewCell : UITableViewCell
 
+@property IBOutlet UITextView *infoLabel;
+
+
 @end

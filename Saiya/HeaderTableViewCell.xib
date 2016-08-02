@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="HeaderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31W-5z-gva">
+                        <rect key="frame" x="14" y="8" width="42" height="56.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="cVy-v9-HLU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-user" translatesAutoresizingMaskIntoConstraints="NO" id="ciH-io-UN1">
+                        <rect key="frame" x="261" y="14" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ciH-io-UN1" secondAttribute="height" multiplier="1:1" id="gsL-ov-c7s"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t60-95-ZUD">
+                        <rect key="frame" x="261" y="14" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="t60-95-ZUD" secondAttribute="height" multiplier="1:1" id="pZ8-X7-2a6"/>
+                        </constraints>
+                        <connections>
+                            <action selector="headClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mcm-s4-7TP"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ciH-io-UN1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="08t-0R-9Xy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="t60-95-ZUD" secondAttribute="bottom" constant="5.5" id="79W-WT-mN4"/>
+                    <constraint firstItem="t60-95-ZUD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="PkR-kw-odV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ciH-io-UN1" secondAttribute="trailing" constant="6" id="QSt-12-gER"/>
+                    <constraint firstItem="31W-5z-gva" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="RAe-vD-S75"/>
+                    <constraint firstItem="31W-5z-gva" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="hSQ-Sa-lum"/>
+                    <constraint firstItem="31W-5z-gva" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="m7w-H7-RaQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ciH-io-UN1" secondAttribute="bottom" constant="5.5" id="oIU-qF-OuZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="t60-95-ZUD" secondAttribute="trailing" constant="6" id="rC1-B3-bgI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headBtn" destination="t60-95-ZUD" id="ZAe-ar-tBj"/>
+                <outlet property="headImage" destination="ciH-io-UN1" id="Pw2-fn-x2u"/>
+            </connections>
+            <point key="canvasLocation" x="209" y="285.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-user" width="18" height="18"/>
+    </resources>
+</document>

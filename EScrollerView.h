@@ -32,9 +32,10 @@
  */
 @property (nonatomic,assign) BOOL autoScroll;
 @property (nonatomic,weak) UIViewController * showPickerVC;
-
+-(NSArray*)imgArr;
 -(NSString *)firstImage;
 -(void)ImageArray:(NSArray *)imgArr TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner;
+-(void)ImageArray:(NSArray *)imgArr holders:(NSArray*)holder TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner;
 
 -(void)deleteView;
 
