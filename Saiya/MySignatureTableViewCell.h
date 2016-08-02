@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MySignatureTableViewCell : UITableViewCell
+@interface MySignatureTableViewCell : UITableViewCell<UITextViewDelegate>
 
 @property IBOutlet UITextView *infoLabel;
-
+@property __weak SaiyaUser * user;
 
 @end

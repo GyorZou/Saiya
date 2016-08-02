@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InputTableViewCell : UITableViewCell
+@interface InputTableViewCell : UITableViewCell<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property IBOutlet UILabel * titleLabel;
 @property IBOutlet UITextField *infoLabel;
+@property __weak SaiyaUser * user;
 
 @end

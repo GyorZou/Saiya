@@ -85,6 +85,7 @@
             if (row != 0) {
                 AreaModel *m =  _states[row-1];
                 _f1.text = m.Name;
+                _user.StateProvinceId = m.Id;
                [self getCityByStateID:m.Id];
             }
             
@@ -97,6 +98,7 @@
             if (row != 0) {
                 AreaModel *m =  _citys[row-1];
                 _f2.text = m.Name;
+                _user.CityId = m.Id;
                [self getDisctriByCId:m.Id];
             }
             
@@ -107,6 +109,7 @@
             _f3.text = @"区域";
              if (row != 0) {
                  AreaModel *m =  _distris[row-1];
+                 _user.DistrictId = m.Id;
                  _f3.text = m.Name;
              }
             
@@ -139,6 +142,19 @@
             }
             _citys = temp;
             [_piker reloadComponent:1];
+            
+            NSNumber * p = _user.StateProvinceId;
+            NSNumber * p2 = _user.CityId;
+            NSNumber * p3 = _user.DistrictId;
+            if (p2) {
+                [temp enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([obj.Id isEqual:p2]) {
+                        _f2.text = obj.Name;
+                        [self getDisctriByCId:p2];
+                    }
+                    
+                }];
+            }
         }
         
         
@@ -162,11 +178,45 @@
             _distris = temp;
             [_piker reloadComponent:2];
             
+           
+            NSNumber * p3 = _user.DistrictId;
+            if (p3) {
+                [temp enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([obj.Id isEqual:p3]) {
+                        _f3.text = obj.Name;
+                    }
+                    
+                }];
+            }
+
+            
         }
         
         
     }];
     
+}
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    NSNumber * p = _user.StateProvinceId;
+    NSNumber * p2 = _user.CityId;
+    NSNumber * p3 = _user.DistrictId;
+    
+    if (p) {
+        __block int index=0,index2=0,index3=0;
+        [_states enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj.Id isEqual:p]) {
+                _f1.text = obj.Name;
+                if (p2) {//通过
+                    [self getCityByStateID:p];
+                    
+                }
+            }
+            
+        }];
+    }
 }
 
 @end

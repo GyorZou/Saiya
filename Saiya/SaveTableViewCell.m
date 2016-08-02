@@ -19,5 +19,11 @@
 
     // Configure the view for the selected state
 }
-
+-(IBAction)headClicked:(UIButton*)sender
+{
+    
+    if (_saveBlk) {
+        _saveBlk();
+    }
+}
 @end

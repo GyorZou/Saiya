@@ -185,7 +185,7 @@
                 label.text =NSStringFromObject(user.Address);
                 break;
             case 3:
-                label.text =NSStringFromObject(user.Vendor);
+                label.text =NSStringFromObject(user.EmotionalState);
                 break;
             case 4:
                 label.text =NSStringFromObject(user.Signature);

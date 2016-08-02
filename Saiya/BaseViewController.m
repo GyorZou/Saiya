@@ -111,6 +111,15 @@
 }
 */
 
+-(void)showIndicate
+{
 
+    [[ShowIndicatorView ShowIndicator] ShowIndicatorInView:self.view];
+}
+
+-(void)hideIndicate
+{
+    [[ShowIndicatorView ShowIndicator] HideIndicatorInView];
+}
 
 @end

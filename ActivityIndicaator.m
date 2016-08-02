@@ -38,21 +38,29 @@ static NSString *loadinglogo = @"loadinglogo";
     self.loadImg.animationDuration = 0.5f;
     self.loadImg.animationRepeatCount = 0;
     [self.loadImg startAnimating];
+    self.backView.layer.masksToBounds = YES;
+    self.backView.layer.cornerRadius = 8.0f;
+    self.backgroundColor =[UIColor clearColor];
+    
+    self.backView.backgroundColor =[[UIColor blackColor] colorWithAlphaComponent:0.5];
 
 }
 
 
 -(void)layoutSubviews{
     
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 5.0f;
+
     [super layoutSubviews];
-    self.frame = CGRectMake([[[UIApplication sharedApplication] delegate] window].frame.origin.x, [[[UIApplication sharedApplication] delegate] window].frame.origin.y, 80, 80);
-    self.center = CGPointMake([[[UIApplication sharedApplication] delegate] window].center.x, [[[UIApplication sharedApplication] delegate] window].frame.size.height/2-64);
+    //self.frame = CGRectMake([[[UIApplication sharedApplication] delegate] window].frame.origin.x, [[[UIApplication sharedApplication] delegate] window].frame.origin.y, 80, 80);
+    //self.center = CGPointMake([[[UIApplication sharedApplication] delegate] window].center.x, [[[UIApplication sharedApplication] delegate] window].frame.size.height/2-64);
    // self.center = [[[UIApplication sharedApplication] delegate] window].center;
-    self.backgroundColor = [UIColor colorWithRed:239/255.0f green:239/255.0f blue:239/255.0f alpha:.9f];
+    self.backView.layer.masksToBounds = YES;
+    self.backView.layer.cornerRadius = 8.0f;
+    self.backgroundColor =[UIColor clearColor];
     
-    [super layoutSubviews];
+    self.backView.backgroundColor =[[UIColor blackColor] colorWithAlphaComponent:0.5];// [UIColor colorWithRed:239/255.0f green:239/255.0f blue:239/255.0f alpha:.9f];
+    
+   // [super layoutSubviews];
     
 
 }

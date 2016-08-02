@@ -24,4 +24,6 @@
 -(void)dissmiss;
 
 -(void)goHome;
+-(void)showIndicate;
+-(void)hideIndicate;
 @end

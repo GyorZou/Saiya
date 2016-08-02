@@ -117,7 +117,7 @@
     NSArray  *titles =@[@"头像",@"姓名",@"性别",@"年龄",@"地区",@"情感状态",@"签名",@"微博"];
     
     
-     NSArray  *keys =@[@"x",@"AvatarUrl",@"Username",@"Gender",@"Old",@"Address",@"Vendor",@"Signature",@"Weibo",@"Description"];
+     NSArray  *keys =@[@"x",@"AvatarUrl",@"Username",@"Gender",@"Old",@"Address",@"EmotionalState",@"Signature",@"Weibo",@"Description"];
     
     SaiyaUser * user = thisUser;//[SaiyaUser curUser];
     id value =  [user valueForKey:keys[indexPath.row]];
@@ -166,7 +166,10 @@
         
     }else if (indexPath.row == 9){
     //HeaderTableViewCell.h
-        cell= [tableView dequeueReusableCellWithIdentifier:@"MySignatureTableViewCell.h"];
+      MySignatureTableViewCell *  cell1= [tableView dequeueReusableCellWithIdentifier:@"MySignatureTableViewCell.h"];
+        cell = cell1;
+        
+        cell1.user = thisUser;
         cell.userInteractionEnabled = _editing == YES;
         UILabel * label = [cell valueForKey:@"infoLabel"];
         label.text = string;
@@ -175,6 +178,7 @@
         
        CityInputCell *  cell1= [tableView dequeueReusableCellWithIdentifier:@"CityInputCell.h"];
         cell1.states = _states;
+        cell1.user = thisUser;
         cell = cell1;
         UILabel * label = [cell valueForKey:@"titleLabel"];
         label.text = titles[indexPath.row - 1];
@@ -182,7 +186,9 @@
         
         
     }else{
-        cell= [tableView dequeueReusableCellWithIdentifier:@"InputTableViewCell.h"];
+       InputTableViewCell * cell1= [tableView dequeueReusableCellWithIdentifier:@"InputTableViewCell.h"];
+        cell = cell1;
+        cell1.user = thisUser;
         UILabel * label = [cell valueForKey:@"titleLabel"];
         label.text = titles[indexPath.row - 1];
         cell.userInteractionEnabled = _editing == YES;
@@ -207,7 +213,11 @@
 {
     UIView * view;
     if (_editing) {
-        view = [[[NSBundle mainBundle] loadNibNamed:@"SaveTableViewCell" owner:nil options:nil] lastObject];//[SaveTableViewCell new];
+        SaveTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"SaveTableViewCell" owner:nil options:nil] lastObject];//[SaveTableViewCell new];
+        cell.saveBlk = ^{
+            
+        };
+        view = cell;
         view.frame = CGRectMake(0, 0, SCREENWIDTH, 60);
     }
     return view;
@@ -357,7 +367,9 @@
     }
     
     
+    [self showIndicate];
     [UIImage uploadImage:imga size:size blk:^(BOOL suc, NSData *dic) {
+        [self hideIndicate];
         if(suc){
             int tag = _curSheet.tag;
             AsynBaseModel * model = [[AsynBaseModel alloc] initWithData:dic];
@@ -415,9 +427,9 @@
 -(void)saveInfo
 {
     NSString* root = @"http://saiya.tv/api/customer/SaveInfo";
-    
+    [self showIndicate];
     [[NetworkManagementRequset manager]  requestPostData:root postData:nil complation:^BOOL(BOOL result, id returnData) {
-        
+        [self hideIndicate];
         if (result && [[returnData objectForKey:@"result"] boolValue] == YES) {
             [NWFToastView showToast:@"保存成功"];
         }else{

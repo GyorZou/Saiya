@@ -10,4 +10,6 @@
 
 @interface SaveTableViewCell : UITableViewCell
 
+@property (nonatomic,copy) void (^saveBlk)();
+
 @end

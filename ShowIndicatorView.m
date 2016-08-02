@@ -30,6 +30,8 @@ UIView *Activity;
         showindicator =[[ShowIndicatorView alloc] init];
         NSArray *viewNib = [[NSBundle mainBundle] loadNibNamed:@"ActivityIndicaator" owner:self  options:nil];
         Activity = viewNib[0];
+        Activity.userInteractionEnabled = NO;
+        
 });
     
     return showindicator;
@@ -39,7 +41,9 @@ UIView *Activity;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.viewHutianhu = view;
         //Activity.center =[[[UIApplication sharedApplication] delegate] window].center;//    view.center;
-        Activity.center = CGPointMake([[[UIApplication sharedApplication] delegate] window].center.x, [[[UIApplication sharedApplication] delegate] window].center.y-32.0f);
+        Activity.bounds = view.bounds;
+        Activity.center = CGPointMake([[[UIApplication sharedApplication] delegate] window].center.x, [[[UIApplication sharedApplication] delegate] window].center.y-62.0f);
+        
      //   EWJLog(@"%f,%f",[[[UIApplication sharedApplication] delegate] window].center.x,[[[UIApplication sharedApplication] delegate] window].center.y-32.0f);
         [self.viewHutianhu addSubview:Activity];
         [(ActivityIndicaator*)Activity startAnimation];

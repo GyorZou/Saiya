@@ -14,6 +14,7 @@
     UIPickerView * _piker;
     
 }
+@property __weak SaiyaUser * user;
 @property NSArray * states,*citys,*distris;
 @property IBOutlet UILabel * titleLabel;
 @end

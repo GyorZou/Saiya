@@ -10,4 +10,7 @@
 
 @interface GuanfangAuthenticate : BaseViewController
 
+@property IBOutlet UITextField * nameField,*urlField;
+@property IBOutlet UITextView* desField;
+@property IBOutlet UIImageView * imageView;
 @end

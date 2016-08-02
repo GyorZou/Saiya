@@ -14,8 +14,9 @@
 }
 @property NSString * Email,*Username,*Nickname,*Gender,*AvatarUrl,*Description;
 
-@property NSString *Address,*FirstName,*OpenId,*Signature,*Vendor,*Weibo;
+@property NSString *Address,*FirstName,*OpenId,*Signature,*Weibo,*EmotionalState;
 @property NSArray * Pictures;
+@property NSDictionary * Entertainer,*Vendor;
 @property NSNumber * Id,*AvatarId,*CityId,*DistrictId,*Old,*RewardPoints,*StateProvinceId;
 +(instancetype)curUser;
 +(NSString*)notificationString;

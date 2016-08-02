@@ -10,6 +10,7 @@
 
 @interface ActivityIndicaator : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *loadImg;
+@property (weak, nonatomic) IBOutlet UIView * backView;
 @property double angle;
 
 -(void) startAnimation;

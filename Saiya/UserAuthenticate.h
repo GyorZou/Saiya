@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface UserAuthenticate : BaseViewController
-
+@property IBOutlet UITextField *infoLabel;
+@property (nonatomic,weak) IBOutlet UIImageView * c1,*c2,*c3;
 @end
