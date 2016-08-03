@@ -29,17 +29,63 @@
 {
     switch (component) {
         case 0:{
+            if (_states.count>0) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                __block NSUInteger index =-1;
+                [_states enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([obj.Name isEqualToString:_f1.text]) {
+                        index = idx;
+                        *stop = YES;
+                    }
+                }];
+              
+                if (index<_states.count) {
+                    [_piker selectRow:index+1 inComponent:0 animated:YES];
+                }
+                
             
+            });
+            }
             return _states.count+1;
         }
             break;
         case 1:{
-            
+            if (_citys.count>0) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    __block NSUInteger index =-1;
+                    [_citys enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if ([obj.Name isEqualToString:_f2.text]) {
+                            index = idx;
+                            *stop = YES;
+                        }
+                    }];
+                    if (index<_states.count) {
+                        [_piker selectRow:index+1 inComponent:1 animated:YES];
+                    }
+                
+                });
+            }
             return _citys.count+1;
         }
             break;
         case 2:{
-          
+            if (_distris.count>0) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    __block NSUInteger index =-1;
+                    [_distris enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if ([obj.Name isEqualToString:_f3.text]) {
+                            index = idx;
+                            *stop = YES;
+                        }
+                    }];
+                    if (index<_states.count) {
+                        [_piker selectRow:index+1 inComponent:2 animated:YES];
+                    }
+                
+                });
+            }
+
             return _distris.count+1;
         }
     }
@@ -86,11 +132,20 @@
                 AreaModel *m =  _states[row-1];
                 _f1.text = m.Name;
                 _user.StateProvinceId = m.Id;
+                _user.DistrictId = nil;
+                _user.CityId = nil;
                [self getCityByStateID:m.Id];
             }
+            _citys = nil;
+            _distris = nil;
             
             _f2.text = @"城市";
             _f3.text = @"区域";
+            //[_piker selectRow:0 inComponent:1 animated:YES];
+            //[_piker selectRow:0 inComponent:2 animated:YES];
+            [_piker reloadComponent:1];
+            [_piker reloadComponent:2];
+
         }
             break;
         case 1:{
@@ -99,10 +154,18 @@
                 AreaModel *m =  _citys[row-1];
                 _f2.text = m.Name;
                 _user.CityId = m.Id;
+                _user.DistrictId = nil;
                [self getDisctriByCId:m.Id];
+            }else{
+               
+                
             }
-            
             _f3.text = @"区域";
+            _distris = nil;
+            
+            [_piker reloadComponent:2];
+            //[_piker selectRow:0 inComponent:2 animated:YES];
+            
         }
             break;
         case 2:{
@@ -143,12 +206,12 @@
             _citys = temp;
             [_piker reloadComponent:1];
             
-            NSNumber * p = _user.StateProvinceId;
+            
             NSNumber * p2 = _user.CityId;
-            NSNumber * p3 = _user.DistrictId;
+          
             if (p2) {
                 [temp enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    if ([obj.Id isEqual:p2]) {
+                    if ([obj.Id intValue] == [p2 intValue]) {
                         _f2.text = obj.Name;
                         [self getDisctriByCId:p2];
                     }
@@ -182,7 +245,7 @@
             NSNumber * p3 = _user.DistrictId;
             if (p3) {
                 [temp enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    if ([obj.Id isEqual:p3]) {
+                    if ([obj.Id intValue] ==  [p3 intValue]) {
                         _f3.text = obj.Name;
                     }
                     
@@ -196,10 +259,9 @@
     }];
     
 }
--(void)layoutSubviews
+-(void)setStates:(NSArray *)states
 {
-    [super layoutSubviews];
-    
+    _states = states;
     NSNumber * p = _user.StateProvinceId;
     NSNumber * p2 = _user.CityId;
     NSNumber * p3 = _user.DistrictId;
@@ -207,7 +269,7 @@
     if (p) {
         __block int index=0,index2=0,index3=0;
         [_states enumerateObjectsUsingBlock:^(AreaModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj.Id isEqual:p]) {
+            if ([obj.Id intValue] == p.intValue) {
                 _f1.text = obj.Name;
                 if (p2) {//通过
                     [self getCityByStateID:p];
@@ -217,6 +279,8 @@
             
         }];
     }
+
 }
+
 
 @end

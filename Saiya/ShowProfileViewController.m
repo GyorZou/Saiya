@@ -64,8 +64,13 @@
     //_editing = YES;
     [self showEdit];
     SaiyaUser * user = [SaiyaUser curUser];
-    user.Description = @"asalskdj氨基酸看来大家安看来是大家爱看了沙发客户身份及客户方尽快发货的数据库的恢复的思考及地方案说法就看好飞机开始撒砂浆款式的";
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView) name:[SaiyaUser notificationString] object:nil];
+    
+}
+-(void)reloadView
+{
+    [_tableView reloadData];
 }
 -(void)showEdit
 {
@@ -139,14 +144,23 @@
         if (indexPath.row == 0) {
             ImagesTableViewCell*  cell1 = [tableView dequeueReusableCellWithIdentifier:@"ImagesTableViewCell.h"];
             
-            cell1.deleteBtn.hidden = YES;            cell1.addBtn.hidden =YES;
+            cell1.deleteBtn.hidden = YES;
+            cell1.addBtn.hidden =YES;
             
             cell = cell1;
-            [cell1.imageViews ImageArray:user.Pictures TitleArray:nil rect:CGRectZero isBanner:NO];
+            NSMutableArray * tm = [NSMutableArray array];
+            [user.Pictures enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [tm addObject:obj[@"Url"]];
+            }];
+            [cell1.imageViews ImageArray:tm TitleArray:nil rect:CGRectMake(0, 0, SCREENWIDTH, SCREENWIDTH*0.6) isBanner:NO];
         }else if (indexPath.row == 1){
             //HeaderTableViewCell.h
            HeaderTableViewCell*   cell1= [tableView dequeueReusableCellWithIdentifier:@"HeaderTableViewCell.h"];
             cell =cell1;
+            
+            cell1.headImage.clipsToBounds = YES;
+            cell1.headImage.layer.cornerRadius = cell1.headImage.frame.size.width/2;
+            
             [cell1.headImage setImageWithURL:[NSURL URLWithString:user.AvatarUrl]];
             cell.userInteractionEnabled = _editing == YES;
         }else{

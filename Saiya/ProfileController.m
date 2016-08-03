@@ -160,6 +160,7 @@
         cell1.headImage.clipsToBounds = YES;
         cell1.headImage.layer.cornerRadius = cell1.headImage.frame.size.width/2;
         cell1.headBlk = ^{
+            
             [self photoImgButtonPressed:10];
         };
         cell.userInteractionEnabled = _editing == YES;
@@ -215,7 +216,7 @@
     if (_editing) {
         SaveTableViewCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"SaveTableViewCell" owner:nil options:nil] lastObject];//[SaveTableViewCell new];
         cell.saveBlk = ^{
-            
+            [self saveInfo];
         };
         view = cell;
         view.frame = CGRectMake(0, 0, SCREENWIDTH, 60);
@@ -260,6 +261,7 @@
 #pragma mark - ActionSheet
 -(void)photoImgButtonPressed:(int)tag{
     
+    [self.view endEditing:YES];
     if([LoginPage showIfNotLogin] == NO){
         return;
     }
@@ -426,17 +428,66 @@
 }
 -(void)saveInfo
 {
+    /*
+     
+     Pictures:1411,1412,1413
+     AvatarId:1168
+     FirstName:John Smith
+     Gender:女
+     Old:1234
+     StateProvinceId:340000
+     CityId:340300
+     DistrictId:340321
+     EmotionalState:1235
+     Signature:1236
+     Weibo:1237
+     Description:自行车自行车自行车自行车在小型车做宣传下啊实打实大师大师大师的撒的爱上大声大声大声大声道啊实打实大声道*/
+    
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+    
+    if (imageIds.count>0) {
+        NSMutableArray * ids = [NSMutableArray array];
+        [imageIds enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString * s = NSStringFromObject(obj);
+            [ids addObject:s];
+        }];
+        NSString * ids2 = [ids componentsJoinedByString:@","];
+        dict[@"Pictures"] =ids2;
+    }
+    if (thisUser.AvatarId) {
+        dict[@"AvatarId"] = thisUser.AvatarId;
+    }
+    if ([thisUser.Username isKindOfClass:[NSString class]] ) {
+        dict[@"FirstName"] = thisUser.Username;
+    }
+    if ([thisUser.Gender isKindOfClass:[NSString class]]) {
+        dict[@"Gender"] = thisUser.Gender;
+    }
+    if ([thisUser.Old intValue]> 0) {
+        dict[@"Old"] = thisUser.Old;
+    }
+    dict[@"StateProvinceId"] = thisUser.StateProvinceId;
+    dict[@"DistrictId"] = thisUser.DistrictId;
+    dict[@"CityId"] = thisUser.CityId;
+    dict[@"EmotionalState"] = thisUser.EmotionalState;
+    
+    dict[@"Signature"] = thisUser.Signature;
+    dict[@"Weibo"] = thisUser.Weibo;
+    dict[@"Description"] = thisUser.Description;
+    
     NSString* root = @"http://saiya.tv/api/customer/SaveInfo";
     [self showIndicate];
-    [[NetworkManagementRequset manager]  requestPostData:root postData:nil complation:^BOOL(BOOL result, id returnData) {
+    [[NetworkManagementRequset manager]  requestPostData:root postData:dict complation:^BOOL(BOOL result, id returnData) {
         [self hideIndicate];
         if (result && [[returnData objectForKey:@"result"] boolValue] == YES) {
             [NWFToastView showToast:@"保存成功"];
+            [[SaiyaUser curUser] reloadData];
         }else{
             [NWFToastView showToast:@"保存失败"];
 
         }
 
+        
     
         return YES;
     }];
