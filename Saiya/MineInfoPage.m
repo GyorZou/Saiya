@@ -47,23 +47,35 @@
     [_contentView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"infocell2"];
     [_contentView registerNib:[UINib nibWithNibName:@"MyHeadCell" bundle:nil] forCellReuseIdentifier:@"infocell1"];
     
-    NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@"",@"url":@"watchings.html"};
-    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"InfoDetailViewController",@"url":@"mycompetion.html"};
-    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"IWantAuthentication",@"url":@""};
-
-    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"MySaidouViewController",@"url":@""};
-
-    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"",@"url":@""};
-
-    
-    _datas = @[a1,a2,a3,a4,a5];
+    [self setData];
     
     [self initTitleview];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserInfo) name:[SaiyaUser notificationString] object:nil];
     
 }
+-(void)setData
+{
+    NSDictionary * a1 = @{@"image":@"heart",@"title":@"我的关注",@"class":@"",@"url":@"watchings.html"};
+    NSDictionary * a2 = @{@"image":@"trophy",@"title":@"我的赛事",@"class":@"InfoDetailViewController",@"url":@"mycompetion.html"};
+    NSDictionary * a3 = @{@"image":@"authentication",@"title":@"我要认证",@"class":@"IWantAuthentication",@"url":@""};
+    
+    NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"MySaidouViewController",@"url":@""};
+    
+    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"",@"url":@""};
+    
+    if ([[SaiyaUser curUser].Vendor[@"Certified"] boolValue]) {
+        _datas = @[a1,a2,a3,a4,a5];
+    }else{
+        _datas = @[a1,a3,a4,a5];
+    }
+    
+    
+
+}
 -(void)updateUserInfo
 {
+
+    [self setData];
     [_contentView reloadData];
 }
 -(void)initTitleview
