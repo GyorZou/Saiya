@@ -438,6 +438,8 @@
 		5270A2AA1D502E3A00B6DD58 /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2A81D502E3A00B6DD58 /* HeaderTableViewCell.m */; };
 		5270A2AB1D502E3A00B6DD58 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A2A91D502E3A00B6DD58 /* HeaderTableViewCell.xib */; };
 		5270A2AE1D5036C200B6DD58 /* UIImage+SaiyaUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2AD1D5036C200B6DD58 /* UIImage+SaiyaUpload.m */; };
+		5270A2B21D5377A600B6DD58 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2B01D5377A600B6DD58 /* SettingsViewController.m */; };
+		5270A2B31D5377A600B6DD58 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A2B11D5377A600B6DD58 /* SettingsViewController.xib */; };
 		5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4881D1C3C2300E2B8D1 /* SMSSender.m */; };
 		5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D48D1D216D4F00E2B8D1 /* ConversationListController.m */; };
 		5272D4921D216D4F00E2B8D1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5272D4901D216D4F00E2B8D1 /* ChatViewController.m */; };
@@ -1272,6 +1274,9 @@
 		5270A2A91D502E3A00B6DD58 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		5270A2AC1D5036C200B6DD58 /* UIImage+SaiyaUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SaiyaUpload.h"; sourceTree = "<group>"; };
 		5270A2AD1D5036C200B6DD58 /* UIImage+SaiyaUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SaiyaUpload.m"; sourceTree = "<group>"; };
+		5270A2AF1D5377A600B6DD58 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5270A2B01D5377A600B6DD58 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5270A2B11D5377A600B6DD58 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		5272D4871D1C3C2300E2B8D1 /* SMSSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSender.h; sourceTree = "<group>"; };
 		5272D4881D1C3C2300E2B8D1 /* SMSSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSender.m; sourceTree = "<group>"; };
 		5272D48C1D216D4F00E2B8D1 /* ConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListController.h; sourceTree = "<group>"; };
@@ -1634,6 +1639,9 @@
 				4C29E7C31D1B79DE00E51E24 /* ViewController.m */,
 				4C29E7EF1D1B7D5400E51E24 /* PrefixHeader.pch */,
 				5272D4EF1D21723000E2B8D1 /* ImportHeader.pch */,
+				5270A2AF1D5377A600B6DD58 /* SettingsViewController.h */,
+				5270A2B01D5377A600B6DD58 /* SettingsViewController.m */,
+				5270A2B11D5377A600B6DD58 /* SettingsViewController.xib */,
 				4C29E7C51D1B79DE00E51E24 /* Main.storyboard */,
 				4C29E7C81D1B79DE00E51E24 /* Assets.xcassets */,
 				4C29E7CA1D1B79DE00E51E24 /* LaunchScreen.storyboard */,
@@ -3365,6 +3373,7 @@
 				TargetAttributes = {
 					4C29E7B81D1B79DE00E51E24 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 26422YP86T;
 					};
 					4C29E7D11D1B79DE00E51E24 = {
 						CreatedOnToolsVersion = 7.2;
@@ -3541,6 +3550,7 @@
 				4C76B7821D22404200C6FE6A /* icon_002.gif in Resources */,
 				4C76B7C41D22404200C6FE6A /* tabbarSelectBg.png in Resources */,
 				4C76B7C01D22404200C6FE6A /* tabbar_settingHL.png in Resources */,
+				5270A2B31D5377A600B6DD58 /* SettingsViewController.xib in Resources */,
 				5270A28B1D4DDD0A00B6DD58 /* AreaSelectorViewController.xib in Resources */,
 				4C76B7721D22404200C6FE6A /* imageDownloadFail@2x.png in Resources */,
 				5272D5421D2176EB00E2B8D1 /* RedpacketCellResource.bundle in Resources */,
@@ -3579,6 +3589,7 @@
 				5270A2921D4E127E00B6DD58 /* MySaidouViewController.m in Sources */,
 				4C76B6521D213F4600C6FE6A /* EMCDDeviceManagerBase.m in Sources */,
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
+				5270A2B21D5377A600B6DD58 /* SettingsViewController.m in Sources */,
 				4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */,
 				4C29E8041D1B80F300E51E24 /* SaixinPage.m in Sources */,
 				4C76B6A91D213F4700C6FE6A /* EaseUsersListViewController.m in Sources */,

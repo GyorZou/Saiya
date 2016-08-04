@@ -21,5 +21,7 @@
 +(instancetype)curUser;
 +(NSString*)notificationString;
 -(void)reloadData;
+-(void)reloadDataWithCompletion:(void(^)(BOOL))blk;
 -(SaiyaUser*)copiedUser;
+-(BOOL)isLogined;
 @end

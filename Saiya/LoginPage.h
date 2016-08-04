@@ -16,7 +16,7 @@
 +(void)show;
 
 +(void)showWithCompletion:(void(^)(void))blk;
-
++(void)cleanWhenLogout;
 
 /**
  *  未登录就显示，返回是否登录结果

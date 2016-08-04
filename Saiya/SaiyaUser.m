@@ -32,7 +32,7 @@ id curUser;
 {
     return @"saiyauser_update";
 }
--(void)reloadData
+-(void)reloadDataWithCompletion:(void (^)(BOOL suc))blk
 {
     NSString* root = @"http://saiya.tv/api/customer/GetInfo";
     
@@ -40,12 +40,25 @@ id curUser;
         if (result && [[returnData objectForKey:@"result"] boolValue] == YES) {
             NSDictionary * datas = returnData[@"data"];
             [self updateAttribute:datas];
-
-            [[NSNotificationCenter defaultCenter] postNotificationName:[[self class] notificationString]  object:nil];
+            
+            if (blk) {
+                blk(YES);
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:[[self class] notificationString]  object:nil];
+            }
+        }else{
+            if (blk) {
+                blk(NO);
+            }
         }
         
         
     }];
+}
+-(void)reloadData
+{
+
+    [self reloadDataWithCompletion:nil];
 
 }
 -(SaiyaUser *)copiedUser
@@ -55,5 +68,14 @@ id curUser;
     [user updateAttribute:[self properties]];
     
     return user;
+}
+-(BOOL)isLogined
+{
+    BOOL isLogin = [EMClient sharedClient].isLoggedIn;
+    if (isLogin == NO || [AppDelegate isLogin] == NO) {
+        
+        return NO;
+    }
+    return YES;
 }
 @end

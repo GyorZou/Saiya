@@ -61,7 +61,7 @@
     
     NSDictionary * a4 = @{@"image":@"saidou",@"title":@"赛豆",@"class":@"MySaidouViewController",@"url":@""};
     
-    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"",@"url":@""};
+    NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"SettingsViewController",@"url":@""};
     
     if ([[SaiyaUser curUser].Vendor[@"Certified"] boolValue]) {
         _datas = @[a1,a2,a3,a4,a5];
@@ -124,49 +124,94 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+      NSDictionary * dict =  _datas[indexPath.row];
+    
+
+    NSString * title = dict[@"title"];
+ 
     UITableViewCell * cell;
     if (indexPath.section == 0) {
         MyHeadCell * myHead = [tableView dequeueReusableCellWithIdentifier:@"infocell1"];
         UIImage  * image = _placeHolderImage;
         SaiyaUser * user = [SaiyaUser curUser];
-        NSURL * url = [NSURL URLWithString:user.AvatarUrl ];
-        
-        if (_placeHolderImage) {
-            myHead.headImgeView.image = _placeHolderImage;
-        }else{
-            [myHead.headImgeView setImageWithURL:url placeholderImage:image];
-        }
-        myHead.headImgeView.layer.cornerRadius = myHead.headImgeView.frame.size.width/2;
-        myHead.headImgeView.clipsToBounds = YES;
-        
-        myHead.nameLabel.text = user.Username;
-        myHead.saidouLabel.text = [NSString stringWithFormat:@"赛豆:%@颗",user.RewardPoints];
-        NSString *c = [NSString stringWithFormat:@"%@",user.Id];
-        myHead.countLabel.text = APPENDSTRING(@"赛芽号:", c);
+
         
         myHead.clipsToBounds = YES;
         myHead.headImgeView.layer.cornerRadius = myHead.headImgeView.frame.size.width/2;
-        myHead.QRCodeBlk =^{
-           UIImage * img = [QRCodeGenerator generateQRCode:c width:SCREENWIDTH/2];
-            UIImageView *view =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/2, SCREENWIDTH/2)];
-            view.image = img;
-            [CustomerContent showView:view];
         
-        };
-        myHead.headBlk = ^{
-            [self photoImgButtonPressed];
-        };
+        
+        
+        if (user.isLogined) {
+//            myHead.headBlk = ^{
+//                [self photoImgButtonPressed];
+//            };
+            
+            NSURL * url = [NSURL URLWithString:user.AvatarUrl ];
+            
+            if (_placeHolderImage) {
+                myHead.headImgeView.image = _placeHolderImage;
+            }else{
+                [myHead.headImgeView setImageWithURL:url placeholderImage:image];
+            }
+
+            
+            myHead.nameLabel.text = user.Username;
+            myHead.saidouLabel.text = [NSString stringWithFormat:@"赛豆:%@颗",user.RewardPoints];
+            NSString *c = [NSString stringWithFormat:@"%@",user.Id];
+            myHead.countLabel.text = APPENDSTRING(@"赛芽号:", c);
+            
+            myHead.QRCodeBlk =^{
+                UIImage * img = [QRCodeGenerator generateQRCode:c width:SCREENWIDTH/2];
+                UIImageView *view =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH/2, SCREENWIDTH/2)];
+                view.image = img;
+                [CustomerContent showView:view];
+                
+            };
+        }else{
+            
+            myHead.headImgeView.image = [UIImage imageNamed:@"icon-nav4"];
+            myHead.nameLabel.text = @"未登录";
+            myHead.saidouLabel.text = [NSString stringWithFormat:@"赛豆:%@",@"--"];
+            NSString *c = @"----";
+            myHead.countLabel.text = APPENDSTRING(@"赛芽号:", c);
+            myHead.QRCodeBlk =^{
+                
+                [LoginPage show];
+                
+            };
+        }
+        
+        
+        
         cell = myHead;
         
     }else{
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"infocell2"];
         cell.detailTextLabel.text = nil;
-        if (indexPath.row == 3) {
+        if ( [title isEqualToString:@"设置"]) {
             SaiyaUser * user = [SaiyaUser curUser];
-            cell.detailTextLabel.text =[NSString stringWithFormat:@"%@颗",user.RewardPoints];// @"1001颗";
+            if (user.isLogined) {
+               cell.detailTextLabel.text =[NSString stringWithFormat:@"%@颗",user.RewardPoints];// @"1001颗";
+            }else{
+                cell.detailTextLabel.text =nil;
+            }
+            
             cell.detailTextLabel.textColor =APPCOLOR_ORINGE;
+        }else if ( [title isEqualToString:@"我要认证"]) {
+            SaiyaUser * user = [SaiyaUser curUser];
+            BOOL isU = user.Entertainer[@"Certified"];
+            BOOL isV = user.Vendor[@"Certified"];
+            if (user.isLogined&&(isU||isV)) {
+                NSString * s = isU?@"已认证选手":@"已认证主办方";
+                cell.detailTextLabel.text =s;//[NSString stringWithFormat:@"%@颗",user.RewardPoints];// @"1001颗";
+            }else{
+                cell.detailTextLabel.text =nil;
+            }
+            
+            cell.detailTextLabel.textColor =[UIColor lightGrayColor];
         }
-        cell.textLabel.text = _datas[indexPath.row][@"title"];
+        cell.textLabel.text = title;
         cell.imageView.image = [UIImage imageNamed:_datas[indexPath.row][@"image"]];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -192,19 +237,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([LoginPage showIfNotLogin] == YES) {
+    NSString * root = @"http://saiya.tv/h5/";
+    NSDictionary * dict =  _datas[indexPath.row];
+    
+    NSString * cls = dict[@"class"];
+    NSString * url = dict[@"url"];
+    NSString * title = dict[@"title"];
+    if ([title isEqualToString:@"设置"]||[LoginPage showIfNotLogin] == YES) {
         if (indexPath.section == 0) {
             ShowProfileViewController * p = [ShowProfileViewController new];
             p.title = @"个人信息";
             [self.navigationController pushViewController:p animated:YES];
         }else{
             
-            NSString * root = @"http://saiya.tv/h5/";
-            NSDictionary * dict =  _datas[indexPath.row];
-            
-            NSString * cls = dict[@"class"];
-            NSString * url = dict[@"url"];
-            NSString * title = dict[@"title"];
+
             if (url.length > 0) {
                 url = [root stringByAppendingString:url];
             }

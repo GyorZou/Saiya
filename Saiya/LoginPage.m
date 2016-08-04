@@ -135,7 +135,7 @@
     [NWFToastView showProgress:@"正在登录..."];
     NSDictionary * dict = @{@"Account":_nameFiled.text,@"Password":_pwdField.text};
     [[NetworkManagementRequset manager] requestPostData:[self normalLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
-        [NWFToastView dismissProgress];
+        
         if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
             
              NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
@@ -144,9 +144,10 @@
             
             hxName = _nameFiled.text;
             hxPwd = _pwdField.text;
-            [self huanxinLogin:YES];
+            [self huanxinLogin:NO];
             NSLog(@"%@",returnData);
         }else{
+            [NWFToastView dismissProgress];
             [NWFToastView showToast:@"用户名或密码错误"];
         }
         
@@ -224,7 +225,8 @@
 {
 
     if (showHud) {
-        [self showHudInView:self.view hint:NSLocalizedString(@"login.ongoing", @"Is Login...")];
+       // [self showHudInView:self.view hint:NSLocalizedString(@"login.ongoing", @"Is Login...")];
+        [NWFToastView showProgress:@"登录中..."];
     }
 
     //异步登陆账号
@@ -242,9 +244,10 @@
             }
             
         }
-        
+        [NWFToastView dismissProgress];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakself hideHud];
+            //[weakself hideHud];
+            
             if (!error) {
                 //设置是否自动登录
                 [[EMClient sharedClient].options setIsAutoLogin:YES];
@@ -301,7 +304,7 @@
     [self showWithCompletion:nil];
 
 }
-+(void)showWithCompletion:(void (^)(void))blk
++(void)cleanWhenLogout
 {
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     // NSString * s = [def objectForKey:@"acc_token"];
@@ -312,6 +315,11 @@
     if ([[EMClient sharedClient]  isLoggedIn]) {
         [[EMClient sharedClient]  logout:YES];
     }
+}
++(void)showWithCompletion:(void (^)(void))blk
+{
+
+    [self cleanWhenLogout];
     
     LoginPage * lg = [LoginPage new];
     UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:lg];
@@ -322,8 +330,9 @@
 +(BOOL)showIfNotLogin
 {
 
-    BOOL isLogin = [EMClient sharedClient].isLoggedIn;
-    if (isLogin == NO || [AppDelegate isLogin] == NO) {
+    
+    BOOL isLogin = [[SaiyaUser curUser] isLogined]; //[EMClient sharedClient].isLoggedIn;
+    if (isLogin == NO) {
         [LoginPage show];
         return NO;
     }
@@ -335,18 +344,31 @@
     
     
     [[NetworkManagementRequset manager] requestPostData:[self thirdLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
-        [NWFToastView dismissProgress];
+        
         if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
             
             NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
             [def setObject:[returnData objectForKey:@"data"] forKey:@"acc_token"];
             [def synchronize];
             
-            hxName = dict[@"OpenId"];
-            hxPwd = @"123456";
-            [self huanxinLogin:YES];
+           
+            [[SaiyaUser curUser] reloadDataWithCompletion:^(BOOL suc){
+                
+                if (suc) {
+                    SaiyaUser * curUser = [SaiyaUser curUser];
+                    hxName = NSStringFromObject(curUser.Id);
+                    hxPwd = @"123456";
+                    [self huanxinLogin:YES];
+                }else{
+                    //登录失败
+                    [NWFToastView dismissProgress];
+                }
+                
+            }];
+         
             NSLog(@"%@",returnData);
         }else{
+            [NWFToastView dismissProgress];
             [NWFToastView showToast:@"用户名或密码错误"];
         }
         

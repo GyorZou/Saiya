@@ -15,7 +15,8 @@
 
 @property (strong,nonatomic) MainViewController * mainController;
 @property (readonly) BOOL isLogin;
-+(BOOL) isLogin;
+
++(BOOL) isLogin;//仅仅判断accToken
 +(NSString*)accToken;
 
 @end
