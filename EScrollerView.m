@@ -71,6 +71,8 @@
 -(void)ImageArray:(NSArray *)imgArr holders:(NSArray *)holder TitleArray:(NSArray *)titArr rect:(CGRect)rect isBanner:(BOOL)isBanner
 {
     //return;
+    [scrollView removeFromSuperview];
+    scrollView = nil;
     self.userInteractionEnabled=YES;
     if ([imgArr count]==0) {
         return;
@@ -96,6 +98,8 @@
     }
     
     NSUInteger pageCount=[imageArray count];
+    [scrollView removeFromSuperview];
+    scrollView = nil;
     if (!scrollView) {
         scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, viewSize.size.height)];
     }
@@ -184,7 +188,7 @@
 }
 -(int)curIndex
 {
-    return currentPageIndex;
+    return  currentPageIndex;
 }
 -(void)refreshLoad{
     [_moveTime invalidate];

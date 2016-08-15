@@ -135,11 +135,12 @@
     [NWFToastView showProgress:@"正在登录..."];
     NSDictionary * dict = @{@"Account":_nameFiled.text,@"Password":_pwdField.text};
     [[NetworkManagementRequset manager] requestPostData:[self normalLoginUrl] postData:dict complation:^BOOL(BOOL result, id returnData) {
-        
+         [NWFToastView dismissProgress];
         if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
             
              NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
             [def setObject:[returnData objectForKey:@"data"] forKey:@"acc_token"];
+           // [def setObject:@"6208" forKey:@"acc_token"];
             [def synchronize];
             
             hxName = _nameFiled.text;
@@ -147,7 +148,7 @@
             [self huanxinLogin:NO];
             NSLog(@"%@",returnData);
         }else{
-            [NWFToastView dismissProgress];
+           
             [NWFToastView showToast:@"用户名或密码错误"];
         }
         
@@ -232,9 +233,9 @@
     //异步登陆账号
     __weak typeof(self) weakself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        EMError *error = [[EMClient sharedClient] loginWithUsername:hxName password:hxPwd];//如果未注册，那注册一下吧
+        EMError *error = [[EMClient sharedClient] loginWithUsername:hxName password:@"123456"];//如果未注册，那注册一下吧
         if (error.code == EMErrorUserNotFound) {
-            EMError* error = [[EMClient sharedClient] registerWithUsername:hxName  password:hxPwd];
+            EMError* error = [[EMClient sharedClient] registerWithUsername:hxName  password:@"123456"];
             if (error == nil) {
               dispatch_async(dispatch_get_main_queue(), ^{
                 [self huanxinLogin:NO];
@@ -339,6 +340,24 @@
     return YES;
 }
 
+-(void)thirdPartDidLogined
+{
+
+        [[SaiyaUser curUser] reloadDataWithCompletion:^(BOOL suc){
+            
+            if (suc) {
+                SaiyaUser * curUser = [SaiyaUser curUser];
+                hxName = NSStringFromObject(curUser.Id);
+                hxPwd = @"123456";
+                [self huanxinLogin:YES];
+            }else{
+                //登录失败
+                [NWFToastView dismissProgress];
+            }
+            
+        }];
+
+}
 -(void)thirdPartLogin:(NSDictionary*)dict
 {//http://saiya.tv/api/customer/LoginAuths
     
@@ -352,19 +371,12 @@
             [def synchronize];
             
            
-            [[SaiyaUser curUser] reloadDataWithCompletion:^(BOOL suc){
-                
-                if (suc) {
-                    SaiyaUser * curUser = [SaiyaUser curUser];
-                    hxName = NSStringFromObject(curUser.Id);
-                    hxPwd = @"123456";
-                    [self huanxinLogin:YES];
-                }else{
-                    //登录失败
-                    [NWFToastView dismissProgress];
-                }
-                
-            }];
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self thirdPartDidLogined];
+            });
+            
+
          
             NSLog(@"%@",returnData);
         }else{

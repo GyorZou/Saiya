@@ -41,7 +41,9 @@
     [super viewDidAppear:animated];
     
     _tableView.frame = self.view.bounds;
+    [_tableView reloadData];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -152,7 +154,7 @@
             [user.Pictures enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 [tm addObject:obj[@"Url"]];
             }];
-            [cell1.imageViews ImageArray:tm TitleArray:nil rect:CGRectMake(0, 0, SCREENWIDTH, SCREENWIDTH*0.6) isBanner:NO];
+            [cell1.imageViews ImageArray:tm TitleArray:nil rect:CGRectMake(0, 0, 0, 0) isBanner:NO];
         }else if (indexPath.row == 1){
             //HeaderTableViewCell.h
            HeaderTableViewCell*   cell1= [tableView dequeueReusableCellWithIdentifier:@"HeaderTableViewCell.h"];

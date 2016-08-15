@@ -63,10 +63,11 @@
     
     NSDictionary * a5 = @{@"image":@"shezhi",@"title":@"设置",@"class":@"SettingsViewController",@"url":@""};
     
-    if ([[SaiyaUser curUser].Vendor[@"Certified"] boolValue]) {
+    NSDictionary * vd = [SaiyaUser curUser].Vendor;
+    if ([vd isKindOfClass:[NSDictionary class]] && [[SaiyaUser curUser].Vendor[@"Certified"] boolValue]) {
         _datas = @[a1,a2,a3,a4,a5];
     }else{
-        _datas = @[a1,a3,a4,a5];
+        _datas = @[a1,a2,a3,a4,a5];
     }
     
     
@@ -189,7 +190,7 @@
     }else{
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"infocell2"];
         cell.detailTextLabel.text = nil;
-        if ( [title isEqualToString:@"设置"]) {
+        if ( [title isEqualToString:@"赛豆"]) {
             SaiyaUser * user = [SaiyaUser curUser];
             if (user.isLogined) {
                cell.detailTextLabel.text =[NSString stringWithFormat:@"%@颗",user.RewardPoints];// @"1001颗";
@@ -200,8 +201,15 @@
             cell.detailTextLabel.textColor =APPCOLOR_ORINGE;
         }else if ( [title isEqualToString:@"我要认证"]) {
             SaiyaUser * user = [SaiyaUser curUser];
-            BOOL isU = user.Entertainer[@"Certified"];
-            BOOL isV = user.Vendor[@"Certified"];
+     
+            BOOL isU =NO ;//= [user.Entertainer[@"Certified"] boolValue];
+            BOOL isV = NO;//= [user.Vendor[@"Certified"] boolValue];
+            if ([user.Entertainer isKindOfClass:[NSDictionary class]]) {
+                isU = [user.Entertainer[@"Certified"] boolValue];
+            }
+            if ([user.Vendor isKindOfClass:[NSDictionary class]]) {
+                isV = [user.Vendor[@"Certified"] boolValue];
+            }
             if (user.isLogined&&(isU||isV)) {
                 NSString * s = isU?@"已认证选手":@"已认证主办方";
                 cell.detailTextLabel.text =s;//[NSString stringWithFormat:@"%@颗",user.RewardPoints];// @"1001颗";
@@ -209,6 +217,7 @@
                 cell.detailTextLabel.text =nil;
             }
             
+            cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
             cell.detailTextLabel.textColor =[UIColor lightGrayColor];
         }
         cell.textLabel.text = title;

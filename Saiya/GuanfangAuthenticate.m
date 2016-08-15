@@ -41,6 +41,7 @@
 -(IBAction)uploadAction:(UIButton*)sender
 {
     
+    [self.view endEditing:YES];
     int tag = sender.tag;
     
     
@@ -83,6 +84,8 @@
         [self hideIndicate];
         if (result && [[returnData objectForKey:@"result"] boolValue] == YES) {
             [NWFToastView showToast:@"保存成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+            [[SaiyaUser curUser] reloadData];
         }else{
             [NWFToastView showToast:@"保存失败"];
             
@@ -96,7 +99,7 @@
 -(void)loadData
 {
     SaiyaUser * user = [SaiyaUser curUser];
-    if (user.Vendor) {
+    if ([user.Vendor isKindOfClass:[NSDictionary class]]) {
         NSString* root = @"http://saiya.tv/API/Vendor/GetVendorById";
         NSDictionary * d = @{@"vendorId":user.Vendor[@"Id"]};
         

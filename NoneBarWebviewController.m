@@ -72,6 +72,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)initJSContext
+{
+    [super initJSContext];
+
+
+    __weak    typeof(self) ws = self;
+    self.jsContext[@"sendSuccess"] = ^{
+        //[ws dissmiss];
+        [ws.navigationController popViewControllerAnimated:YES];
+    };
+}
 -(BOOL)handleUrl:(NSString *)url
 {
     if ([url hasSuffix:@"#"] && [url isEqualToString:[NSString stringWithFormat:@"%@#",self.baseUrl]]) {

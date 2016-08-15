@@ -8,7 +8,8 @@
 
 #import "SettingsViewController.h"
 
-@interface SettingsViewController ()
+#import "ChangePasswordController.h"
+@interface SettingsViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -34,6 +35,23 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:[SaiyaUser notificationString] object:nil];
     
 }
+-(IBAction)clearClick:(id)sender
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否确认清空缓存" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [NWFToastView showToast:@"缓存已清除"];
+        });
+        
+    }
+
+}
 -(IBAction)logOutClick:(id)sender
 {
     [self logout];
@@ -44,7 +62,10 @@
 }
 -(IBAction)changePwd:(id)sender
 {
-   
+    ChangePasswordController * vc = [ChangePasswordController new];
+    vc.title = @"修改密码";
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

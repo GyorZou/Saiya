@@ -135,6 +135,7 @@
 
 -(void)initJSContext
 {
+    [super initJSContext];
     __weak typeof(self) wS = self;
     self.jsContext[@"viewSaiquan"] = ^(NSString * sid){
     
@@ -142,6 +143,10 @@
         detail.saiquanId = sid;
         detail.baseUrl = @"http://saiya.tv/h5/saiquan_details.html";
         [wS.navigationController pushViewController:detail animated:YES];
+    };
+    self.jsContext[@"sendEssay"] = ^(NSString * sid){
+        
+        NoneBarWebviewController * web =[NoneBarWebviewController new];
     };
 }
 

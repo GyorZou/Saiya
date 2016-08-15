@@ -32,6 +32,14 @@
 
 -(void)initJSContext;
 -(void)evaluateJSWithDict:(NSDictionary*)dict;
+
+/**
+ *  是否可以跳转此url
+ *
+ *  @param url url
+ *
+ *  @return 是否可以
+ */
 -(BOOL)handleUrl:(NSString *)url;
 -(void)reload;
 @end

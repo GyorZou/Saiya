@@ -36,6 +36,7 @@
 -(void)initJSContext
 {
     
+    [super initJSContext];
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     NSString * s = [def objectForKey:@"acc_token"];
     //if (s) {
@@ -61,6 +62,17 @@
         detail.type = InfoTypeSaishi;
         [wS.navigationController pushViewController:detail animated:YES];
     };
+    
+    
+    self.jsContext[@"join"] = ^(NSString * sid){
+        NoneBarWebviewController * detail = [NoneBarWebviewController new];
+        //detail.baseUrl = @"http://saiya.tv/h5/competionsummary.html";
+        detail.baseUrl=@"loading:http://saiya.tv/h5/join_competetion.html";
+        
+        [wS.navigationController pushViewController:detail animated:YES];
+
+    };
+
 
 }
 

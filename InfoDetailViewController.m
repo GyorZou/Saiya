@@ -8,7 +8,7 @@
 
 #import "InfoDetailViewController.h"
 #import "SaiquanDetailViewController.h"
-
+#import "CreateSaishiViewController.h"
 #import <ShareSDK/ShareSDK.h>
 
 @interface InfoDetailViewController ()
@@ -40,10 +40,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.baseUrl = [self url];
+    if([self url]){
+        self.baseUrl = [self url];
+    }
+    
 }
 -(void)initJSContext
 {
+    [super initJSContext];
+
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     NSString * s = [def objectForKey:@"acc_token"];
     if (s) {
@@ -69,7 +74,10 @@
     self.jsContext[@"publishComptetion"] = ^{
         
         //[wS share:nil];
-        [NWFToastView showToast:@"请发布赛事"];
+        //[NWFToastView showToast:@"请发布赛事"];
+        CreateSaishiViewController * none = [CreateSaishiViewController new];
+        none.baseUrl = @"http://saiya.tv/h5/add_competetion.html";
+        [wS.navigationController pushViewController:none animated:YES];
         
         
     };
@@ -102,6 +110,7 @@
         action(sid,InfoTypeSaishi);
     };
 
+    //publishComptetion
 
 
 }

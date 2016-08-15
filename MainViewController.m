@@ -96,6 +96,8 @@ MainViewController * halfShareInstance = nil;
     
     [ChatDemoHelper shareHelper].contactViewVC = _contactsVC;
     [ChatDemoHelper shareHelper].conversationListVC = _chatListVC;
+    
+    [ChatDemoHelper shareHelper].mainVC = self;
 
 }
 
@@ -170,6 +172,7 @@ MainViewController * halfShareInstance = nil;
     
     UIApplication *application = [UIApplication sharedApplication];
     [application setApplicationIconBadgeNumber:unreadCount];
+
 }
 // 统计未读消息数
 -(void)setupUnreadMessageCount

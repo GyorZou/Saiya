@@ -111,6 +111,8 @@
 		4C35A42F1D37972900DE3A37 /* ShowIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35A42E1D37972900DE3A37 /* ShowIndicatorView.m */; };
 		4C35A4331D37977A00DE3A37 /* ActivityIndicaator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35A4311D37977A00DE3A37 /* ActivityIndicaator.m */; };
 		4C35A4341D37977A00DE3A37 /* ActivityIndicaator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C35A4321D37977A00DE3A37 /* ActivityIndicaator.xib */; };
+		4C4C50EC1D61A5DA00F58EB0 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */; };
+		4C4C50ED1D61A5DA00F58EB0 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */; };
 		4C6903901D34F8AE00049806 /* HotEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C69038F1D34F8AE00049806 /* HotEventsViewController.m */; };
 		4C6903931D35037200049806 /* AsynBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903921D35037200049806 /* AsynBaseModel.m */; };
 		4C6903961D35038E00049806 /* HotEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903951D35038E00049806 /* HotEventModel.m */; };
@@ -414,6 +416,7 @@
 		4C76B7D51D23AF8800C6FE6A /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D41D23AF8800C6FE6A /* DXPopover.m */; };
 		4C76B7D81D23B1A700C6FE6A /* SaiyaPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */; };
 		4CA6632D1D2135BE008B094B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA6632C1D2135BE008B094B /* libiconv.tbd */; };
+		4CB351BB1D5420F1002B504F /* CreateSaishiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB351BA1D5420F0002B504F /* CreateSaishiViewController.m */; };
 		5270A26C1D4CB26000B6DD58 /* NoneBarWebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A26B1D4CB26000B6DD58 /* NoneBarWebviewController.m */; };
 		5270A2751D4CB2CD00B6DD58 /* IWantAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5270A2731D4CB2CD00B6DD58 /* IWantAuthentication.m */; };
 		5270A2761D4CB2CD00B6DD58 /* IWantAuthentication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270A2741D4CB2CD00B6DD58 /* IWantAuthentication.xib */; };
@@ -708,6 +711,9 @@
 		4C35A4301D37977A00DE3A37 /* ActivityIndicaator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicaator.h; sourceTree = "<group>"; };
 		4C35A4311D37977A00DE3A37 /* ActivityIndicaator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicaator.m; sourceTree = "<group>"; };
 		4C35A4321D37977A00DE3A37 /* ActivityIndicaator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityIndicaator.xib; sourceTree = "<group>"; };
+		4C4C50E91D61A5DA00F58EB0 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
+		4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
+		4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
 		4C69038E1D34F8AE00049806 /* HotEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventsViewController.h; sourceTree = "<group>"; };
 		4C69038F1D34F8AE00049806 /* HotEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventsViewController.m; sourceTree = "<group>"; };
 		4C6903911D35037200049806 /* AsynBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynBaseModel.h; sourceTree = "<group>"; };
@@ -1234,6 +1240,8 @@
 		4C76B7D61D23B1A700C6FE6A /* SaiyaPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaiyaPopover.h; sourceTree = "<group>"; };
 		4C76B7D71D23B1A700C6FE6A /* SaiyaPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaiyaPopover.m; sourceTree = "<group>"; };
 		4CA6632C1D2135BE008B094B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		4CB351B91D5420F0002B504F /* CreateSaishiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSaishiViewController.h; sourceTree = "<group>"; };
+		4CB351BA1D5420F0002B504F /* CreateSaishiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSaishiViewController.m; sourceTree = "<group>"; };
 		5270A26A1D4CB26000B6DD58 /* NoneBarWebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoneBarWebviewController.h; sourceTree = "<group>"; };
 		5270A26B1D4CB26000B6DD58 /* NoneBarWebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoneBarWebviewController.m; sourceTree = "<group>"; };
 		5270A2721D4CB2CC00B6DD58 /* IWantAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWantAuthentication.h; path = ../IWantAuthentication.h; sourceTree = "<group>"; };
@@ -1800,6 +1808,11 @@
 				5270A2A71D502E3A00B6DD58 /* HeaderTableViewCell.h */,
 				5270A2A81D502E3A00B6DD58 /* HeaderTableViewCell.m */,
 				5270A2A91D502E3A00B6DD58 /* HeaderTableViewCell.xib */,
+				4CB351B91D5420F0002B504F /* CreateSaishiViewController.h */,
+				4CB351BA1D5420F0002B504F /* CreateSaishiViewController.m */,
+				4C4C50E91D61A5DA00F58EB0 /* ChangePasswordController.h */,
+				4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */,
+				4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -3373,7 +3386,7 @@
 				TargetAttributes = {
 					4C29E7B81D1B79DE00E51E24 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 26422YP86T;
+						DevelopmentTeam = Y44Q42CSN4;
 					};
 					4C29E7D11D1B79DE00E51E24 = {
 						CreatedOnToolsVersion = 7.2;
@@ -3549,6 +3562,7 @@
 				4C76B7B51D22404200C6FE6A /* newFriends@2x.png in Resources */,
 				4C76B7821D22404200C6FE6A /* icon_002.gif in Resources */,
 				4C76B7C41D22404200C6FE6A /* tabbarSelectBg.png in Resources */,
+				4C4C50ED1D61A5DA00F58EB0 /* ChangePasswordController.xib in Resources */,
 				4C76B7C01D22404200C6FE6A /* tabbar_settingHL.png in Resources */,
 				5270A2B31D5377A600B6DD58 /* SettingsViewController.xib in Resources */,
 				5270A28B1D4DDD0A00B6DD58 /* AreaSelectorViewController.xib in Resources */,
@@ -3590,6 +3604,7 @@
 				4C76B6521D213F4600C6FE6A /* EMCDDeviceManagerBase.m in Sources */,
 				5272D4891D1C3C2300E2B8D1 /* SMSSender.m in Sources */,
 				5270A2B21D5377A600B6DD58 /* SettingsViewController.m in Sources */,
+				4C4C50EC1D61A5DA00F58EB0 /* ChangePasswordController.m in Sources */,
 				4C69039A1D35057B00049806 /* HotEventTableViewCell.m in Sources */,
 				4C29E8041D1B80F300E51E24 /* SaixinPage.m in Sources */,
 				4C76B6A91D213F4700C6FE6A /* EaseUsersListViewController.m in Sources */,
@@ -3763,6 +3778,7 @@
 				4C76B6641D213F4600C6FE6A /* MJRefreshBackStateFooter.m in Sources */,
 				4C76B6E21D2232E300C6FE6A /* AppDelegate+Parse.m in Sources */,
 				4C76B6BF1D213F4700C6FE6A /* EaseRecordView.m in Sources */,
+				4CB351BB1D5420F1002B504F /* CreateSaishiViewController.m in Sources */,
 				4C76B68F1D213F4600C6FE6A /* PSTGridLayoutInfo.m in Sources */,
 				5272D4DE1D2170DA00E2B8D1 /* PublicGroupDetailViewController.m in Sources */,
 				4C76B69C1D213F4600C6FE6A /* UIViewController+HUD.m in Sources */,
