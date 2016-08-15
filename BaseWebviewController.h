@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import <ShareSDK/ShareSDK.h>
+
 @interface BaseWebviewController : BaseViewController<UIWebViewDelegate>
 {
 
@@ -30,6 +32,7 @@
 
 @property (nonatomic,assign) BOOL showMJHeader;
 
+@property (nonatomic,strong) id<ISSContent> publishContent;
 -(void)initJSContext;
 -(void)evaluateJSWithDict:(NSDictionary*)dict;
 

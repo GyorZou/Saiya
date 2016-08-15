@@ -21,6 +21,7 @@
 
 -(void)initJSContext
 {
+    [super initJSContext];
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     NSString * s = [def objectForKey:@"acc_token"];
     if (s) {
@@ -29,6 +30,18 @@
     }
 
 
+}
+-(id<ISSContent>)publishContent
+{
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"card"  ofType:@"png"];
+    id<ISSContent> publishContent = [ShareSDK content:@"赛圈"
+                                       defaultContent:@"默认分享内容测试，没内容时显示"
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"pmmq"
+                                                  url:@"http://www.sharesdk.cn"
+                                          description:@"这是一条测试信息"
+                                            mediaType:SSPublishContentMediaTypeNews];
+    return publishContent;
 }
 -(void)viewDidAppear:(BOOL)animated
 {

@@ -49,6 +49,11 @@
     //_web.view.backgroundColor = [UIColor whiteColor];
     self.baseUrl = @"http://saiya.tv/h5/saiquan.html";
     self.showMJHeader = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNoti) name:@"saiya_did_send_suc" object:nil];
+}
+-(void)didReceiveNoti
+{
+    [self.webView reload];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -161,9 +166,13 @@
 */
 -(BOOL)handleUrl:(NSString *)url
 {
-    NoneBarWebviewController * web = [NoneBarWebviewController new];
-    web.baseUrl = url;
-    [self.navigationController pushViewController:web animated:YES];
+    if ([url isEqualToString:@"http://saiya.tv/h5/send_essay.html"]) {
+        SaiquanDetailViewController * web = [SaiquanDetailViewController new];
+        web.baseUrl = url;
+        [self.navigationController pushViewController:web animated:YES];
+        return NO;
+    }
+
     return NO;
 }
 @end

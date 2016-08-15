@@ -65,10 +65,11 @@
     
     
     self.jsContext[@"join"] = ^(NSString * sid){
-        NoneBarWebviewController * detail = [NoneBarWebviewController new];
+        InfoDetailViewController * detail = [InfoDetailViewController new];
         //detail.baseUrl = @"http://saiya.tv/h5/competionsummary.html";
-        detail.baseUrl=@"loading:http://saiya.tv/h5/join_competetion.html";
-        
+        detail.baseUrl=@"http://saiya.tv/h5/join_competetion.html";
+        detail.infoId = wS.saishiId;
+        detail.hidesBottomBarWhenPushed = YES;
         [wS.navigationController pushViewController:detail animated:YES];
 
     };

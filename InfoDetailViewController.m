@@ -40,9 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if([self url]){
+    
         self.baseUrl = [self url];
-    }
+
     
 }
 -(void)initJSContext
@@ -148,6 +148,11 @@
                                     [NWFToastView showToast:@"分享失败"];
                                 }
                             }];
+}
+
+-(BOOL)handleUrl:(NSString *)url
+{
+    return NO;
 }
 
 /*

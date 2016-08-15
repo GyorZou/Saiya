@@ -298,7 +298,7 @@
                   moduleName = "Saiya"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zougyor/Desktop/GitProjects/Saiya/Saiya/CityInputCell.m"
-                  timestampString = "492014920.781947"
+                  timestampString = "492961235.418956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -313,7 +313,7 @@
                   moduleName = "Saiya"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zougyor/Desktop/GitProjects/Saiya/Saiya/CityInputCell.m"
-                  timestampString = "492014920.782111"
+                  timestampString = "492961235.41948"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "205"
@@ -362,7 +362,7 @@
                   moduleName = "Saiya"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zougyor/Desktop/GitProjects/Saiya/Saiya/UserAuthenticate.m"
-                  timestampString = "492014920.783772"
+                  timestampString = "492961235.422738"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -377,7 +377,7 @@
                   moduleName = "Saiya"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zougyor/Desktop/GitProjects/Saiya/Saiya/UserAuthenticate.m"
-                  timestampString = "492014920.784012"
+                  timestampString = "492961235.423102"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -432,6 +432,38 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "-updateView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoneBarWebviewController.m"
+            timestampString = "492960145.491772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-initJSContext"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Saiya/SaishiInfoViewController.m"
+            timestampString = "492961106.930034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-initJSContext"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -275,10 +275,12 @@
     };
         [self initJSContext];
 }
-
--(IBAction)share:(id)sender{
+-(id<ISSContent>)publishContent
+{
+    if (_publishContent) {
+        return _publishContent;
+    }
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"card"  ofType:@"png"];
-    //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容测试"
                                        defaultContent:@"默认分享内容测试，没内容时显示"
                                                 image:[ShareSDK imageWithPath:imagePath]
@@ -286,6 +288,13 @@
                                                   url:@"http://www.sharesdk.cn"
                                           description:@"这是一条测试信息"
                                             mediaType:SSPublishContentMediaTypeNews];
+    return publishContent;
+    
+}
+-(IBAction)share:(id)sender{
+
+    //构造分享内容
+    id<ISSContent> publishContent = [self publishContent];;
     
     [ShareSDK showShareActionSheet:nil
                          shareList:nil

@@ -80,6 +80,7 @@
     __weak    typeof(self) ws = self;
     self.jsContext[@"sendSuccess"] = ^{
         //[ws dissmiss];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"saiya_did_send_suc" object:nil];
         [ws.navigationController popViewControllerAnimated:YES];
     };
 }
