@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
+#import "AboutSaiyaViewController.h"
 #import "ChangePasswordController.h"
 @interface SettingsViewController ()<UIAlertViewDelegate>
 
@@ -27,6 +27,9 @@
     }else{
         self.unloginView.hidden = NO;
     }
+    
+    self.unloginVersionLabel.text = APPENDSTRING(@"v",  [SettingsViewController appVersion]);
+    self.versionLabel.text =APPENDSTRING(@"v",  [SettingsViewController appVersion]);
 }
 -(void)logout
 {
@@ -52,13 +55,20 @@
     }
 
 }
+
++(NSString *)appVersion
+{
+    NSString *version=  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return  version;
+}
 -(IBAction)logOutClick:(id)sender
 {
     [self logout];
 }
 -(IBAction)aboutSaiya:(id)sender
 {
-    
+    AboutSaiyaViewController * ab = [AboutSaiyaViewController new];
+    [self.navigationController pushViewController:ab animated:YES];
 }
 -(IBAction)changePwd:(id)sender
 {

@@ -50,14 +50,14 @@
             [NWFToastView showProgress:@"正在修改..."];
             NSDictionary * dict = @{@"OldPassword":_oldPwd.text,@"NewPassword":_pwd1.text,@"ConfirmNewPassword":_pwd2.text};
             [[NetworkManagementRequset manager] requestPostData:url postData:dict complation:^BOOL(BOOL result, id returnData) {
-                
+                [NWFToastView dismissProgress];
                 if (result && [[returnData objectForKey:@"result"] boolValue] != NO) {
                 
                     [NWFToastView showToast:@"密码修改成功"];
                     _oldPwd.text = _pwd1.text = _pwd2.text = @"";
                     NSLog(@"%@",returnData);
                 }else{
-                    [NWFToastView dismissProgress];
+                    
                     [NWFToastView showToast:@"旧密码错误"];
                 }
                 

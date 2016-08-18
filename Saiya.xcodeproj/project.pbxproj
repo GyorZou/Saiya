@@ -113,6 +113,12 @@
 		4C35A4341D37977A00DE3A37 /* ActivityIndicaator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C35A4321D37977A00DE3A37 /* ActivityIndicaator.xib */; };
 		4C4C50EC1D61A5DA00F58EB0 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */; };
 		4C4C50ED1D61A5DA00F58EB0 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */; };
+		4C4C50F31D6558CD00F58EB0 /* AboutSaiyaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C50F11D6558CD00F58EB0 /* AboutSaiyaViewController.m */; };
+		4C4C50F41D6558CD00F58EB0 /* AboutSaiyaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C50F21D6558CD00F58EB0 /* AboutSaiyaViewController.xib */; };
+		4C4C50F81D655E3400F58EB0 /* FindPwdPage1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C50F61D655E3400F58EB0 /* FindPwdPage1.m */; };
+		4C4C50F91D655E3400F58EB0 /* FindPwdPage1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C50F71D655E3400F58EB0 /* FindPwdPage1.xib */; };
+		4C4C50FD1D655E4D00F58EB0 /* FindPwdPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C50FB1D655E4D00F58EB0 /* FindPwdPage2.m */; };
+		4C4C50FE1D655E4D00F58EB0 /* FindPwdPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C50FC1D655E4D00F58EB0 /* FindPwdPage2.xib */; };
 		4C6903901D34F8AE00049806 /* HotEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C69038F1D34F8AE00049806 /* HotEventsViewController.m */; };
 		4C6903931D35037200049806 /* AsynBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903921D35037200049806 /* AsynBaseModel.m */; };
 		4C6903961D35038E00049806 /* HotEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6903951D35038E00049806 /* HotEventModel.m */; };
@@ -714,6 +720,15 @@
 		4C4C50E91D61A5DA00F58EB0 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
 		4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
 		4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
+		4C4C50F01D6558CD00F58EB0 /* AboutSaiyaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSaiyaViewController.h; sourceTree = "<group>"; };
+		4C4C50F11D6558CD00F58EB0 /* AboutSaiyaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSaiyaViewController.m; sourceTree = "<group>"; };
+		4C4C50F21D6558CD00F58EB0 /* AboutSaiyaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSaiyaViewController.xib; sourceTree = "<group>"; };
+		4C4C50F51D655E3400F58EB0 /* FindPwdPage1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPwdPage1.h; sourceTree = "<group>"; };
+		4C4C50F61D655E3400F58EB0 /* FindPwdPage1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPwdPage1.m; sourceTree = "<group>"; };
+		4C4C50F71D655E3400F58EB0 /* FindPwdPage1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPwdPage1.xib; sourceTree = "<group>"; };
+		4C4C50FA1D655E4D00F58EB0 /* FindPwdPage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPwdPage2.h; sourceTree = "<group>"; };
+		4C4C50FB1D655E4D00F58EB0 /* FindPwdPage2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPwdPage2.m; sourceTree = "<group>"; };
+		4C4C50FC1D655E4D00F58EB0 /* FindPwdPage2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPwdPage2.xib; sourceTree = "<group>"; };
 		4C69038E1D34F8AE00049806 /* HotEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotEventsViewController.h; sourceTree = "<group>"; };
 		4C69038F1D34F8AE00049806 /* HotEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotEventsViewController.m; sourceTree = "<group>"; };
 		4C6903911D35037200049806 /* AsynBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsynBaseModel.h; sourceTree = "<group>"; };
@@ -1813,6 +1828,9 @@
 				4C4C50E91D61A5DA00F58EB0 /* ChangePasswordController.h */,
 				4C4C50EA1D61A5DA00F58EB0 /* ChangePasswordController.m */,
 				4C4C50EB1D61A5DA00F58EB0 /* ChangePasswordController.xib */,
+				4C4C50F01D6558CD00F58EB0 /* AboutSaiyaViewController.h */,
+				4C4C50F11D6558CD00F58EB0 /* AboutSaiyaViewController.m */,
+				4C4C50F21D6558CD00F58EB0 /* AboutSaiyaViewController.xib */,
 			);
 			name = wode;
 			sourceTree = "<group>";
@@ -1927,6 +1945,12 @@
 				4C29E86A1D1BF66800E51E24 /* RegisterPage3.xib */,
 				5272D4871D1C3C2300E2B8D1 /* SMSSender.h */,
 				5272D4881D1C3C2300E2B8D1 /* SMSSender.m */,
+				4C4C50F51D655E3400F58EB0 /* FindPwdPage1.h */,
+				4C4C50F61D655E3400F58EB0 /* FindPwdPage1.m */,
+				4C4C50F71D655E3400F58EB0 /* FindPwdPage1.xib */,
+				4C4C50FA1D655E4D00F58EB0 /* FindPwdPage2.h */,
+				4C4C50FB1D655E4D00F58EB0 /* FindPwdPage2.m */,
+				4C4C50FC1D655E4D00F58EB0 /* FindPwdPage2.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -3447,6 +3471,7 @@
 				4C76B77D1D22404200C6FE6A /* chat_sender_audio_playing_002@2x.png in Resources */,
 				4C76B7681D22404200C6FE6A /* chat_location_annotation_someone.png in Resources */,
 				4C76B79F1D22404200C6FE6A /* icon_035_cover.png in Resources */,
+				4C4C50F91D655E3400F58EB0 /* FindPwdPage1.xib in Resources */,
 				4C76B7A51D22404200C6FE6A /* password@2x.png in Resources */,
 				4C29E7CC1D1B79DE00E51E24 /* LaunchScreen.storyboard in Resources */,
 				5270A27E1D4CB5B300B6DD58 /* UserAuthenticate.xib in Resources */,
@@ -3469,6 +3494,7 @@
 				4C29E85D1D1BEEC000E51E24 /* LoginPage.xib in Resources */,
 				4C76B7911D22404200C6FE6A /* icon_020_cover.png in Resources */,
 				4C76B7BA1D22404200C6FE6A /* tabbar_contacts.png in Resources */,
+				4C4C50F41D6558CD00F58EB0 /* AboutSaiyaViewController.xib in Resources */,
 				4C76B7741D22404200C6FE6A /* chat_receiver_audio_playing000@2x.png in Resources */,
 				4C76B78F1D22404200C6FE6A /* icon_019_cover.png in Resources */,
 				4C76B7BD1D22404200C6FE6A /* tabbar_contactsHL@2x.png in Resources */,
@@ -3556,6 +3582,7 @@
 				4C29E8621D1BF5E800E51E24 /* RegisterPage.xib in Resources */,
 				4C76B7991D22404200C6FE6A /* icon_027_cover.png in Resources */,
 				4C76B7981D22404200C6FE6A /* icon_027.gif in Resources */,
+				4C4C50FE1D655E4D00F58EB0 /* FindPwdPage2.xib in Resources */,
 				4C76B7AA1D22404200C6FE6A /* titleBar.png in Resources */,
 				4C76B7B81D22404200C6FE6A /* tabbar_chatsHL.png in Resources */,
 				4C76B76A1D22404200C6FE6A /* chat_location_detail_disclosure.png in Resources */,
@@ -3667,6 +3694,7 @@
 				4C76B6971D213F4600C6FE6A /* EaseUserModel.m in Sources */,
 				4C76B65B1D213F4600C6FE6A /* MJRefreshBackFooter.m in Sources */,
 				5272D5111D21762200E2B8D1 /* TTGlobalUICommon.m in Sources */,
+				4C4C50F81D655E3400F58EB0 /* FindPwdPage1.m in Sources */,
 				4C76B6941D213F4600C6FE6A /* EaseSDKHelper.m in Sources */,
 				5272D4911D216D4F00E2B8D1 /* ConversationListController.m in Sources */,
 				4C6903E41D36359B00049806 /* UILabel+NSNull.m in Sources */,
@@ -3716,6 +3744,7 @@
 				4C76B67F1D213F4600C6FE6A /* UIButton+EMWebCache.m in Sources */,
 				4C29E81F1D1BD0D800E51E24 /* SearchViewController.m in Sources */,
 				5272D55D1D2179B500E2B8D1 /* RobotChatViewController.m in Sources */,
+				4C4C50F31D6558CD00F58EB0 /* AboutSaiyaViewController.m in Sources */,
 				5272D4EE1D21719C00E2B8D1 /* UserProfileManager.m in Sources */,
 				4C29E8521D1BE92A00E51E24 /* UIProgressView+AFNetworking.m in Sources */,
 				5272D4DD1D2170DA00E2B8D1 /* GroupSubjectChangingViewController.m in Sources */,
@@ -3729,6 +3758,7 @@
 				4C6903C51D35F8DD00049806 /* MLPhotoBrowserPhotoView.m in Sources */,
 				4C76B6741D213F4600C6FE6A /* MWZoomingScrollView.m in Sources */,
 				4C76B6A81D213F4700C6FE6A /* EaseRefreshTableViewController.m in Sources */,
+				4C4C50FD1D655E4D00F58EB0 /* FindPwdPage2.m in Sources */,
 				4C046D221D4F2D5B0035C12F /* QRCodeGenerator.m in Sources */,
 				5272D4DF1D2170DA00E2B8D1 /* PublicGroupListViewController.m in Sources */,
 				4C29E7C11D1B79DE00E51E24 /* AppDelegate.m in Sources */,

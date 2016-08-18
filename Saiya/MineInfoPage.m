@@ -67,7 +67,7 @@
     if ([vd isKindOfClass:[NSDictionary class]] && [[SaiyaUser curUser].Vendor[@"Certified"] boolValue]) {
         _datas = @[a1,a2,a3,a4,a5];
     }else{
-        _datas = @[a1,a2,a3,a4,a5];
+        _datas = @[a1,a3,a4,a5];
     }
     
     

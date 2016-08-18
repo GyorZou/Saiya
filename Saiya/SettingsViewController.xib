@@ -154,6 +154,9 @@
                                     <state key="normal" title="关于我们">
                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="aboutSaiya:" destination="-1" eventType="touchDragInside" id="lXS-vd-BRP"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

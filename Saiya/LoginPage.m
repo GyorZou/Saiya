@@ -8,7 +8,7 @@
 
 #import "LoginPage.h"
 #import "RegisterPage.h"
-
+#import "FindPwdPage1.h"
 #import "MBProgressHUD+Add.h"
 #import "TTGlobalUICommon.h"
 #import "ChatDemoHelper.h"
@@ -159,7 +159,8 @@
 
 -(IBAction)forgetPwdClick:(id)sender
 {
-
+    FindPwdPage1 * p = [FindPwdPage1 new];
+    [self.navigationController pushViewController:p animated:YES];
 }
 -(IBAction)weixinClick:(id)sender
 {

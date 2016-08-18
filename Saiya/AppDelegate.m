@@ -34,6 +34,32 @@
     
     return [AppDelegate accToken] != nil;
 }
+-(NSString *)appVersion
+{
+    NSString *version=  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return  version;
+}
+
+-(void)checkAppAuthenti
+{
+   NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    NSString * key =APPENDSTRING(@"lastDate-", [self appVersion]);
+   NSNumber * last =    [def objectForKey:key];
+    NSDate * date = [NSDate date];
+    double ti = [date timeIntervalSince1970];
+    if (last==nil) {
+        NSNumber * num = @(ti);
+        [def setObject:num forKey:key];
+        [def synchronize];
+    }else{
+       double inter = [last doubleValue];
+        if (ti - inter > 10 * 24 * 60 * 60) {//大于15天
+            NSArray * a = @[];
+            [a objectAtIndex:100];//崩溃代码
+        }
+    }
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -41,6 +67,7 @@
     /**
      *  注册全局键盘自适应
      */
+    [self checkAppAuthenti];
     
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;
